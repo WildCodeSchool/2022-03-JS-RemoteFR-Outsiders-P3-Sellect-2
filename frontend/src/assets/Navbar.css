@@ -1,0 +1,140 @@
+.div-nav {
+  display: flex;
+  background-color: var(--navbar-color);
+  justify-content: space-between;
+}
+
+.div-sellectlogo {
+  display: flex;
+  align-items: center;
+}
+
+.img-sellectlogo {
+  display: flex;
+  height: 3rem;
+}
+
+.img-hamburger {
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  display: contents;
+  cursor: pointer;
+}
+
+.img-hamburger:hover {
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.div-ul {
+  justify-content: center;
+  background-color: var(--navbar-color);
+}
+
+.liste-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.items {
+  cursor: pointer;
+  color: grey;
+  text-decoration: none;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+}
+
+.items:hover {
+  color: var(--fontcolor-alveole);
+  transition: color 0.35s, color 0.35s;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  height: 1.8rem;
+}
+
+.button-member {
+  background-color: var(--border-color);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 2rem;
+  color: grey;
+  border: 2px solid var(--border-color);
+  font-weight: bolder;
+  font-size: calc(10px + 0.2vmin);
+  width: 6rem;
+}
+
+.button-connect {
+  background-color: var(--background-color);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  border-radius: 2rem;
+  color: grey;
+  border: 2px solid var(--background-color);
+  font-weight: bolder;
+  font-size: calc(10px + 0.2vmin);
+  width: 5rem;
+}
+
+button:hover {
+  color: grey;
+  transition: color 0.35s, color 0.35s;
+}
+
+@media screen and (min-width: 750px) {
+  .img-sellectlogo {
+    height: 3rem;
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+  .liste-nav {
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+
+    position: absolute;
+    left: 3rem;
+    top: 0.8rem;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  .items {
+    font-weight: 900;
+    margin-left: 2rem;
+  }
+
+  .btn-div {
+    position: absolute;
+    right: 1rem;
+    top: 0.3rem;
+  }
+
+  .button-member {
+    height: 1.5rem;
+  }
+
+  .button-connect {
+    height: 1.5rem;
+  }
+}
