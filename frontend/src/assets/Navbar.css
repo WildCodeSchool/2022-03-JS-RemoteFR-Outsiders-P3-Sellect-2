@@ -147,7 +147,6 @@ details p ul {
   margin: auto;
 }
 
-
 @media screen and (min-width: 750px) {
   .div-nav {
     height: 6rem;
@@ -179,8 +178,8 @@ details p ul {
   }
 
   .items-activated {
-font-size: 1.5rem;
-margin-left: 2rem;
+    font-size: 1.5rem;
+    margin-left: 2rem;
   }
   .btn-div {
     position: absolute;
@@ -201,7 +200,7 @@ margin-left: 2rem;
   .faq-div {
     margin-top: 2rem;
   }
-  
+
   details {
     border: 1px solid #aaa;
     border-radius: 4px;
@@ -213,24 +212,24 @@ margin-left: 2rem;
     margin-top: 3rem;
     padding-bottom: 2rem;
   }
-  
+
   summary {
     font-weight: bold;
     margin: -0.5em -0.5em 0;
     padding: 0.5em;
     font-size: 1.6rem;
   }
-  
+
   details:hover {
     cursor: pointer;
   }
-  
+
   details p {
     color: grey;
     font: bolder;
     font-size: 1.3rem;
   }
-  
+
   details p ul {
     width: 90%;
     margin: auto;
