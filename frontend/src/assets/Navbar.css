@@ -5,18 +5,16 @@
 }
 
 .div-sellectlogo {
-  display: flex;
-  align-items: center;
+  padding-left: 0.2rem;
 }
 
 .img-sellectlogo {
   display: flex;
-  height: 3rem;
+  height: 4.2rem;
 }
 
 .img-hamburger {
   width: 4rem;
-  height: 3rem;
   cursor: pointer;
 }
 
@@ -45,16 +43,25 @@
 
 .items {
   cursor: pointer;
-  color: grey;
+  color: white;
   text-decoration: none;
   font-weight: 900;
   display: flex;
   justify-content: center;
+  font-size: 1.2rem;
 }
 
 .items:hover {
-  color: var(--fontcolor-alveole);
-  transition: color 0.35s, color 0.35s;
+  color: black;
+}
+
+.items-activated {
+  cursor: pointer;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
 }
 
 .btn-div {
@@ -64,43 +71,89 @@
 }
 
 .button-member {
-  background-color: var(--border-color);
+  background-color: rgb(231, 164, 39);
   border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
   border-radius: 2rem;
-  color: grey;
-  border: 2px solid var(--border-color);
-  font-weight: bolder;
-  font-size: calc(10px + 0.2vmin);
-  width: 6rem;
+  color: white;
+  border: 2px solid var(--navbar-color);
+  font-weight: 900;
+  font-size: calc(10px + 1vmin);
+  font-size: 1rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  cursor: pointer;
 }
 
 .button-connect {
-  background-color: var(--background-color);
+  background-color: var(--connexion-color);
   border: none;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  margin: 4px 2px;
   border-radius: 2rem;
-  color: grey;
-  border: 2px solid var(--background-color);
-  font-weight: bolder;
-  font-size: calc(10px + 0.2vmin);
-  width: 5rem;
+  color: white;
+  border: 2px solid var(--navbar-color);
+  font-weight: 900;
+  font-size: calc(10px + 1vmin);
+  font-size: 1rem;
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+  cursor: pointer;
 }
 
 button:hover {
-  color: grey;
+  color: black;
   transition: color 0.35s, color 0.35s;
 }
 
+.faq-div {
+  margin-top: 2rem;
+}
+
+details {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  padding: 0.5em 0.5em 0;
+  width: 95%;
+  margin: auto;
+  background-color: white;
+  color: black;
+  margin-top: 3rem;
+  padding-bottom: 2rem;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  font-size: 1.6rem;
+}
+
+details:hover {
+  cursor: pointer;
+}
+
+details p {
+  color: grey;
+  font: bolder;
+  font-size: 1.3rem;
+}
+
+details p ul {
+  width: 90%;
+  margin: auto;
+}
+
+
 @media screen and (min-width: 750px) {
+  .div-nav {
+    height: 6rem;
+  }
   .img-sellectlogo {
-    height: 3rem;
+    height: 6rem;
   }
 
   .btn-toggle {
@@ -113,28 +166,73 @@ button:hover {
 
     position: absolute;
     left: 3rem;
-    top: 0.8rem;
+    top: 3rem;
     display: flex;
     justify-content: center;
     height: auto;
   }
 
-  .items {
+  nav .items {
     font-weight: 900;
     margin-left: 2rem;
+    font-size: 1.5rem;
   }
 
+  .items-activated {
+font-size: 1.5rem;
+margin-left: 2rem;
+  }
   .btn-div {
     position: absolute;
     right: 1rem;
-    top: 0.3rem;
+    top: 2.8rem;
   }
 
   .button-member {
-    height: 1.5rem;
+    height: 2rem;
+    font-size: 1rem;
   }
 
   .button-connect {
-    height: 1.5rem;
+    height: 2rem;
+    font-size: 1rem;
+  }
+
+  .faq-div {
+    margin-top: 2rem;
+  }
+  
+  details {
+    border: 1px solid #aaa;
+    border-radius: 4px;
+    padding: 0.5em 0.5em 0;
+    width: 70%;
+    margin: auto;
+    background-color: white;
+    color: grey;
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+  }
+  
+  summary {
+    font-weight: bold;
+    margin: -0.5em -0.5em 0;
+    padding: 0.5em;
+    font-size: 1.6rem;
+  }
+  
+  details:hover {
+    cursor: pointer;
+  }
+  
+  details p {
+    color: grey;
+    font: bolder;
+    font-size: 1.3rem;
+  }
+  
+  details p ul {
+    width: 90%;
+    margin: auto;
   }
 }

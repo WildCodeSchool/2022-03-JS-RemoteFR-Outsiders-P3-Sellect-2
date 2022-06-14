@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-import sellect2 from "../assets/img/sellect2.svg";
+// import sellect2 from "../assets/img/sellect2.svg";
+import logosellect from "../assets/img/logosellect.svg";
 import toggle from "../assets/img/toggle.svg";
 import "../assets/Navbar.css";
 import "../assets/common.css";
@@ -33,7 +34,11 @@ export default function Navbar() {
     <>
       <div className="div-nav">
         <div className="div-sellectlogo">
-          <img src={sellect2} alt="sellectlogo" className="img-sellectlogo" />
+          <img
+            src={logosellect}
+            alt="sellectlogo"
+            className="img-sellectlogo"
+          />
         </div>
         <div className="div-button">
           <button type="button" onClick={toggleNav} className="btn-toggle">
@@ -48,22 +53,42 @@ export default function Navbar() {
           <>
             <div>
               <nav className="liste-nav">
-                <Link to="/" className="items">
+                <NavLink
+                  to="/"
+                  className={(items) =>
+                    items.isActive ? "items-activated" : "items"
+                  }
+                >
                   Accueil
-                </Link>
-                <Link to="/nosengagements" className="items">
+                </NavLink>
+                <NavLink
+                  to="/nosengagements"
+                  className={(items) =>
+                    items.isActive ? "items-activated" : "items"
+                  }
+                >
                   Nos engagements
-                </Link>
-                <Link to="/faq" className="items">
+                </NavLink>
+                <NavLink
+                  to="/faq"
+                  className={(items) =>
+                    items.isActive ? "items-activated" : "items"
+                  }
+                >
                   FAQ
-                </Link>
-                <Link to="/partenariat" className="items">
+                </NavLink>
+                <NavLink
+                  to="/partenariat"
+                  className={(items) =>
+                    items.isActive ? "items-activated" : "items"
+                  }
+                >
                   Partenariat
-                </Link>
+                </NavLink>
               </nav>
             </div>
             <div className="btn-div">
-              <Link to="/inscription" className="items">
+              <NavLink to="/inscription" className="items">
                 <button
                   className="button-member"
                   type="button"
@@ -71,8 +96,8 @@ export default function Navbar() {
                 >
                   Devenir membre
                 </button>
-              </Link>
-              <Link to="/connexion" className="items">
+              </NavLink>
+              <NavLink to="/connexion" className="items">
                 <button
                   className="button-connect"
                   type="button"
@@ -80,7 +105,7 @@ export default function Navbar() {
                 >
                   Se connecter
                 </button>
-              </Link>
+              </NavLink>
             </div>
           </>
         )}
