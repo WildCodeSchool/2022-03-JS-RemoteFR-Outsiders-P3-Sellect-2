@@ -1,0 +1,68 @@
+.footer {
+  width: 100%;
+  /*margin-top: 34rem;*/
+  background-color: var(--navbar-color);
+  position: relative;
+}
+
+.reseauxsociaux {
+  padding-top: 8px;
+  margin: 0.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.copyright-un {
+  width: 100%;
+  text-align: center;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: x-small;
+}
+
+.copyright-deux {
+  width: 100%;
+  text-align: center;
+  color: black;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: x-small;
+}
+
+.footer .reseauxsociaux a {
+  margin: 0.2rem;
+}
+
+.mentionslegales-div {
+  width: 90%;
+  margin: auto;
+}
+
+.mentionslegales-div h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+span {
+  font-weight: 900;
+}
+
+.mentionslegales-div h2 {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+.mentionslegales-div p {
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+}

@@ -1,0 +1,126 @@
+.signup-container h2 {
+  color: var(--border-color);
+  padding-top: 5rem;
+}
+
+.signup-form-content {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  /*width: 25vw;*/
+}
+
+.signup-name-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+}
+
+.signup-form-content input {
+  border-radius: 5px;
+}
+
+.signup-image {
+  width: 55vw;
+  height: 100%;
+  object-fit: cover;
+  max-height: 100vh;
+  bottom: 0;
+}
+
+.signup-container {
+  display: flex;
+  height: 100vh;
+  background-color: var(--page-background-color);
+  /*background-color: var(--navbar-color);*/
+}
+
+.signup-form-container {
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-form-container p {
+  padding-top: 5rem;
+}
+
+.signup-container input {
+  height: 2.5rem;
+  margin: 0.5rem;
+  font-size: 1rem;
+  padding-left: 1rem;
+  border: 1px solid rgb(190, 190, 190);
+}
+
+.signup-container input:focus {
+  outline-color: var(--border-color);
+  box-shadow: 0 0 4px var(--border-color);
+}
+
+.signup-form-container h2 {
+  padding-bottom: 2rem;
+}
+
+.signup-button-container button {
+  height: 2.6rem;
+  width: 8rem;
+  font-size: 1rem;
+  background-color: var(--border-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.signup-button-container button:hover {
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid var(--border-color);
+  color: var(--border-color);
+  transition: 0.4s ease-in-out;
+}
+
+.signup-button-container {
+  display: flex;
+  justify-content: center;
+  padding-top: 3rem;
+}
+
+.error-container {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-image-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.signup-image-text {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  /*transform: translate(-50%, -50%);*/
+  font-size: 1.5em;
+  line-height: 3.1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .signup-image {
+    display: none;
+  }
+
+  .signup-form-container {
+    width: 100vw;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .signup-container input {
+    font-size: 0.8rem;
+  }
+}

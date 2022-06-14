@@ -1,0 +1,37 @@
+:root {
+  --background-color: #e2f0d9;
+  --navbar-color: #65bd60;
+  --connexion-color: #c5e0b4;
+  --font: "Calibri";
+  --font-size: 1em;
+  --line-height: 1.5;
+  width: 100%;
+  --page-background-color: rgb(245, 245, 240);
+  --grey-background: rgb(242, 242, 242);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: var(--font);
+}
+
+.error {
+  font-weight: bold;
+  color: red;
+  padding-top: 0.4rem;
+  position: absolute;
+}
+
+.link-other-pages {
+  color: var(--border-color);
+  font-weight: 900;
+  font-size: 1.1rem;
+}
+
+.link-other-pages:hover {
+  color: orange;
+  transition: 0.5s;
+}
