@@ -41,62 +41,60 @@ function Login() {
   // console.log(isLoggedIn);
 
   return (
-    <section>
-      <div className="login-container">
-        <img src={sellect2} className="login-logo" alt="sellect-logo" />
-        <div className="login-form-container">
-          <h2>
-            Bonjour ! <span>Envie d'une nouvelle astuce ?</span>
-          </h2>
-          <form onSubmit={handleLogin} className="login-content">
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              required
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              type="password"
-              placeholder="Mot de passe"
-              value={password}
-              required
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <div className="login-container-error">
-              {loginError && (
-                <span className="error">
-                  L'email ou le mot de passe ne correspondent pas
-                </span>
-              )}
-            </div>
-            <div className="login-button-container">
-              <button type="submit">SE CONNECTER</button>
-            </div>
-          </form>
-          <p>
-            Pas de compte ?{" "}
-            <NavLink to="/inscription" className="link-other-pages">
-              Inscrivez-vous !
-            </NavLink>
-          </p>
-        </div>
-        <div className="login-image-container">
-          <img className="login-image" src={loginImage} alt="happyWoman" />
-          <div className="login-image-text">
-            <h1>
-              Optimisez
-              <br />
-              votre
-              <br />
-              pouvoir
-              <br />
-              d'achat
-            </h1>
+    <div className="login-container">
+      <img src={sellect2} className="login-logo" alt="sellect-logo" />
+      <div className="login-form-container">
+        <h2>
+          Bonjour ! <span>Envie d'une nouvelle astuce ?</span>
+        </h2>
+        <form onSubmit={handleLogin} className="login-content">
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            required
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <input
+            type="password"
+            placeholder="Mot de passe"
+            value={password}
+            required
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div className="login-container-error">
+            {loginError && (
+              <span className="error">
+                L'email ou le mot de passe ne correspondent pas
+              </span>
+            )}
           </div>
+          <div className="login-button-container">
+            <button type="submit">SE CONNECTER</button>
+          </div>
+        </form>
+        <p>
+          Pas de compte ?{" "}
+          <NavLink to="/inscription" className="link-other-pages">
+            Inscrivez-vous !
+          </NavLink>
+        </p>
+      </div>
+      <div className="login-image-container">
+        <img className="login-image" src={loginImage} alt="happyWoman" />
+        <div className="login-image-text">
+          <h1>
+            Optimisez
+            <br />
+            votre
+            <br />
+            pouvoir
+            <br />
+            d'achat
+          </h1>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
