@@ -26,9 +26,9 @@
 }
 
 .link-other-pages {
-  color: var(--border-color);
+  color: var(--navbar-color);
   font-weight: 900;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .link-other-pages:hover {
