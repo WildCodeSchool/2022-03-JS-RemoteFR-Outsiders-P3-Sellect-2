@@ -16,7 +16,7 @@ export default function Bloc1() {
           <span>La seule dépense</span> qui fait baisser toutes les autres
         </p>
         <div className="btn">
-          <button type="button">Réserver mon audit</button>
+          <button type="button">Je réserve mon audit</button>
           <button type="button">Je deviens apporteur d'affaires</button>
         </div>
       </div>
