@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import Faq from "./pages/Faq";
 import HomeUser from "./pages/HomeUser";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -18,6 +19,7 @@ function App() {
           <Route path="/connexion" element={<Login />} />
           <Route path="/mon-compte" element={<HomeUser />} />
           <Route path="/mentionslegales" element={<LegalNotices />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="/wilders" element={<Wilders />} />
         </Routes>
       </MainContextProvider>
