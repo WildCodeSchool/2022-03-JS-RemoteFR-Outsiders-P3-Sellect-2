@@ -76,14 +76,12 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 2rem;
+  border-radius: 20px;
   color: white;
   border: 2px solid var(--navbar-color);
-  font-weight: 900;
-  font-size: calc(10px + 1vmin);
-  font-size: 1rem;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
+  font-weight: 500;
+  font-size: calc(var(--font-size) * 0.6);
+  padding: 0 0.5em 0 0.5em;
   cursor: pointer;
 }
 
@@ -93,14 +91,12 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  border-radius: 2rem;
+  border-radius: 20px;
   color: white;
   border: 2px solid var(--navbar-color);
-  font-weight: 900;
-  font-size: calc(10px + 1vmin);
-  font-size: 1rem;
-  padding-left: 0.4rem;
-  padding-right: 0.4rem;
+  font-weight: 500;
+  font-size: calc(var(--font-size) * 0.6);
+  padding: 0 0.5em 0 0.5em;
   cursor: pointer;
 }
 
@@ -189,12 +185,12 @@ details p ul {
 
   .button-member {
     height: 2rem;
-    font-size: 1rem;
+    font-size: calc(var(--font-size) * 0.8);
   }
 
   .button-connect {
     height: 2rem;
-    font-size: 1rem;
+    font-size: calc(var(--font-size) * 0.8);
   }
 
   .faq-div {

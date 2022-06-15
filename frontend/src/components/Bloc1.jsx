@@ -2,6 +2,7 @@ import React from "react";
 import "@assets/common.css";
 import "@assets/Bloc1.css";
 import bloc1 from "@assets/img/bloc1.jpg";
+import { Link } from "react-router-dom";
 
 export default function Bloc1() {
   return (
@@ -13,11 +14,25 @@ export default function Bloc1() {
           accompagnement humain.
         </h2>
         <p>
-          <span>La seule dépense</span> qui fait baisser toutes les autres
+          <span>La seule dépense</span> qui fait baisser toutes les autres.
         </p>
         <div className="btn">
-          <button type="button">Réserver mon audit</button>
-          <button type="button">Je deviens apporteur d'affaires</button>
+          <Link to="/calendrier">
+            <button
+              type="button"
+              /* onClick={handleClick} */
+            >
+              Je réserve mon audit
+            </button>
+          </Link>
+          <Link to="/parrainage">
+            <button
+              type="button"
+              /* onClick={handleClick} */
+            >
+              Je deviens apporteur d'affaires
+            </button>
+          </Link>
         </div>
       </div>
       <div className="bloc1_right">
