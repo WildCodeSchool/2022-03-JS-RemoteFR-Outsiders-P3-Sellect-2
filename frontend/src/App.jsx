@@ -7,6 +7,8 @@ import SignUp from "./pages/SignUp";
 import LegalNotices from "./pages/LegalNotices";
 import Wilders from "./pages/Wilders";
 import { MainContextProvider } from "./contexts/MainContext";
+import Sponsorship from "./pages/Sponsorship";
+import Calendar from "./pages/Calendar";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path="/mon-compte" element={<HomeUser />} />
           <Route path="/mentionslegales" element={<LegalNotices />} />
           <Route path="/wilders" element={<Wilders />} />
+          <Route path="/parrainage" element={<Sponsorship />} />
+          <Route path="/connexion" element={<Calendar />} />
         </Routes>
       </MainContextProvider>
     </div>

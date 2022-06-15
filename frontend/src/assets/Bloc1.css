@@ -106,10 +106,6 @@
     font-size: calc(var(--font-size) * 0.8);
   }
 
-  .btn button:hover {
-    font-size: calc(var(--font-size) * 1);
-  }
-
   .bloc1_left h1 {
     margin-bottom: 2em;
   }
@@ -117,8 +113,4 @@
   .bloc1_left h2 {
     margin-bottom: 2em;
   }
-
-
-
-
 }
