@@ -17,7 +17,7 @@ export default function Bloc1() {
           <span>La seule dépense</span> qui fait baisser toutes les autres
         </p>
         <div className="btn">
-          <Link to="/connexion">
+          <Link to="/calendrier">
             <button
               type="button"
               /* onClick={handleClick} */

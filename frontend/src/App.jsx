@@ -24,7 +24,7 @@ function App() {
           <Route path="/faq" element={<Faq />} />
           <Route path="/wilders" element={<Wilders />} />
           <Route path="/parrainage" element={<Sponsorship />} />
-          <Route path="/connexion" element={<Calendar />} />
+          <Route path="/calendrier" element={<Calendar />} />
         </Routes>
       </MainContextProvider>
     </div>
