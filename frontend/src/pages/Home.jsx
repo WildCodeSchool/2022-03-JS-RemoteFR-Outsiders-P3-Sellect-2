@@ -1,10 +1,11 @@
 import React from "react";
-import "@assets/common.css";
-import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
+import "../assets/common.css";
+import Navbar from "../components/Navbar";
+import Slider from "../components/Slider";
+import Footer from "../components/Footer";
 import Bloc2 from "@components/Bloc2";
-import HomeBlock3 from "@components/HomeBlock3";
-import Bloc1 from "@components/Bloc1";
+import HomeBlock3 from "../components/HomeBlock3";
+import Bloc1 from "../components/Bloc1";
 
 function Home() {
   return (
@@ -14,6 +15,7 @@ function Home() {
         <Bloc1 />
         <Bloc2 />
         <HomeBlock3 />
+        <Slider />
       </div>
       <Footer />
     </div>
