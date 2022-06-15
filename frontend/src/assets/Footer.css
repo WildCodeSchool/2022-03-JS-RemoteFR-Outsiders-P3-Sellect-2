@@ -1,8 +1,12 @@
 .footer {
-  width: 100%;
   /*margin-top: 34rem;
   position: relative;*/
   background-color: var(--navbar-color);
+  position: absolute;
+
+  bottom: 0;
+  width: 100%;
+  margin-top: 10rem;
 }
 
 .reseauxsociaux {

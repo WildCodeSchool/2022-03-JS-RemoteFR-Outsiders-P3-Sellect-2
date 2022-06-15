@@ -1,0 +1,43 @@
+.carousel-root {
+  background-color: blue;
+  position: relative;
+  top: 27rem;
+}
+
+.carousel {
+  background-color: blue;
+  position: relative;
+  top: 27rem;
+}
+.carousel .carousel-status {
+  display: none;
+}
+
+.slider-div {
+  background-color: purple;
+}
+.carousel .slide img {
+  width: 30%;
+  height: 12rem;
+}
+
+.carousel .thumb {
+  width: 40%;
+  height: 5rem;
+  background-color: pink;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 0;
+  background-color: yellow;
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+  height: 3rem;
+  margin: auto;
+}
