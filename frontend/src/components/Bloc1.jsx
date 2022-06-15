@@ -14,7 +14,7 @@ export default function Bloc1() {
           accompagnement humain.
         </h2>
         <p>
-          <span>La seule dépense</span> qui fait baisser toutes les autres
+          <span>La seule dépense</span> qui fait baisser toutes les autres.
         </p>
         <div className="btn">
           <Link to="/calendrier">

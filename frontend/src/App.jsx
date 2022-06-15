@@ -20,7 +20,7 @@ function App() {
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/connexion" element={<Login />} />
           <Route path="/mon-compte" element={<HomeUser />} />
-          <Route path="/mentionslegales" element={<LegalNotices />} />
+          <Route path="/mentions-legales" element={<LegalNotices />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/wilders" element={<Wilders />} />
           <Route path="/parrainage" element={<Sponsorship />} />

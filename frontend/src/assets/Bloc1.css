@@ -16,7 +16,7 @@
 .bloc1_left h1 {
   color: #65bd60;
   font-size: calc(var(--font-size) * 2);
-  margin: 0.2em;
+  margin-left: 0.3em;
 }
 
 .bloc1_left h2 {
@@ -107,10 +107,15 @@
   }
 
   .bloc1_left h1 {
-    margin-bottom: 2em;
+    margin: 1.5em;
   }
 
   .bloc1_left h2 {
     margin-bottom: 2em;
+    margin-left: 0.5em;
+  }
+
+  .bloc1_left p {
+    margin-left: em;
   }
 }
