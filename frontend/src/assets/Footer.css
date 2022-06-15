@@ -1,8 +1,9 @@
 .footer {
   width: 100%;
-  /*margin-top: 34rem;*/
+  padding: 1rem;
+  /*margin-top: 34rem;
+  position: relative;*/
   background-color: var(--navbar-color);
-  position: relative;
 }
 
 .reseauxsociaux {
@@ -15,19 +16,19 @@
 .copyright-un {
   width: 100%;
   text-align: center;
-  color: black;
+  color: white;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: x-small;
+  font-size: 1rem;
 }
 
 .copyright-deux {
   width: 100%;
   text-align: center;
-  color: black;
+  color: white;
   margin-top: 0px;
   margin-bottom: 0px;
-  font-size: x-small;
+  font-size: 1rem;
 }
 
 .footer .reseauxsociaux a {
@@ -65,4 +66,14 @@ section {
   justify-content: center;
   width: 70%;
   margin: auto;
+}
+
+.colorfooter {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+}
+.colorfooter:hover {
+  color: black;
 }
