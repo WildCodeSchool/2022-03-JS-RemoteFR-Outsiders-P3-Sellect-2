@@ -1,4 +1,4 @@
-.sponsor_container {
+.calendar_container {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -58,7 +58,7 @@
 }
 
 @media screen and (min-width: 768px) {
-  .sponsor_container .instructions_container {
+  .calendar_container .instructions_container {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -85,5 +85,6 @@
   .illustration img {
     width: 95%;
     height: auto;
+    margin-top: 1em;
   }
 }
