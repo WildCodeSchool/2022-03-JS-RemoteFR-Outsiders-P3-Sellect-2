@@ -79,7 +79,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin: 1em;
+    margin: auto;
   }
 
   .bloc1_left {
