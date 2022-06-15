@@ -31,7 +31,7 @@ export default function Footer() {
       </div>
       <p className="copyright-un">
         &copy;Copyright2022. Tous Droits Réservés.{" "}
-        <NavLink to="/mentionslegales" className="colorfooter">
+        <NavLink to="/mentions-legales" className="colorfooter">
           Mentions Légales
         </NavLink>
       </p>

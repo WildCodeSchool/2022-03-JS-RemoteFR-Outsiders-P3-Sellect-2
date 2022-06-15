@@ -62,7 +62,7 @@ export default function Navbar() {
                   Accueil
                 </NavLink>
                 <NavLink
-                  to="/nosengagements"
+                  to="/nos-engagements"
                   className={(items) =>
                     items.isActive ? "items-activated" : "items"
                   }

@@ -1,5 +1,6 @@
 .footer {
   width: 100%;
+  padding: 1rem;
   /*margin-top: 34rem;
   position: relative;*/
   background-color: var(--navbar-color);

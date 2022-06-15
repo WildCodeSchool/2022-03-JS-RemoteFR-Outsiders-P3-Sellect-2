@@ -7,10 +7,12 @@ import Bloc1 from "@components/Bloc1";
 
 function Home() {
   return (
-    <div>
+    <div className="content_container">
       <Navbar />
-      <Bloc1 />
-      <HomeBlock3 />
+      <div className="content">
+        <Bloc1 />
+        <HomeBlock3 />
+      </div>
       <Footer />
     </div>
   );
