@@ -1,28 +1,25 @@
 .carousel-root {
-  /* padding-top: 5rem; */
   width: 95%;
   height: 28rem;
   background: rgb(0, 0, 0, 0.2);
   margin: auto;
+  height: fit-content;
 }
-
+/*
 .carousel {
-   /*background-color: green; */
-   height: fit-content;
-}
+  background-color: green; 
+}*/
 .carousel-div {
- 
   /*background-color: blue; */
-  margin-top: 30rem;
   display: flex;
   flex-direction: column;
 }
 
 .carousel-div .img1 {
   height: 6rem;
- /* background-color: pink;*/
- display: flex;
- align-self: center;
+  /* background-color: pink;*/
+  display: flex;
+  align-self: center;
 }
 
 .img-carousel-div {
@@ -37,47 +34,106 @@
 }
 
 .carousel .slide img {
-  width: 100%;
+  width: 90%;
+  position: absolute;
+  bottom: 2rem;
 }
 
+.carousel .thumbs {
+  position: absolute;
+    bottom: 1rem;
+}
 
-.carousel .thumb {
-  width: 40%;
-  height: 5rem;
+.carousel .slider-wrapper.axis-horizontal .slider .slide {
+  height: 20rem;
 }
 
 .carousel .overlay {
   width: 80%;
+ display: flex;
+ justify-content: center;
+}
+
+/*
+.carousel .overlay h2 {
   position: absolute;
-  top: 50%;
+  top: 5rem;
+}
+
+.carousel .overlay p {
+  position: absolute;
+  top: 8rem;
+}*/
+
+.carousel .overlay {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 5rem;
 }
 
 .carousel.carousel-slider .control-arrow {
-  top: 0;
   background-color: rgb(115, 112, 112);
-  bottom: 0;
-  margin-top: 0;
+  position: absolute;
+  bottom: 6rem;
   padding: 5px;
   height: 3rem;
   margin: auto;
 }
 
-@media screen and (min-width: 750px) {
-  .img-carousel-div {
-    /* background-color: purple; */
-    height: 40rem;
+.carousel .control-dots {
+  position: absolute;
+  bottom: 5rem;
+  margin: 10px 0;
+  padding: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+.carousel a {
+ font-size: xx-large;
+ color: black;
+ cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .carousel-root {
+    height: 31rem;
   }
 
-  .carousel-root {
-     height: 53rem;
-   }
+  .carousel .slide img {
+    height: 40rem;
+    width: 100%;
+    margin: auto;
+  }
+
+  .carousel .slider-wrapper.axis-horizontal .slider .slide {
+   height: 34rem;
+}
+ 
+
+  .img-carousel-div {
+    height: 33rem;
+}
+  
+  .carousel .thumbs {
+    position: absolute;
+      bottom: 5rem;
+  }
+
+  .carousel .control-dots {
+    position: absolute;
+    top: 22rem;
+}
 }
 
 @media screen and (min-width: 1100px) {
   .carousel-div .img1 {
     height: auto;
-   /* background-color: pink;*/
-
+    /* background-color: pink;*/
   }
 
   .carousel-root {
@@ -86,36 +142,36 @@
     /* padding-top: 5rem; */
     width: 65%;
   }
-  
+
   .carousel-div {
     display: flex;
-  flex-direction: row;
+    flex-direction: row;
     margin-top: 2rem;
   }
-  
+
   .img-carousel-div {
     /* background-color: purple; */
     display: flex;
     justify-content: center;
     height: auto;
   }
-  
+
   .carousel .carousel-status {
     display: none;
   }
-  
+
   .carousel .slide img {
     height: 40rem;
     width: 100%;
     margin: auto;
   }
-  
+
   .carousel .overlay {
     width: 80%;
     position: absolute;
     top: 50%;
   }
-  
+
   .carousel.carousel-slider .control-arrow {
     top: 0;
     background-color: rgb(115, 112, 112);
