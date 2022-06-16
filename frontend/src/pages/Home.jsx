@@ -3,14 +3,22 @@ import "@assets/common.css";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import HomeGoals from "@components/HomeGoals";
-import Bloc1 from "@components/Bloc1";
+import "../assets/common.css";
+import Bloc2 from "@components/Bloc2";
+import Slider from "../components/Slider";
+import Footer from "../components/Footer";
+import Bloc1 from "../components/Bloc1";
 
 function Home() {
   return (
-    <div>
+    <div className="content_container">
       <Navbar />
-      <Bloc1 />
-      <HomeGoals />
+      <div className="content">
+          <Bloc1 />
+        <Bloc2 />
+    <HomeGoals />
+        <Slider />
+      </div>
       <Footer />
     </div>
   );

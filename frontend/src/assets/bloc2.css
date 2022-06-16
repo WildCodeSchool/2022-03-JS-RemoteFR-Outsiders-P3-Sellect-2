@@ -1,0 +1,125 @@
+.bloc2 {
+  background-color: #65bd60;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.bloc2-text {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.auditcontainer,
+.plateformcontainer,
+.proposalcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.auditlogo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.auditlogo img {
+  height: 8rem;
+}
+
+.auditcontainer h1,
+.plateformcontainer h1,
+.proposalcontainer h1 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.auditcontainer p,
+.plateformcontainer p,
+.proposalcontainer p {
+  margin-left: 1em;
+  line-height: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+@media screen and (min-width: 768px) {
+  .bloc2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .bloc2-text {
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .auditcontainer,
+  .plateformcontainer,
+  .proposalcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .auditcontainer,
+  .plateformcontainer,
+  .proposalcontainer {
+    height: 37rem;
+  }
+
+  .auditlogo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .auditlogo img {
+    width: 60%;
+    height: 100%;
+  }
+
+  .auditcontainer h1,
+  .plateformcontainer h1,
+  .proposalcontainer h1 {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+
+  .auditcontainer p,
+  .plateformcontainer p,
+  .proposalcontainer p {
+    margin-left: 1em;
+    line-height: 1.5em;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .auditcontainer,
+  .plateformcontainer,
+  .proposalcontainer {
+    height: 33rem;
+  }
+}

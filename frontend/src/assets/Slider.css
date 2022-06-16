@@ -1,0 +1,125 @@
+.carousel-root {
+  /* padding-top: 5rem; */
+  width: 95%;
+  height: 28rem;
+  background: rgb(0, 0, 0, 0.2);
+  margin: auto;
+}
+
+.carousel {
+  /*background-color: green; */
+  height: fit-content;
+}
+.carousel-div {
+  /*background-color: blue; */
+  margin-top: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.carousel-div .img1 {
+  height: 6rem;
+  /* background-color: pink;*/
+  display: flex;
+  align-self: center;
+}
+
+.img-carousel-div {
+  /* background-color: purple; */
+  display: flex;
+  justify-content: center;
+  height: 20rem;
+}
+
+.carousel .carousel-status {
+  display: none;
+}
+
+.carousel .slide img {
+  width: 100%;
+}
+
+.carousel .thumb {
+  width: 40%;
+  height: 5rem;
+}
+
+.carousel .overlay {
+  width: 80%;
+  position: absolute;
+  top: 50%;
+}
+
+.carousel.carousel-slider .control-arrow {
+  top: 0;
+  background-color: rgb(115, 112, 112);
+  bottom: 0;
+  margin-top: 0;
+  padding: 5px;
+  height: 3rem;
+  margin: auto;
+}
+
+@media screen and (min-width: 750px) {
+  .img-carousel-div {
+    /* background-color: purple; */
+    height: 40rem;
+  }
+
+  .carousel-root {
+    height: 53rem;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .carousel-div .img1 {
+    height: auto;
+    /* background-color: pink;*/
+  }
+
+  .carousel-root {
+    /* background-color: blue; */
+    margin-bottom: 2rem;
+    /* padding-top: 5rem; */
+    width: 65%;
+  }
+
+  .carousel-div {
+    display: flex;
+    flex-direction: row;
+    margin-top: 2rem;
+  }
+
+  .img-carousel-div {
+    /* background-color: purple; */
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  .carousel .carousel-status {
+    display: none;
+  }
+
+  .carousel .slide img {
+    height: 40rem;
+    width: 100%;
+    margin: auto;
+  }
+
+  .carousel .overlay {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+  }
+
+  .carousel.carousel-slider .control-arrow {
+    top: 0;
+    background-color: rgb(115, 112, 112);
+    bottom: 0;
+    margin-top: 0;
+    padding: 5px;
+    height: 3rem;
+    margin: auto;
+  }
+}
