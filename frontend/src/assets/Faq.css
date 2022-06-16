@@ -42,6 +42,31 @@ details p ul {
   margin: auto;
 }
 
+.faq-div .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid var(--grey-background);
+  border-radius: 5px;
+  padding: 0.8em 0 0.8em 0.5em;
+  width: 95%;
+  margin: 2em 0 1em 0;
+}
+
+.contact h1 {
+  font-size: 1.4rem;
+}
+
+.contact h3 {
+  font-size: 1rem;
+}
+
+.contact p {
+  margin-top: 1em;
+}
+
 @media screen and (min-width: 750px) {
   details {
     width: 70%;
@@ -54,5 +79,17 @@ details p ul {
 
   details p {
     font-size: 1.3rem;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact a {
+    font-size: 1.2rem;
   }
 }

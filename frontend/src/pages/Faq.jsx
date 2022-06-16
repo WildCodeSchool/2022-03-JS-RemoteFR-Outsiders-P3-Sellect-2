@@ -86,6 +86,14 @@ export default function Faq() {
             mensuel soit 10 €/ mois.{" "}
           </p>
         </details>
+        <div className="contact">
+          <h1>Une autre question ?</h1>
+          <h3>Nous y réponderons dans les plus brefs délais.</h3>
+          <p>
+            ► Contactez:{" "}
+            <a href="mailto:Sellect33@gmail.com">Sellect33@gmail.com </a>{" "}
+          </p>
+        </div>
       </div>
       <Footer />
     </>
