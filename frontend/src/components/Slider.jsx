@@ -1,17 +1,18 @@
 import React from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
-import slidepartner from "../assets/img/slidepartner.svg";
 import tips from "../assets/img/tips.svg";
+import hosman from "../assets/img/hosman.svg";
+import cteasy from "../assets/img/cteasy.svg";
 import "../assets/Slider.css";
 
 export default function Slider() {
   return (
     <div className="carousel-div">
       <img className="img1" src={tips} alt="tips" />
-      <Carousel>
+      <Carousel autoPlay interval={2000} infiniteLoop>
         <div className="img-carousel-div">
-          <img src={slidepartner} alt="sellectlogo" />
+          <img src={cteasy} alt="logo cteasy" />
           <div className="overlay">
             <h2> CTEASY</h2>
             <p>
@@ -28,7 +29,7 @@ export default function Slider() {
           </div>
         </div>
         <div className="img-carousel-div">
-          <img src={slidepartner} alt="sellectlogo" />
+          <img src={hosman} alt="logo hosman" />
           <div className="overlay">
             <h2 className="overlay_title"> Hosman </h2>
             <p className="overlay_text">
