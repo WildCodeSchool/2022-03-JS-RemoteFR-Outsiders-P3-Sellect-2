@@ -10,7 +10,7 @@ export default function Faq() {
       <Navbar />
       <div className="faq-div">
         <details>
-          <summary>Pourquoi devenir SELLECT?</summary>
+          <summary>Pourquoi devenir SELLECT ?</summary>
           <p>
             <ul>
               <li>
@@ -38,7 +38,7 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary> Que contient l’Audit?</summary>
+          <summary> Que contient l’Audit ?</summary>
           <p>
             {" "}
             L’audit est composé de trois phases
@@ -65,7 +65,7 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary>Que se passe y-il après l’audit?</summary>
+          <summary>Que se passe y-il après l’audit ?</summary>
           <p>
             {" "}
             Vous restez maître de vos contrats. Si vous souhaitez mettre en
@@ -80,7 +80,7 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary>L’abonnement?</summary>
+          <summary>L’abonnement ?</summary>
           <p>
             Le montant de l’abonnement est de 120 € sous forme de cotisation
             mensuel soit 10 €/ mois.{" "}
