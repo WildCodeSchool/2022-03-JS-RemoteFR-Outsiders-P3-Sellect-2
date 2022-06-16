@@ -106,7 +106,7 @@ color: white;
  cursor: pointer;
 }
 
-@media screen and (min-width: 415px) {
+@media screen and (min-width: 450px) {
   .carousel-root {
     height: 31rem;
     padding-top: 4vh;
@@ -181,6 +181,11 @@ color: white;
 
 }
 
+@media all and (device-width: 540px){
+.carousel-root {
+  height: 70vh;
+}
+}
 
 @media all and (device-width: 820px){
   .carousel-div .img1 {
