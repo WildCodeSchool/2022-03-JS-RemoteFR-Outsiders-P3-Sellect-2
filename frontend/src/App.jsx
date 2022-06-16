@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import AdminDashboard from "@pages/AdminDashboard";
+import Page404 from "@pages/Page404";
 import HomeUser from "./pages/HomeUser";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
@@ -19,6 +21,8 @@ function App() {
           <Route path="/mon-compte" element={<HomeUser />} />
           <Route path="/mentionslegales" element={<LegalNotices />} />
           <Route path="/wilders" element={<Wilders />} />
+          <Route path="/admin-dashboard" element={<AdminDashboard />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </MainContextProvider>
     </div>

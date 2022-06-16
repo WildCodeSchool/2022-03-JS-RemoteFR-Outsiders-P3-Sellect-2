@@ -5,16 +5,22 @@ class AuthManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${AuthManager.table} (firstname, lastname, phone_number, email, password) values (?, ?, ?, ?, ?)`,
+      `insert into ${AuthManager.table} (firstname, lastname, phoneNumber, email, password, role) values (?, ?, ?, ?, ?, ?)`,
       [
         user.firstname,
         user.lastname,
-        user.phone_number,
+        user.phoneNumber,
         user.email,
         user.password,
-        "role_user",
+        user.role,
       ]
     );
+  }
+
+  get(user) {
+    return this.connection
+      .query(`SELECT * FROM ${AuthManager.table} WHERE email = ?`, [user.email])
+      .then((res) => res[0]);
   }
 
   update(user) {
