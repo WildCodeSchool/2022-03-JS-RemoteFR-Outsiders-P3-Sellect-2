@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/common.css";
 import "../assets/Signup.css";
@@ -32,7 +32,7 @@ function SignUp() {
           firstname,
           lastname,
           email,
-          phone_number: phoneNumber,
+          phoneNumber,
           password,
         })
         .then((res) => {
@@ -43,7 +43,7 @@ function SignUp() {
           }
         })
         .catch((err) => {
-          console.error(err);
+          // console.error(err);
           if (err) {
             setError(true);
             setTimeout(() => {
@@ -56,7 +56,9 @@ function SignUp() {
 
   return (
     <div className="signup-container">
-      <img src={sellect2} className="login-logo" alt="sellect-logo" />
+      <Link to="/">
+        <img src={sellect2} className="login-logo" alt="sellect-logo" />
+      </Link>
       <div className="signup-form-container">
         <h2>Bienvenue dans l'équipe !</h2>
         <form className="signup-form-content" onSubmit={handleRegister}>
@@ -115,9 +117,6 @@ function SignUp() {
           <div className="signup-button-container">
             <button type="submit">S'INSCRIRE</button>
           </div>
-          {/* <div>
-          <CellButton title="S'INSCRIRE"/>
-          </div> */}
         </form>
         <p>
           Déja membre ?{" "}

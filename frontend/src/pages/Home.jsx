@@ -1,10 +1,12 @@
 import React from "react";
+import "@assets/common.css";
+import Navbar from "@components/Navbar";
+import Footer from "@components/Footer";
+import HomeGoals from "@components/HomeGoals";
 import "../assets/common.css";
 import Bloc2 from "@components/Bloc2";
-import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
-import HomeBlock3 from "../components/HomeBlock3";
 import Bloc1 from "../components/Bloc1";
 
 function Home() {
@@ -12,9 +14,9 @@ function Home() {
     <div className="content_container">
       <Navbar />
       <div className="content">
-        <Bloc1 />
+          <Bloc1 />
         <Bloc2 />
-        <HomeBlock3 />
+    <HomeGoals />
         <Slider />
       </div>
       <Footer />
