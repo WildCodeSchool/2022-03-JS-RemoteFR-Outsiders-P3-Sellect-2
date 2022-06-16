@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import "../assets/common.css";
-import "../assets/Navbar.css";
+import "../assets/Faq.css";
 
 export default function Faq() {
   return (
@@ -41,7 +41,7 @@ export default function Faq() {
           <summary> Que contient l’Audit?</summary>
           <p>
             {" "}
-            L’audit est composé de trois phases:
+            L’audit est composé de trois phases
             <ul>
               <li>
                 Premier rendez-vous: Nous collectons les informations sur les

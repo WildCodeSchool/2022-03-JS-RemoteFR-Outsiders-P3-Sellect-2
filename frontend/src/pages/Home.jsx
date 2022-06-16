@@ -1,9 +1,9 @@
 import React from "react";
 import "../assets/common.css";
+import Bloc2 from "@components/Bloc2";
 import Navbar from "../components/Navbar";
 import Slider from "../components/Slider";
 import Footer from "../components/Footer";
-import Bloc2 from "@components/Bloc2";
 import HomeBlock3 from "../components/HomeBlock3";
 import Bloc1 from "../components/Bloc1";
 
