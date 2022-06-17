@@ -21,7 +21,7 @@
 
 .bloc1_left h2 {
   font-size: calc(var(--font-size) * 1.5);
-  margin: 0.3em;
+  margin: 0.5em;
 }
 
 .bloc1_left p {
@@ -112,10 +112,10 @@
 
   .bloc1_left h2 {
     margin-bottom: 2em;
-    margin-left: 0.5em;
+    margin-left: 0.7em;
   }
 
   .bloc1_left p {
-    margin-left: em;
+    margin-left: 1em;
   }
 }

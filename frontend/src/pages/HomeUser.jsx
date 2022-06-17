@@ -1,3 +1,6 @@
+import Footer from "@components/Footer";
+import Logout from "@components/Logout";
+import Navbar from "@components/Navbar";
 import React /* useContext, useEffect, useState */ from "react";
 /* import { useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext"; */
@@ -15,7 +18,10 @@ function HomeUser() {
 
   return (
     <div>
+      <Navbar />
       <p>Hello Dashboard</p>
+      <Logout />
+      <Footer />
     </div>
   );
 }
