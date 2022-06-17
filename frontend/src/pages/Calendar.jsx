@@ -3,6 +3,7 @@ import "@assets/common.css";
 import "@assets/Calendar.css";
 import audit from "@assets/img/audit.svg";
 import Navbar from "@components/Navbar";
+import Calendly from "@components/Calendly";
 import Footer from "@components/Footer";
 
 export default function Calendar() {
@@ -66,6 +67,7 @@ export default function Calendar() {
           </div>
         </div>
       </section>
+      <Calendly />
       <Footer />
     </div>
   );
