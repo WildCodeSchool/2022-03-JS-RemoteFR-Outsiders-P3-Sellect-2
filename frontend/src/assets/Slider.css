@@ -1,10 +1,9 @@
 .carousel-root {
   width: 100%;
-  height: 28rem;
   background: rgb(222, 222, 222);
   margin: auto;
-  height: fit-content;
-  margin-top: 7vh;
+  height: 54vh;
+  padding-top: 2vh;
 }
 
 .carousel-div {
@@ -13,11 +12,7 @@
 }
 
 .carousel-div .img1 {
-  position: absolute;
-  left: 0;
-  height: 6rem;
-  display: flex;
-  align-self: center;
+ display: none;
 }
 
 .img-carousel-div {
@@ -33,7 +28,7 @@
 .carousel .slide img {
   width: 90%;
   position: absolute;
-  bottom: 2rem;
+  bottom: 0.6rem;
 }
 
 .carousel .thumbs {
@@ -54,12 +49,10 @@
 }
 
 .carousel .overlay h2 {
-  padding-top: 1vh;
   color: black;
 }
 
 .carousel .overlay a {
-  padding-top: 1vh;
   color: black;
 }
 
@@ -102,7 +95,7 @@
   .carousel-root {
     height: 31rem;
     padding-top: 4vh;
-    height: 56vh;
+    height: 71vh;
   }
 
   .carousel .slide img {
@@ -139,27 +132,6 @@
   .carousel .overlay a {
     font-size: xx-large;
   }
-}
-@media screen and (min-width: 750px) {
-  .carousel-root {
-    margin-top: 6rem;
-  }
-
-  .carousel .overlay {
-    height: fit-content;
-    height: 53rem;
-  }
-}
-.carousel .overlay h2 {
-  font-size: xx-large;
-}
-
-.carousel .overlay a {
-  font-size: xx-large;
-}
-
-.carousel-div .img1 {
-  height: 21vh;
 }
 
 @media all and (device-width: 768px) {
