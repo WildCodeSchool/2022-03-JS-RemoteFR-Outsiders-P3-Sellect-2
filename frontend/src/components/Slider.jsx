@@ -14,7 +14,7 @@ export default function Slider() {
         <div className="img-carousel-div">
           <img src={cteasy} alt="logo cteasy" />
           <div className="overlay">
-            <h2> CTEASY</h2>
+            <h2> Cteasy</h2>
             <p>
               {" "}
               <a

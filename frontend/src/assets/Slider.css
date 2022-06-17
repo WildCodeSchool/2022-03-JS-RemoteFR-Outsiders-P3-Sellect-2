@@ -1,5 +1,5 @@
 .carousel-root {
-  width: 95%;
+  width: 100%;
   height: 28rem;
   background:rgb(222, 222, 222);
   margin: auto;
@@ -64,11 +64,13 @@
 }
 
 .carousel .overlay h2{
-color: white;
+  padding-top: 1vh;
+color: black;
 }
 
 .carousel .overlay a{
-  color: white;
+  padding-top: 1vh;
+  color: black;
   }
 
 .carousel .overlay {
