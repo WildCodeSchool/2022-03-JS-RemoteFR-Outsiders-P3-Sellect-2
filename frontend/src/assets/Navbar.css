@@ -1,0 +1,164 @@
+.div-nav {
+  display: flex;
+  background-color: var(--navbar-color);
+  justify-content: space-between;
+}
+
+.div-sellectlogo {
+  padding-left: 0.2rem;
+}
+
+.img-sellectlogo {
+  display: flex;
+  height: 10vh;
+}
+
+.img-hamburger {
+  width: 4rem;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  display: contents;
+  cursor: pointer;
+}
+
+.img-hamburger:hover {
+  width: 4rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.div-ul {
+  justify-content: center;
+  background-color: var(--navbar-color);
+}
+
+.liste-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.items {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.items:hover {
+  color: black;
+}
+
+.items-activated {
+  cursor: pointer;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.btn-div {
+  display: flex;
+  justify-content: center;
+  height: 1.8rem;
+}
+
+.button-member {
+  background-color: rgb(231, 164, 39);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid var(--navbar-color);
+  font-weight: 500;
+  font-size: calc(var(--font-size) * 0.6);
+  padding: 0 0.5em 0 0.5em;
+  cursor: pointer;
+}
+
+.button-connect {
+  background-color: var(--connexion-color);
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 20px;
+  color: white;
+  border: 2px solid var(--navbar-color);
+  font-weight: 500;
+  font-size: calc(var(--font-size) * 0.6);
+  padding: 0 0.5em 0 0.5em;
+  cursor: pointer;
+}
+
+button:hover {
+  color: black;
+  transition: color 0.35s, color 0.35s;
+}
+
+@media screen and (min-width: 750px) {
+  .div-nav {
+    height: 12vh;
+  }
+  .img-sellectlogo {
+    height: 13vh;
+  }
+
+  .btn-toggle {
+    display: none;
+  }
+  .liste-nav {
+    flex-direction: row;
+    align-items: center;
+    width: 80%;
+
+    position: absolute;
+    left: 3rem;
+    top: 3rem;
+    display: flex;
+    justify-content: center;
+    height: auto;
+  }
+
+  nav .items {
+    font-weight: 900;
+    margin-left: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .items-activated {
+    font-size: 1.5rem;
+    margin-left: 2rem;
+  }
+  .btn-div {
+    position: absolute;
+    right: 1rem;
+    top: 2.8rem;
+    flex-direction: column;
+  }
+
+  .button-member {
+    height: 2rem;
+    font-size: calc(var(--font-size) * 0.8);
+  }
+
+  .button-connect {
+    height: 2rem;
+    font-size: calc(var(--font-size) * 0.8);
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .btn-div {
+    flex-direction: row;
+  }
+}
