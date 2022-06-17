@@ -10,7 +10,7 @@
 
 .img-sellectlogo {
   display: flex;
-  height: 4.2rem;
+  height: 10vh;
 }
 
 .img-hamburger {
@@ -107,10 +107,10 @@ button:hover {
 
 @media screen and (min-width: 750px) {
   .div-nav {
-    height: 6rem;
+    height: 12vh;
   }
   .img-sellectlogo {
-    height: 6rem;
+    height: 13vh;
   }
 
   .btn-toggle {
@@ -143,6 +143,7 @@ button:hover {
     position: absolute;
     right: 1rem;
     top: 2.8rem;
+    flex-direction: column;
   }
 
   .button-member {
@@ -155,3 +156,11 @@ button:hover {
     font-size: calc(var(--font-size) * 0.8);
   }
 }
+
+@media screen and (min-width: 1100px) {
+.btn-div {
+  flex-direction: row;
+}
+}
+
+
