@@ -20,5 +20,6 @@
   },
   "dependencies": {
     "react-calendly": "^4.0.1"
+    "react-responsive-carousel": "^3.2.23"
   }
 }

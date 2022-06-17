@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
 import "../assets/common.css";
-import "../assets/Navbar.css";
+import "../assets/Faq.css";
 
 export default function Faq() {
   return (
@@ -10,7 +10,7 @@ export default function Faq() {
       <Navbar />
       <div className="faq-div">
         <details>
-          <summary>Pourquoi devenir SELLECT?</summary>
+          <summary>Pourquoi devenir SELLECT ?</summary>
           <p>
             <ul>
               <li>
@@ -38,10 +38,10 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary> Que contient l’Audit?</summary>
+          <summary> Que contient l’Audit ?</summary>
           <p>
             {" "}
-            L’audit est composé de trois phases:
+            L’audit est composé de trois phases
             <ul>
               <li>
                 Premier rendez-vous: Nous collectons les informations sur les
@@ -65,7 +65,7 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary>Que se passe y-il après l’audit?</summary>
+          <summary>Que se passe y-il après l’audit ?</summary>
           <p>
             {" "}
             Vous restez maître de vos contrats. Si vous souhaitez mettre en
@@ -80,12 +80,20 @@ export default function Faq() {
         </details>
 
         <details>
-          <summary>L’abonnement?</summary>
+          <summary>L’abonnement ?</summary>
           <p>
             Le montant de l’abonnement est de 120 € sous forme de cotisation
             mensuel soit 10 €/ mois.{" "}
           </p>
         </details>
+        <div className="contact">
+          <h1>Une autre question ?</h1>
+          <h3>Nous y réponderons dans les plus brefs délais.</h3>
+          <p>
+            ► Contactez:{" "}
+            <a href="mailto:Sellect33@gmail.com">Sellect33@gmail.com </a>{" "}
+          </p>
+        </div>
       </div>
       <Footer />
     </>

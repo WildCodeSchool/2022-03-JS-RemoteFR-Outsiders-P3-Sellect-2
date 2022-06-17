@@ -2,7 +2,7 @@ import React from "react";
 import photoJoffrey from "../assets/img/photoJoffrey.png";
 import "../assets/HomeBlock3.css";
 
-function HomeBlock3() {
+function HomeGoals() {
   return (
     <div className="home-block3-container">
       <div className="home-block3-content">
@@ -41,4 +41,4 @@ function HomeBlock3() {
   );
 }
 
-export default HomeBlock3;
+export default HomeGoals;

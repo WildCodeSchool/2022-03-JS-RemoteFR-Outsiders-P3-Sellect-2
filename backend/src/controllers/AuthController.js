@@ -1,4 +1,7 @@
+require("dotenv").config();
+
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class AuthController {
@@ -51,30 +54,83 @@ class AuthController {
         res.sendStatus(500);
       });
   };
-  /* eslint-disable */
-  static add = (req, res) => {
-    const { firstname, lastname, email, phone_number, password } = req.body;
+
+  static add = async (req, res) => {
+    const { firstname, lastname, email, phoneNumber, password } = req.body;
 
     // TODO validations (length, format...)
-    const hash = bcrypt.hash(password, 10);
+    const hash = await bcrypt.hash(password, 10);
 
     models.user
-      .insert({ firstname, lastname, email, phone_number, password })
-      .then(([result]) => {
+      .insert({
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        password: hash,
+        role: "USER",
+      })
+      .then((result) => {
         res.status(201).send({
-          firstname,
-          lastname,
-          phone_number,
-          email,
-          password: hash,
           id: result.insertId,
+          message: "User created",
         });
-        /* eslint-enable */
+      })
+      .catch((err) => {
+        console.error(err.message);
+        res.sendStatus(500);
+      });
+  };
+
+  static login = async (req, res) => {
+    const { email, password } = req.body;
+    /* eslint-disable */
+    models.user
+      .get({ email, password })
+      .then(async (result) => {
+        // console.log({ email, password, result });
+        if (result.length === 0) {
+          return result.status(400).json({
+            status: 400,
+            message: "User not found",
+          });
+        }
+        const isPasswordValid = await bcrypt.compare(
+          password,
+          result[0].password
+        );
+        if (!isPasswordValid) {
+          return res.status(400).json({
+            status: 400,
+            message: "Password is incorrect",
+          });
+        }
+        const token = jwt.sign(
+          {
+            id: result[0].id,
+            email: result[0].email,
+          },
+          process.env.SECRET_JWT,
+          {
+            expiresIn: "1h",
+          }
+        );
+        res.cookie("sellectUser", token).json({
+          message: "User logged",
+        });
       })
       .catch((err) => {
         console.error(err);
         res.sendStatus(500);
       });
+  };
+  /* eslint-enable */
+
+  static logout = (req, res) => {
+    res.clearCookie("sellectUser").sendStatus(200);
+    /* if (error) {
+      res.status(400).json({ error: error.message });
+    } */
   };
 
   static delete = (req, res) => {

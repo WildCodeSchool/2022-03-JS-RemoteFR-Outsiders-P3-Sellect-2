@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/common.css";
 import "../assets/Login.css";
@@ -20,6 +20,7 @@ function Login() {
       .post("http://localhost:5000/login/users", {
         email,
         password,
+        withCredentials: true,
       })
       .then((res) => {
         // res.data;
@@ -29,7 +30,7 @@ function Login() {
         }
       })
       .catch((err) => {
-        /* console.error(err); */
+        console.error(err);
         if (err) {
           setLoginError(true);
           setTimeout(() => {
@@ -42,7 +43,9 @@ function Login() {
 
   return (
     <div className="login-container">
-      <img src={sellect2} className="login-logo" alt="sellect-logo" />
+      <Link to="/">
+        <img src={sellect2} className="login-logo" alt="sellect-logo" />
+      </Link>
       <div className="login-form-container">
         <h2>
           Bonjour ! <span>Envie d'une nouvelle astuce ?</span>

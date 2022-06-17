@@ -1,0 +1,95 @@
+.faq-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+details {
+  border: 1px solid #65bd60;
+  border-radius: 5px;
+  padding: 0.8em 0 0.8em 0.5em;
+  width: 95%;
+  background-color: var(--background-color);
+  color: black;
+  margin-top: 2em;
+}
+
+summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+
+details:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: orange;
+  background-color: white;
+  transition: 0.6s;
+}
+
+details p {
+  color: black;
+  font: bolder;
+  font-size: 1.2rem;
+}
+
+details p ul {
+  width: 90%;
+  margin: auto;
+}
+
+.faq-div .contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 3px solid var(--grey-background);
+  border-radius: 5px;
+  padding: 0.8em 0 0.8em 0.5em;
+  width: 95%;
+  margin: 2em 0 1em 0;
+}
+
+.contact h1 {
+  font-size: 1.4rem;
+}
+
+.contact h3 {
+  font-size: 1rem;
+}
+
+.contact p {
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 750px) {
+  details {
+    width: 70%;
+  }
+
+  summary {
+    padding: 0.5em;
+    font-size: 1.6rem;
+  }
+
+  details p {
+    font-size: 1.3rem;
+  }
+
+  .contact h1 {
+    font-size: 2rem;
+  }
+
+  .contact h3 {
+    font-size: 1.4rem;
+  }
+
+  .contact a {
+    font-size: 1.2rem;
+  }
+}
