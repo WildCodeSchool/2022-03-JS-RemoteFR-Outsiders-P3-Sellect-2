@@ -57,34 +57,46 @@ class AuthController {
 
   static add = async (req, res) => {
     const { firstname, lastname, email, phoneNumber, password } = req.body;
-
-    // TODO validations (length, format...)
     const hash = await bcrypt.hash(password, 10);
+    const getUserEmail = await models.user.get(email);
 
-    models.user
-      .insert({
-        firstname,
-        lastname,
-        email,
-        phoneNumber,
-        password: hash,
-        role: "USER",
-      })
-      .then((result) => {
-        res.status(201).send({
-          id: result.insertId,
-          message: "User created",
+    try {
+      if (getUserEmail.length > 0) {
+        return res.status(400).json({
+          status: 400,
+          message: "Email already exists",
         });
-      })
-      .catch((err) => {
-        console.error(err.message);
-        res.sendStatus(500);
+      }
+      models.user
+        .insert({
+          firstname,
+          lastname,
+          email,
+          phoneNumber,
+          password: hash,
+          role: "USER",
+        })
+        .then((result) => {
+          res.status(201).send({
+            id: result.insertId,
+            message: "User created",
+          });
+        })
+        .catch((err) => {
+          console.error(err.message);
+          res.sendStatus(500);
+        });
+    } catch (error) {
+      res.status(400).json({
+        message: error.message,
       });
+    }
+    return "";
   };
 
   static login = async (req, res) => {
     const { email, password } = req.body;
-    /* eslint-disable */
+
     models.user
       .get({ email, password })
       .then(async (result) => {
@@ -115,7 +127,7 @@ class AuthController {
             expiresIn: "1h",
           }
         );
-        res.cookie("sellectUser", token).json({
+        return res.cookie("sellectUserToken", token).json({
           message: "User logged",
         });
       })
@@ -123,11 +135,11 @@ class AuthController {
         console.error(err);
         res.sendStatus(500);
       });
+    return "";
   };
-  /* eslint-enable */
 
   static logout = (req, res) => {
-    res.clearCookie("sellectUser").sendStatus(200);
+    res.clearCookie("sellectUserToken").sendStatus(200);
     /* if (error) {
       res.status(400).json({ error: error.message });
     } */

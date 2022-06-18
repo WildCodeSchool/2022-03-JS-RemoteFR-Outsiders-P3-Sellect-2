@@ -8,7 +8,7 @@ import signupImage from "../assets/img/signupImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
 function SignUp() {
-  const { setIsLoggedIn } = useContext(MainContext);
+  const { setIsLoggedIn, setIsFirstConnection } = useContext(MainContext);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -28,7 +28,7 @@ function SignUp() {
       }, 5000);
     } else {
       axios
-        .post("http://localhost:5000/auth/users", {
+        .post(`${import.meta.env.VITE_BACKEND_URL}/auth/users`, {
           firstname,
           lastname,
           email,
@@ -39,6 +39,7 @@ function SignUp() {
           // console.log(res.data);
           if (res.status === 200 || res.status === 201) {
             setIsLoggedIn(true);
+            setIsFirstConnection(true);
             navigate("/mon-compte");
           }
         })
