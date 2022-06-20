@@ -17,7 +17,7 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/login/users", {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/login/users`, {
         email,
         password,
         withCredentials: true,
