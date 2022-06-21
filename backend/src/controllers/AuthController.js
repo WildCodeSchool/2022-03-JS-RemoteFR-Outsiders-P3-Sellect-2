@@ -133,7 +133,7 @@ class AuthController {
       })
       .catch((err) => {
         console.error(err);
-        res.sendStatus(500);
+        res.status(500).json({ status: "error", message: err.message });
       });
     return "";
   };
