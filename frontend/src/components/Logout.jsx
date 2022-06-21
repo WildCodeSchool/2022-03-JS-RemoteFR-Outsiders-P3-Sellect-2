@@ -10,7 +10,9 @@ function Logout() {
   const handleLogout = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:5000/logout/users", { withCredentials: true })
+      .get(`${import.meta.env.VITE_BACKEND_URL}/logout/users`, {
+        withCredentials: true,
+      })
       .then((res) => {
         // console.log(res.data);
         if (res.status === 200) {
