@@ -12,6 +12,10 @@
   justify-content: center;
 }
 
+.reseauxsociaux a {
+  padding: 0 0.5em 0 0.5em;
+}
+
 .copyright-un {
   width: 100%;
   text-align: center;
@@ -25,8 +29,7 @@
   width: 100%;
   text-align: center;
   color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
+  padding-bottom: 0.5em;
   font-size: 1rem;
 }
 

@@ -1,6 +1,5 @@
 .carousel-root {
   width: 100%;
-  background: rgb(222, 222, 222);
   margin: auto;
   height: 54vh;
   padding-top: 2vh;
@@ -50,6 +49,7 @@
 
 .carousel .overlay h2 {
   color: black;
+  margin-top: 0.6em;
 }
 
 .carousel .overlay a {
@@ -77,9 +77,10 @@
 
 .carousel .control-dots {
   position: absolute;
-  bottom: 5rem;
+  bottom: 4rem;
   margin: 10px 0;
-  padding: 0;
+  color: black;
+
   text-align: center;
   width: 100%;
   z-index: 1;
@@ -188,19 +189,25 @@
 
   .carousel-root {
     margin-bottom: 2rem;
-    width: 65%;
+    width: 100%;
   }
 
   .carousel-div {
     display: flex;
     flex-direction: row;
     margin-top: 2rem;
+    width: 100%;
   }
 
   .img-carousel-div {
     display: flex;
     justify-content: center;
     height: auto;
+    width: 100%;
+  }
+
+  .img-carousel-div img {
+    width: 100%;
   }
 
   .carousel .carousel-status {
@@ -216,7 +223,6 @@
   .carousel .overlay {
     width: 80%;
     position: absolute;
-    height: fit-content;
   }
 
   .carousel .overlay h2 {
