@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import AdminDashboard from "@pages/AdminDashboard";
 import Page404 from "@pages/Page404";
 import Faq from "./pages/Faq";
-import HomeUser from "./pages/HomeUser";
+import UserHome from "./pages/UserHome";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import SignUp from "./pages/SignUp";
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/inscription" element={<SignUp />} />
           <Route path="/connexion" element={<Login />} />
-          <Route path="/mon-compte" element={<HomeUser />} />
+          <Route path="/mon-compte" element={<UserHome />} />
           <Route path="/mentions-legales" element={<LegalNotices />} />
           <Route path="/faq" element={<Faq />} />
           <Route path="/wilders" element={<Wilders />} />

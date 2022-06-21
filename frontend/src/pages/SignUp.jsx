@@ -36,7 +36,6 @@ function SignUp() {
           password,
         })
         .then((res) => {
-          // console.log(res.data);
           if (res.status === 200 || res.status === 201) {
             setIsLoggedIn(true);
             setIsFirstConnection(true);
@@ -44,7 +43,6 @@ function SignUp() {
           }
         })
         .catch((err) => {
-          // console.error(err);
           if (err) {
             setError(true);
             setTimeout(() => {

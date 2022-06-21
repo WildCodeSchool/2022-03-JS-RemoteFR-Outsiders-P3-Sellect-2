@@ -5,6 +5,7 @@ const MainContext = createContext();
 function MainContextProvider({ children }) {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFirstConnection, setIsFirstConnection] = useState(false);
+  const [userData, setUserData] = useState(null);
 
   return (
     <MainContext.Provider
@@ -13,6 +14,8 @@ function MainContextProvider({ children }) {
         setIsLoggedIn,
         isFirstConnection,
         setIsFirstConnection,
+        userData,
+        setUserData,
       }}
     >
       {children}

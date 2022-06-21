@@ -23,7 +23,6 @@ function Login() {
         withCredentials: true,
       })
       .then((res) => {
-        // res.data;
         if (res.status === 200) {
           setIsLoggedIn(true);
           navigate("/mon-compte");
@@ -39,7 +38,6 @@ function Login() {
         }
       });
   };
-  // console.log(isLoggedIn);
 
   return (
     <div className="login-container">

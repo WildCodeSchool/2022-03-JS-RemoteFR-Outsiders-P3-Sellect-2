@@ -80,6 +80,7 @@ class AuthController {
           res.status(201).send({
             id: result.insertId,
             message: "User created",
+            // user: req.body,
           });
         })
         .catch((err) => {
@@ -98,9 +99,8 @@ class AuthController {
     const { email, password } = req.body;
 
     models.user
-      .get({ email, password })
+      .findByEmail({ email, password })
       .then(async (result) => {
-        // console.log({ email, password, result });
         if (result.length === 0) {
           return result.status(400).json({
             status: 400,
@@ -138,11 +138,15 @@ class AuthController {
     return "";
   };
 
-  static logout = (req, res) => {
-    res.clearCookie("sellectUserToken").sendStatus(200);
-    /* if (error) {
-      res.status(400).json({ error: error.message });
-    } */
+  static logout = async (req, res) => {
+    try {
+      return res
+        .clearCookie("sellectUserToken")
+        .status(200)
+        .json({ message: "Logout successful" });
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
   };
 
   static delete = (req, res) => {

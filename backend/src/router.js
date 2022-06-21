@@ -15,5 +15,6 @@ router.post("/auth/users", AuthController.add);
 router.get("/auth/users", /* authorization, isAdmin, */ AuthController.browse);
 router.post("/login/users", AuthController.login);
 router.get("/logout/users", AuthController.logout);
+router.get("/login/users", AuthController.login);
 
 module.exports = router;
