@@ -17,13 +17,12 @@ function Login() {
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:5000/login/users", {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/login/users`, {
         email,
         password,
         withCredentials: true,
       })
       .then((res) => {
-        // res.data;
         if (res.status === 200) {
           setIsLoggedIn(true);
           navigate("/mon-compte");
@@ -39,7 +38,6 @@ function Login() {
         }
       });
   };
-  // console.log(isLoggedIn);
 
   return (
     <div className="login-container">

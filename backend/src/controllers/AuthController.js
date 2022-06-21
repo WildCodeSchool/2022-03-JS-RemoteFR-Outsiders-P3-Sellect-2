@@ -57,38 +57,50 @@ class AuthController {
 
   static add = async (req, res) => {
     const { firstname, lastname, email, phoneNumber, password } = req.body;
-
-    // TODO validations (length, format...)
     const hash = await bcrypt.hash(password, 10);
+    const findByEmail = await models.user.findByEmail(email);
 
-    models.user
-      .insert({
-        firstname,
-        lastname,
-        email,
-        phoneNumber,
-        password: hash,
-        role: "USER",
-      })
-      .then((result) => {
-        res.status(201).send({
-          id: result.insertId,
-          message: "User created",
+    try {
+      if (findByEmail.length > 0) {
+        return res.status(400).json({
+          status: 400,
+          message: "Email already exists",
         });
-      })
-      .catch((err) => {
-        console.error(err.message);
-        res.sendStatus(500);
+      }
+      models.user
+        .insert({
+          firstname,
+          lastname,
+          email,
+          phoneNumber,
+          password: hash,
+          role: "USER",
+        })
+        .then((result) => {
+          res.status(201).send({
+            id: result.insertId,
+            message: "User created",
+            // user: req.body,
+          });
+        })
+        .catch((err) => {
+          console.error(err.message);
+          res.sendStatus(500);
+        });
+    } catch (error) {
+      res.status(400).json({
+        message: error.message,
       });
+    }
+    return "";
   };
 
   static login = async (req, res) => {
     const { email, password } = req.body;
-    /* eslint-disable */
+
     models.user
-      .get({ email, password })
+      .findByEmail({ email, password })
       .then(async (result) => {
-        // console.log({ email, password, result });
         if (result.length === 0) {
           return result.status(400).json({
             status: 400,
@@ -115,7 +127,7 @@ class AuthController {
             expiresIn: "1h",
           }
         );
-        res.cookie("sellectUser", token).json({
+        return res.cookie("sellectUserToken", token).json({
           message: "User logged",
         });
       })
@@ -123,14 +135,18 @@ class AuthController {
         console.error(err);
         res.sendStatus(500);
       });
+    return "";
   };
-  /* eslint-enable */
 
-  static logout = (req, res) => {
-    res.clearCookie("sellectUser").sendStatus(200);
-    /* if (error) {
-      res.status(400).json({ error: error.message });
-    } */
+  static logout = async (req, res) => {
+    try {
+      return res
+        .clearCookie("sellectUserToken")
+        .status(200)
+        .json({ message: "Logout successful" });
+    } catch (err) {
+      return res.status(400).json({ error: err.message });
+    }
   };
 
   static delete = (req, res) => {

@@ -1,9 +1,7 @@
 const express = require("express");
 
 const { ItemController, AuthController } = require("./controllers");
-
-// const authorization = require("./middlewares/authorization");
-// const isAdmin = require("./middlewares/isAdmin");
+// const { authorization, isAdmin } = require("./middlewares/authMiddleware");
 
 const router = express.Router();
 
@@ -14,8 +12,9 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.post("/auth/users", AuthController.add);
-router.get("/auth/users", /* isAdmin */ AuthController.browse);
+router.get("/auth/users", /* authorization, isAdmin, */ AuthController.browse);
 router.post("/login/users", AuthController.login);
 router.get("/logout/users", AuthController.logout);
+router.get("/login/users", AuthController.login);
 
 module.exports = router;

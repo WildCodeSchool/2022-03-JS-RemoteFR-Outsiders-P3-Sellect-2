@@ -4,28 +4,27 @@ import { useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
 
 function Logout() {
-  const { setIsLoggedIn } = useContext(MainContext);
+  const { setIsLoggedIn, setUserData } = useContext(MainContext);
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:5000/logout/users")
+      .get("http://localhost:5000/logout/users", { withCredentials: true })
       .then((res) => {
         // console.log(res.data);
         if (res.status === 200) {
           setIsLoggedIn(false);
+          setUserData(null);
           navigate("/");
         }
       })
       .catch((err) => console.error(err));
   };
 
-  // console.log(isLoggedIn);
-
   return (
     <div>
-      <button type="submit" onClick={handleLogout}>
+      <button type="button" className="button-member" onClick={handleLogout}>
         Se déconnecter
       </button>
     </div>
