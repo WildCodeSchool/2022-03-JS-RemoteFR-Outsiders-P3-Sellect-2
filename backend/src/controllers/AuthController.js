@@ -58,10 +58,10 @@ class AuthController {
   static add = async (req, res) => {
     const { firstname, lastname, email, phoneNumber, password } = req.body;
     const hash = await bcrypt.hash(password, 10);
-    const getUserEmail = await models.user.get(email);
+    const findByEmail = await models.user.findByEmail(email);
 
     try {
-      if (getUserEmail.length > 0) {
+      if (findByEmail.length > 0) {
         return res.status(400).json({
           status: 400,
           message: "Email already exists",
