@@ -45,15 +45,34 @@
 .btn button {
   margin-bottom: 1em;
   border-radius: 20px;
-  padding: 0.4em;
-  border: 1px solid #65bd60;
-  font-size: calc(var(--font-size) * 0.7);
+  padding: 0.6em;
+  font-size: calc(var(--font-size) * 0.9);
 }
 
-.btn button:hover {
+.btn .audit {
+  background-color: orange;
+  color: white;
+  border: 1px solid orange;
+}
+
+.btn .parrainage {
+  background-color: #65bd60;
+  color: white;
+  border: 1px solid #65bd60;
+}
+
+.audit:hover {
   cursor: pointer;
   color: orange;
   border-color: orange;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.parrainage:hover {
+  cursor: pointer;
+  color: #65bd60;
+  border-color: #65bd60;
   background-color: white;
   transition: 0.5s;
 }
@@ -101,9 +120,8 @@
   .btn button {
     margin-bottom: 1em;
     border-radius: 20px;
-    padding: 0.8em;
     margin-top: 5em;
-    font-size: calc(var(--font-size) * 0.8);
+    font-size: calc(var(--font-size) * 1);
   }
 
   .bloc1_left h1 {
