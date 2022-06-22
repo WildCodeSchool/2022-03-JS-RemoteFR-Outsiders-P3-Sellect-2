@@ -37,6 +37,17 @@
   margin: 0.2rem;
 }
 
+.colorfooter {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+}
+.colorfooter:hover {
+  color: black;
+}
+
+/* CSS page Legal notice */
 .mentionslegales-div {
   width: 90%;
   margin: auto;
@@ -71,12 +82,34 @@ section {
   margin: auto;
 }
 
-.colorfooter {
-  cursor: pointer;
-  color: white;
-  text-decoration: none;
-  font-weight: 900;
+/* CSS page wilders */
+
+.wilders {
+  display: flex;
+  flex-direction: column;
 }
-.colorfooter:hover {
-  color: black;
+.div-img-wilders {
+  margin: auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+.div-img-wilders img {
+  width: 21rem;
+  margin-bottom: 1rem;
+}
+
+.wilders h2 {
+  padding-top: 6rem;
+  font-size: -webkit-xxx-large;
+  text-align: center;
+  margin: 1rem;
+}
+
+.wilders p {
+  font-size: larger;
+  margin: 1rem;
+
+  text-align: center;
 }
