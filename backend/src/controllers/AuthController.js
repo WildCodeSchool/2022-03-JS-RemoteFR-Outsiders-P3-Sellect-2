@@ -130,11 +130,31 @@ class AuthController {
         return res.cookie("sellectUserToken", token).json({
           message: "User logged",
         });
+        // console.log(result);
+        // return res.send(result);
       })
       .catch((err) => {
         console.error(err);
         res.status(500).json({ status: "error", message: err.message });
       });
+
+    /* models.user
+      .findUserDataByEmail(req.body)
+      .then((result) => {
+        if (result.length === 0) {
+          return result.status(400).json({
+            status: 400,
+            message: "User not found",
+          });
+        } else {
+          return res.send(result);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).json({ status: "error", message: err.message });
+      }); */
+
     return "";
   };
 
@@ -147,6 +167,27 @@ class AuthController {
     } catch (err) {
       return res.status(400).json({ error: err.message });
     }
+  };
+
+  static getUserData = async (req, res) => {
+    const user = req.body;
+    models.user
+      .findUserDataByEmail(user)
+      .then((result) => {
+        // console.log(result);
+        if (result.length === 0) {
+          return result.status(400).json({
+            status: 400,
+            message: "User not found",
+          });
+        }
+        // console.log(result);
+        return res.send(result);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).json({ status: "error", message: err.message });
+      });
   };
 
   static delete = (req, res) => {

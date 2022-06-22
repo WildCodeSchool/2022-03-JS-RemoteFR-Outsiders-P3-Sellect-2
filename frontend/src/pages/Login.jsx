@@ -23,13 +23,14 @@ function Login() {
         withCredentials: true,
       })
       .then((res) => {
+        // console.log({ res });
         if (res.status === 200) {
           setIsLoggedIn(true);
           navigate("/mon-compte");
         }
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err.message);
         if (err) {
           setLoginError(true);
           setTimeout(() => {

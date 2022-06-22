@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import UserCard from "@components/UserCard";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
+// import { MainContext } from "../contexts/MainContext";
 
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [searchUser, setSearchUser] = useState("");
+  // const { isLoggedIn } = useContext(MainContext);
 
   const getUsers = () => {
     axios
@@ -18,6 +20,7 @@ function AdminDashboard() {
   useEffect(() => {
     getUsers();
   }, []);
+  // console.log(isLoggedIn);
 
   return (
     <div>

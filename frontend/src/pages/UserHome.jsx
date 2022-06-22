@@ -1,7 +1,7 @@
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import SignupModal from "@components/SignupModal";
-import axios from "axios";
+// import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
@@ -11,7 +11,9 @@ function UserHome() {
   const {
     isLoggedIn,
     isFirstConnection,
-    setIsFirstConnection /* , userData, setUserData */,
+    setIsFirstConnection,
+    /* userData,
+    setUserData, */
   } = useContext(MainContext);
   const [modal, setModal] = useState(false);
 
@@ -29,11 +31,13 @@ function UserHome() {
         setModal(true);
       }, 1000);
     }
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/login/users`)
-      // .then((res) => console.log(res.data) /* , setUserData(res.data) */)
-      .catch((err) => console.error(err));
+    /* axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/data/users`)
+      .then((res) => console.log(res), setUserData(res.data))
+      .catch((err) => console.error(err)); */
   }, []);
+  // console.log(userData)
+  // console.log(isLoggedIn);
 
   return (
     <div>

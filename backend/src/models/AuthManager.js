@@ -23,7 +23,7 @@ class AuthManager extends AbstractManager {
       .then((res) => res[0]);
   }
 
-  getUserData(user) {
+  findUserDataByEmail(user) {
     return this.connection
       .query(`SELECT * FROM ${AuthManager.table} WHERE email = ?`, [user.email])
       .then((res) => res[0]);

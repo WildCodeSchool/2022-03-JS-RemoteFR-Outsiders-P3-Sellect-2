@@ -12,9 +12,15 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.post("/auth/users", AuthController.add);
-router.get("/auth/users", /* authorization, isAdmin, */ AuthController.browse);
-router.post("/login/users", AuthController.login);
-router.get("/logout/users", AuthController.logout);
-router.get("/login/users", AuthController.login);
+router.get("/auth/users", /* authorization, isAdmin */ AuthController.browse);
+router.post(
+  "/login/users",
+  AuthController.login /* , AuthController.getUserData */
+);
+router.get(
+  "/logout/users" /* , authorization, isAdmin */,
+  AuthController.logout
+);
+// router.get("/data/users", AuthController.getUserData);
 
 module.exports = router;
