@@ -30,14 +30,11 @@ export default function Footer() {
         </a>
       </div>
       <p className="copyright-un">
-        &copy;Copyright2022. Tous Droits Réservés.{" "}
-      </p>
-      <p className="copyright-un">
-        <NavLink to="/mentions-legales" className="colorfooter">
-          Mentions Légales
+        &copy;Copyright2022 - Tous Droits Réservés{" "}
+        <NavLink to="/mentions-legales">
+          <span>- Mentions Légales</span>
         </NavLink>
       </p>
-
       <p className="copyright-deux">
         Développé avec <FaHeart size="12" color="#B51942" /> par les{" "}
         <NavLink to="/wilders" className="colorfooter">

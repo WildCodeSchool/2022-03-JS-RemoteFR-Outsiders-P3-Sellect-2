@@ -62,14 +62,13 @@
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  top: -0.5rem;
   height: fit-content;
 }
 
 .carousel.carousel-slider .control-arrow {
-  background-color: rgb(115, 112, 112);
+  background-color: #65bd60;
   position: absolute;
-  bottom: 6rem;
+  bottom: 1rem;
   padding: 5px;
   height: 3rem;
   margin: auto;
@@ -234,10 +233,7 @@
   }
 
   .carousel.carousel-slider .control-arrow {
-    top: 0;
-    background-color: rgb(115, 112, 112);
-    bottom: 0;
-    margin-top: 0;
+    bottom: 5rem;
     padding: 5px;
     height: 3rem;
     margin: auto;
