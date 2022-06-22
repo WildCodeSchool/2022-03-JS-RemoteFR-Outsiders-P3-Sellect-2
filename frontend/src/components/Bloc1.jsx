@@ -20,6 +20,7 @@ export default function Bloc1() {
           <Link to="/calendrier">
             <button
               type="button"
+              className="audit"
               /* onClick={handleClick} */
             >
               Je réserve mon audit
@@ -28,6 +29,7 @@ export default function Bloc1() {
           <Link to="/parrainage">
             <button
               type="button"
+              className="parrainage"
               /* onClick={handleClick} */
             >
               Je deviens apporteur d'affaires

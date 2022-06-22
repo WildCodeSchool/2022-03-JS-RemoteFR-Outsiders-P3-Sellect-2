@@ -6,6 +6,7 @@ import HomeGoals from "@components/HomeGoals";
 import Bloc2 from "@components/Bloc2";
 import Slider from "../components/Slider";
 import Bloc1 from "../components/Bloc1";
+import Faq from "./Faq";
 
 function Home() {
   return (
@@ -16,6 +17,7 @@ function Home() {
         <Bloc2 />
         <HomeGoals />
         <Slider />
+        <Faq />
       </div>
       <Footer />
     </div>
