@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "react-calendly": "^4.0.1",
-    "react-responsive-carousel": "^3.2.23"
+    "react-responsive-carousel": "^3.2.23",
+    "react-router-hash-link": "^2.4.3"
   }
 }

@@ -81,6 +81,10 @@ details p ul {
     font-size: 1.3rem;
   }
 
+  details p ul li {
+    margin: 2em 0;
+  }
+
   .contact h1 {
     font-size: 2rem;
   }
