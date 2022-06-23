@@ -4,7 +4,7 @@ import "../assets/HomeBlock3.css";
 
 function HomeGoals() {
   return (
-    <div className="home-block3-container">
+    <div className="home-block3-container" id="goals">
       <div className="home-block3-content">
         <div className="home-block3-content-header">
           <h1>NOS OBJECTIFS</h1>

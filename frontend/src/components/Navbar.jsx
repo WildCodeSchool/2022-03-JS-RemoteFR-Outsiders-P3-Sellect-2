@@ -64,14 +64,14 @@ export default function Navbar() {
                 >
                   Accueil
                 </NavLink>
-                <NavLink
-                  to="/nos-engagements"
+                <a
+                  href="#goals"
                   className={(items) =>
                     items.isActive ? "items-activated" : "items"
                   }
                 >
-                  Nos engagements
-                </NavLink>
+                  Nos objectifs
+                </a>
                 <a
                   href="#faq"
                   className={(items) =>
