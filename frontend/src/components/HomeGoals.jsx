@@ -7,7 +7,7 @@ function HomeGoals() {
     <div className="home-block3-container">
       <div className="home-block3-content">
         <div className="home-block3-content-header">
-          <h2>NOS OBJECTIFS</h2>
+          <h1>NOS OBJECTIFS</h1>
           <p>
             <span>Sellect</span> souhaite devenir un acteur majeur pour le
             pouvoir d'achat !
