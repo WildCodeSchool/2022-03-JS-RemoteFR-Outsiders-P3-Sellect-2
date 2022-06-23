@@ -8,7 +8,8 @@ import "../assets/Slider.css";
 
 export default function Slider() {
   return (
-    <div className="carousel-div">
+    <div className="carousel-div" id="partenariat">
+      <h1>PARTENARIATS</h1>
       <img className="img1" src={tips} alt="tips" />
       <Carousel autoPlay interval={3000} infiniteLoop>
         <div className="img-carousel-div">

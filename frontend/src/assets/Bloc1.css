@@ -15,18 +15,18 @@
 
 .bloc1_left h1 {
   color: #65bd60;
-  font-size: calc(var(--font-size) * 2);
-  margin-left: 0.3em;
+  font-size: calc(var(--font-size) * 1.6);
+  text-align: center;
 }
 
 .bloc1_left h2 {
-  font-size: calc(var(--font-size) * 1.5);
-  margin: 0.5em;
+  font-size: calc(var(--font-size) * 1.4);
+  margin: 1em;
 }
 
 .bloc1_left p {
   font-weight: bolder;
-  margin: 0.5em;
+  margin-left: 1.4em;
 }
 
 .bloc1_left span {
@@ -126,6 +126,7 @@
 
   .bloc1_left h1 {
     margin: 1.5em;
+    font-size: calc(var(--font-size) * 2);
   }
 
   .bloc1_left h2 {

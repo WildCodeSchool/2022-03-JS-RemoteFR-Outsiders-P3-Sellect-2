@@ -4,8 +4,9 @@ import "../assets/Faq.css";
 
 export default function Faq() {
   return (
-    <div className="faq-div">
-      <details id="faq_anchor">
+    <div className="faq-div" id="faq">
+      <h1>FOIRE AUX QUESTIONS</h1>
+      <details>
         <summary>Pourquoi devenir SELLECT ?</summary>
         <p>
           <ul>
@@ -82,11 +83,9 @@ export default function Faq() {
       </details>
       <div className="contact">
         <h1>Une autre question ?</h1>
+        <h2>► Contactez: </h2>
+        <a href="mailto:Sellect33@gmail.com">Sellect33@gmail.com </a>
         <h3>Nous y réponderons dans les plus brefs délais.</h3>
-        <p>
-          ► Contactez:{" "}
-          <a href="mailto:Sellect33@gmail.com">Sellect33@gmail.com </a>{" "}
-        </p>
       </div>
     </div>
   );

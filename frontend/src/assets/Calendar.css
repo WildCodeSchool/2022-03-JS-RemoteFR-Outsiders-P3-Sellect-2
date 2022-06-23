@@ -5,9 +5,9 @@
 }
 
 .title h1 {
-  margin-left: 0.5em;
+  text-align: center;
   color: #65bd60;
-  font-size: calc(var(--font-size) * 2);
+  font-size: calc(var(--font-size) * 1.6);
 }
 
 .instruction1,

@@ -42,7 +42,8 @@
   padding-bottom: 0.5em;
 }
 
-.items {
+.items,
+a {
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -53,6 +54,10 @@
 }
 
 .items:hover {
+  color: black;
+}
+
+.div-ul a:hover {
   color: black;
 }
 
@@ -143,13 +148,15 @@
     height: auto;
   }
 
-  nav .items {
+  nav .items,
+  a {
     font-weight: 900;
     margin-left: 2rem;
     font-size: 1.5rem;
   }
 
-  .items-activated {
+  .items-activated,
+  a {
     font-size: 1.5rem;
     margin-left: 2rem;
   }
@@ -178,6 +185,14 @@
   }
 
   nav .items:hover {
+    cursor: pointer;
+    transition: 0.5s;
+    border: 1px solid orange;
+    border-radius: 20px;
+    padding: 0.4em;
+  }
+
+  nav a:hover {
     cursor: pointer;
     transition: 0.5s;
     border: 1px solid orange;
