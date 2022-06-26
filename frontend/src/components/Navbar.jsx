@@ -1,17 +1,15 @@
 import { NavLink } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 // import sellect2 from "../assets/img/sellect2.svg";
 import logosellect from "../assets/img/logosellect.svg";
 import toggle from "../assets/img/toggle.svg";
 import "../assets/Navbar.css";
 import "../assets/common.css";
-import { MainContext } from "../contexts/MainContext";
 import Logout from "./Logout";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const { isLoggedIn } = useContext(MainContext);
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
@@ -91,7 +89,7 @@ export default function Navbar() {
               </nav>
             </div>
 
-            {isLoggedIn ? (
+            {localStorage.getItem("loggedIn") ? (
               <div className="btn-div">
                 <Logout />
               </div>

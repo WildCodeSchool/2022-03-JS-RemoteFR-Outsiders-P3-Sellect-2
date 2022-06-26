@@ -3,19 +3,19 @@ import React, { useState, createContext } from "react";
 const MainContext = createContext();
 /* eslint-disable */
 function MainContextProvider({ children }) {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isFirstConnection, setIsFirstConnection] = useState(false);
   const [userData, setUserData] = useState(null);
+  const [deleteModal, setDeleteModal] = useState(false);
 
   return (
     <MainContext.Provider
       value={{
-        isLoggedIn,
-        setIsLoggedIn,
         isFirstConnection,
         setIsFirstConnection,
         userData,
         setUserData,
+        deleteModal,
+        setDeleteModal,
       }}
     >
       {children}

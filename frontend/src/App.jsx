@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import AdminDashboard from "@pages/AdminDashboard";
 import Page404 from "@pages/Page404";
+import UpdateUserAccount from "@pages/UpdateUserAccount";
 import Faq from "./pages/Faq";
 import UserHome from "./pages/UserHome";
 import Home from "./pages/Home";
@@ -27,6 +28,10 @@ function App() {
         <Route path="*" element={<Page404 />} />
         <Route path="/parrainage" element={<Sponsorship />} />
         <Route path="/calendrier" element={<Calendar />} />
+        <Route
+          path="/mon-compte/mettre-a-jour"
+          element={<UpdateUserAccount />}
+        />
       </Routes>
     </div>
   );

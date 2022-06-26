@@ -3,13 +3,12 @@ import Navbar from "@components/Navbar";
 import SignupModal from "@components/SignupModal";
 // import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
 
 function UserHome() {
   const navigate = useNavigate();
   const {
-    isLoggedIn,
     isFirstConnection,
     setIsFirstConnection,
     /* userData,
@@ -23,7 +22,7 @@ function UserHome() {
   };
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (!localStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
     if (isFirstConnection) {
@@ -36,13 +35,12 @@ function UserHome() {
       .then((res) => console.log(res), setUserData(res.data))
       .catch((err) => console.error(err)); */
   }, []);
-  // console.log(userData)
-  // console.log(isLoggedIn);
 
   return (
     <div>
       <Navbar />
       <p>Bonjour</p>
+      <Link to="/mon-compte/mettre-a-jour"> Mettre à jour mon compte</Link>
       {modal && <SignupModal toggleModal={toggleModal} />}
       <Footer />
     </div>

@@ -1,6 +1,6 @@
 const express = require("express");
 
-const { ItemController, AuthController } = require("./controllers");
+const { ItemController, UsersController } = require("./controllers");
 // const { authorization, isAdmin } = require("./middlewares/authMiddleware");
 
 const router = express.Router();
@@ -11,16 +11,12 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
-router.post("/auth/users", AuthController.add);
-router.get("/auth/users", /* authorization, isAdmin */ AuthController.browse);
-router.post(
-  "/login/users",
-  AuthController.login /* , AuthController.getUserData */
-);
-router.get(
-  "/logout/users" /* , authorization, isAdmin */,
-  AuthController.logout
-);
-// router.get("/data/users", AuthController.getUserData);
+router.post("/auth/users", UsersController.add);
+router.get("/users", /* authorization, isAdmin */ UsersController.browse);
+router.post("/login/users", UsersController.login);
+router.get("/logout/users", UsersController.logout);
+router.get("/users/:id", UsersController.read);
+router.delete("/users/:id", UsersController.delete);
+router.put("/users/:id", UsersController.edit);
 
 module.exports = router;

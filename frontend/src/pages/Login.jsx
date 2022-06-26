@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/common.css";
 import "../assets/Login.css";
-import { MainContext } from "../contexts/MainContext";
+// import { MainContext } from "../contexts/MainContext";
 import loginImage from "../assets/img/loginImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
 function Login() {
-  const { setIsLoggedIn } = useContext(MainContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
@@ -23,9 +22,12 @@ function Login() {
         withCredentials: true,
       })
       .then((res) => {
-        // console.log({ res });
         if (res.status === 200) {
-          setIsLoggedIn(true);
+          if (res.data.role === "ADMIN") {
+            localStorage.setItem("isAdmin", true);
+          }
+          localStorage.setItem("userId", res.data.id);
+          localStorage.setItem("loggedIn", true);
           navigate("/mon-compte");
         }
       })
