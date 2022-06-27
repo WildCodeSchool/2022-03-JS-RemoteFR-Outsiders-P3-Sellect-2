@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
 
 function Logout() {
-  const { setIsLoggedIn, setUserData } = useContext(MainContext);
+  const { setUserData } = useContext(MainContext);
   const navigate = useNavigate();
 
   const handleLogout = (e) => {
@@ -14,9 +14,8 @@ function Logout() {
         withCredentials: true,
       })
       .then((res) => {
-        // console.log(res.data);
         if (res.status === 200) {
-          setIsLoggedIn(false);
+          localStorage.clear();
           setUserData(null);
           navigate("/");
         }

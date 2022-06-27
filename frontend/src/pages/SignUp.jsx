@@ -8,7 +8,7 @@ import signupImage from "../assets/img/signupImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
 function SignUp() {
-  const { setIsLoggedIn, setIsFirstConnection } = useContext(MainContext);
+  const { setIsFirstConnection } = useContext(MainContext);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -37,8 +37,9 @@ function SignUp() {
         })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {
-            setIsLoggedIn(true);
             setIsFirstConnection(true);
+            localStorage.setItem("userId", res.data.id);
+            localStorage.setItem("loggedIn", true);
             navigate("/mon-compte");
           }
         })

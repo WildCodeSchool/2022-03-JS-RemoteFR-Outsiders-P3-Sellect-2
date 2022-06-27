@@ -1,17 +1,18 @@
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import SignupModal from "@components/SignupModal";
-import axios from "axios";
+// import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
 
 function UserHome() {
   const navigate = useNavigate();
   const {
-    isLoggedIn,
     isFirstConnection,
-    setIsFirstConnection /* , userData, setUserData */,
+    setIsFirstConnection,
+    /* userData,
+    setUserData, */
   } = useContext(MainContext);
   const [modal, setModal] = useState(false);
 
@@ -21,7 +22,7 @@ function UserHome() {
   };
 
   useEffect(() => {
-    if (!isLoggedIn) {
+    if (!localStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
     if (isFirstConnection) {
@@ -29,16 +30,17 @@ function UserHome() {
         setModal(true);
       }, 1000);
     }
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/login/users`)
-      // .then((res) => console.log(res.data) /* , setUserData(res.data) */)
-      .catch((err) => console.error(err));
+    /* axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/data/users`)
+      .then((res) => console.log(res), setUserData(res.data))
+      .catch((err) => console.error(err)); */
   }, []);
 
   return (
     <div>
       <Navbar />
       <p>Bonjour</p>
+      <Link to="/mon-compte/mettre-a-jour"> Mettre à jour mon compte</Link>
       {modal && <SignupModal toggleModal={toggleModal} />}
       <Footer />
     </div>

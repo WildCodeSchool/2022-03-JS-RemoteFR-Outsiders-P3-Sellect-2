@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
 
-class AuthController {
+class UsersController {
   static browse = (req, res) => {
     models.user
       .findAll()
@@ -18,13 +18,16 @@ class AuthController {
   };
 
   static read = (req, res) => {
+    const user = req.body;
+    user.id = parseInt(req.params.id, 10);
+
     models.user
-      .find(req.params.id)
+      .findById(user)
       .then(([rows]) => {
-        if (rows[0] == null) {
+        if (rows == null) {
           res.sendStatus(404);
         } else {
-          res.send(rows[0]);
+          res.send(rows);
         }
       })
       .catch((err) => {
@@ -33,15 +36,13 @@ class AuthController {
       });
   };
 
-  static edit = (req, res) => {
-    const user = req.body;
-
-    // TODO validations (length, format...)
-
-    user.id = parseInt(req.params.id, 10);
+  static edit = async (req, res) => {
+    const { phoneNumber, email, password } = req.body;
+    const id = parseInt(req.params.id, 10);
+    const hash = await bcrypt.hash(password, 10);
 
     models.user
-      .update(user)
+      .update({ id, phoneNumber, email, password: hash })
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -78,9 +79,8 @@ class AuthController {
         })
         .then((result) => {
           res.status(201).send({
-            id: result.insertId,
+            id: result[0].insertId,
             message: "User created",
-            // user: req.body,
           });
         })
         .catch((err) => {
@@ -129,6 +129,8 @@ class AuthController {
         );
         return res.cookie("sellectUserToken", token).json({
           message: "User logged",
+          role: result[0].role,
+          id: result[0].id,
         });
       })
       .catch((err) => {
@@ -153,7 +155,7 @@ class AuthController {
     models.user
       .delete(req.params.id)
       .then(() => {
-        res.sendStatus(204);
+        res.status(204).json({ message: "User deleted" });
       })
       .catch((err) => {
         console.error(err);
@@ -162,4 +164,4 @@ class AuthController {
   };
 }
 
-module.exports = AuthController;
+module.exports = UsersController;
