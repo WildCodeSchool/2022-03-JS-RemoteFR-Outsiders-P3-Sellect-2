@@ -3,7 +3,7 @@ import Navbar from "@components/Navbar";
 import SignupModal from "@components/SignupModal";
 // import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { MainContext } from "../contexts/MainContext";
 
 function UserHome() {
@@ -40,7 +40,10 @@ function UserHome() {
     <div>
       <Navbar />
       <p>Bonjour</p>
-      <Link to="/mon-compte/mettre-a-jour"> Mettre à jour mon compte</Link>
+      <NavLink style={{ color: "blue" }} to="/mon-compte/mettre-a-jour">
+        {" "}
+        Mettre à jour mon compte
+      </NavLink>
       {modal && <SignupModal toggleModal={toggleModal} />}
       <Footer />
     </div>
