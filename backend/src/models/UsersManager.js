@@ -5,7 +5,7 @@ class UsersManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UsersManager.table} (firstname, lastname, phoneNumber, email, password, role) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${UsersManager.table} (firstname, lastname, phoneNumber, email, password, role, signupDate) values (?, ?, ?, ?, ?, ?, ?)`,
       [
         user.firstname,
         user.lastname,
@@ -13,6 +13,7 @@ class UsersManager extends AbstractManager {
         user.email,
         user.password,
         user.role,
+        user.signupDate,
       ]
     );
   }
@@ -31,10 +32,17 @@ class UsersManager extends AbstractManager {
       .then((res) => res[0]);
   }
 
-  update(user) {
+  updateInfos(user) {
     return this.connection.query(
-      `update ${UsersManager.table} set phoneNumber = ?, email = ?, password = ? where id = ?`,
-      [user.phoneNumber, user.email, user.password, user.id]
+      `update ${UsersManager.table} set phoneNumber = ?, email = ? where id = ?`,
+      [user.phoneNumber, user.email, user.id]
+    );
+  }
+
+  updatePassword(user) {
+    return this.connection.query(
+      `update ${UsersManager.table} set password = ? where id = ?`,
+      [user.password, user.id]
     );
   }
 }

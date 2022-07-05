@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import UserCard from "@components/UserCard";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
-import UserDeleteModal from "@components/UserDeleteModal";
+import Modal from "@components/Modal";
 import { MainContext } from "../contexts/MainContext";
 
 function AdminDashboard() {
@@ -47,9 +47,12 @@ function AdminDashboard() {
       <ul>
         {users &&
           users
-            .sort((a, b) =>
-              a.lastname.toLowerCase() < b.lastname.toLowerCase() ? -1 : 1
-            )
+            .reverse()
+            // .sort((a, b) =>
+            // a.lastname.toLowerCase() < b.lastname.toLowerCase() ? -1 : 1
+            // newDate(a.signupDate) - newDate(b.signupDate)
+            // a.signupDate < b.signupDate ? -1 : 1
+            // )
             .filter(
               (user) =>
                 user.firstname
@@ -69,7 +72,12 @@ function AdminDashboard() {
               );
             })}
       </ul>
-      {deleteModal && <UserDeleteModal toggleModal={toggleModal} />}
+      {deleteModal && (
+        <Modal
+          toggleModal={toggleModal}
+          modalMessage="L'utilisateur a bien été supprimé."
+        />
+      )}
       <Footer />
     </div>
   );

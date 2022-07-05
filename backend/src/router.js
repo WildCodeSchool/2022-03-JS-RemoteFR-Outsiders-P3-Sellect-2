@@ -17,6 +17,7 @@ router.post("/login/users", UsersController.login);
 router.get("/logout/users", UsersController.logout);
 router.get("/users/:id", UsersController.read);
 router.delete("/users/:id", UsersController.delete);
-router.put("/users/:id", UsersController.edit);
+router.put("/infos/users/:id", UsersController.editInfos);
+router.put("/password/users/:id", UsersController.editPassword);
 
 module.exports = router;
