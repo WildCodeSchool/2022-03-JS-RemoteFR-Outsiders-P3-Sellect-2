@@ -1,5 +1,5 @@
+import API from "@services/api";
 import React, { useState } from "react";
-import axios from "axios";
 
 function UpdatePassword({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -15,10 +15,9 @@ function UpdatePassword({ setModal }) {
         setPasswordError(false);
       }, 5000);
     } else {
-      axios
-        .put(`${import.meta.env.VITE_BACKEND_URL}/password/users/${userId}`, {
-          password,
-        })
+      API.put(`/password/users/${userId}`, {
+        password,
+      })
         .then(() => {
           setTimeout(() => {
             setModal(true);

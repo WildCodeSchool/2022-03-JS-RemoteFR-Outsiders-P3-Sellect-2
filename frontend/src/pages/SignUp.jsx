@@ -1,9 +1,9 @@
 import React, { useState, useContext } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
+import Moment from "moment";
 import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Signup.css";
-import Moment from "moment";
 import { MainContext } from "../contexts/MainContext";
 import signupImage from "../assets/img/signupImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
@@ -35,6 +35,7 @@ function SignUp() {
         email,
         phoneNumber,
         password,
+        signupDate,
       })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {

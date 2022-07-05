@@ -3,9 +3,9 @@ import Navbar from "@components/Navbar";
 import React, { useEffect, useState } from "react";
 import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
-import API from "../services/api";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
+import API from "../services/api";
 
 function UpdateUserAccount() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -30,28 +30,6 @@ function UpdateUserAccount() {
     setModal(false);
   };
 
-  const handleUpdate = (e) => {
-    e.preventDefault();
-    if (password !== confirmPassword) {
-      setPasswordError(true);
-      setTimeout(() => {
-        setPasswordError(false);
-      }, 5000);
-    } else {
-      API.put(`/users/${userId}`, {
-        email,
-        phoneNumber,
-        password,
-      })
-        .then(() => {
-          setTimeout(() => {
-            setModal(true);
-          }, 500);
-        })
-        .catch((err) => console.error(err));
-    }
-  };
-  
   return (
     <div>
       <Navbar />

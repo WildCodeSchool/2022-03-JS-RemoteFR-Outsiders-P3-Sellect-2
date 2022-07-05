@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 import UserCard from "@components/UserCard";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
-import API from "../services/api";
 import Modal from "@components/Modal";
+import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
 
 function AdminDashboard() {
