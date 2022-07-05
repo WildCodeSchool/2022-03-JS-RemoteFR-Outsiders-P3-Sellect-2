@@ -1,4 +1,4 @@
-.signup-modal-content {
+.modal-content {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -14,7 +14,7 @@
   min-width: 16rem;
 }
 
-.signup-modal-overlay {
+.modal-overlay {
   top: 0;
   left: 0;
   right: 0;
@@ -23,7 +23,7 @@
   background: rgba(0, 0, 0, 0.75);
 }
 
-.signup-modal-close-button {
+.modal-close-button {
   cursor: pointer;
   border: none;
   outline: none;
@@ -35,16 +35,16 @@
   color: var(--navbar-color);
 }
 
-.signup-modal-close-button:hover {
+.modal-close-button:hover {
   color: orange;
 }
 
-.signup-modal-header {
+.modal-header {
   display: flex;
   justify-content: flex-end;
 }
 
-.signup-modal-message {
+.modal-message {
   height: 60%;
   display: flex;
   justify-content: center;

@@ -36,13 +36,32 @@ class UsersController {
       });
   };
 
-  static edit = async (req, res) => {
-    const { phoneNumber, email, password } = req.body;
+  static editInfos = async (req, res) => {
+    const { phoneNumber, email } = req.body;
+    const id = parseInt(req.params.id, 10);
+
+    models.user
+      .updateInfos({ id, phoneNumber, email })
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static editPassword = async (req, res) => {
+    const { password } = req.body;
     const id = parseInt(req.params.id, 10);
     const hash = await bcrypt.hash(password, 10);
 
     models.user
-      .update({ id, phoneNumber, email, password: hash })
+      .updatePassword({ id, password: hash })
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -57,7 +76,8 @@ class UsersController {
   };
 
   static add = async (req, res) => {
-    const { firstname, lastname, email, phoneNumber, password } = req.body;
+    const { firstname, lastname, email, phoneNumber, password, signupDate } =
+      req.body;
     const hash = await bcrypt.hash(password, 10);
     const findByEmail = await models.user.findByEmail(email);
 
@@ -76,6 +96,7 @@ class UsersController {
           phoneNumber,
           password: hash,
           role: "USER",
+          signupDate,
         })
         .then((result) => {
           res.status(201).send({

@@ -22,10 +22,11 @@ function UserCard({ users, setUsers, user }) {
   return (
     <div>
       <p>
-        Nom: {user.firstname} {user.lastname}
+        Nom:&nbsp;{user.firstname}&nbsp;{user.lastname}
       </p>
-      <p>Adresse email: {user.email}</p>
-      <p>Téléphone: {user.phoneNumber}</p>
+      <p>Adresse email:&nbsp;{user.email}</p>
+      <p>Téléphone:&nbsp;{user.phoneNumber}</p>
+      <p>Date d'inscription:&nbsp;{user.signupDate}</p>
       <button type="button" onClick={handleDelete}>
         Supprimer utilisateur
       </button>
