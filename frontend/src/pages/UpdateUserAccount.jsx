@@ -1,11 +1,12 @@
 import Footer from "@components/Footer";
-import Navbar from "@components/Navbar";
+import UserNavbar from "@components/UserNavbar";
 import React, { useEffect, useState } from "react";
 import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
 import API from "../services/api";
+import "@assets/Useraccount.css";
 
 function UpdateUserAccount() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -32,20 +33,23 @@ function UpdateUserAccount() {
 
   return (
     <div>
-      <Navbar />
-      <div>
-        <h1>
+      <UserNavbar />
+      <div className="div-updateuseraccount">
+        <h1 className="title-updateuseraccount">
           {firstname}&nbsp;{lastname}
         </h1>
+        <div>
+          <UpdateInfos setModal={setModal} />
+          <UpdatePassword setModal={setModal} />
+          {modal && (
+            <Modal
+              toggleModal={toggleModal}
+              modalMessage="Vos modifications ont bien été enregistrées."
+            />
+          )}
+        </div>
       </div>
-      <UpdateInfos setModal={setModal} />
-      <UpdatePassword setModal={setModal} />
-      {modal && (
-        <Modal
-          toggleModal={toggleModal}
-          modalMessage="Vos modifications ont bien été enregistrées."
-        />
-      )}
+
       <Footer />
     </div>
   );

@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
 import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
+import "@assets/Useraccount.css";
+import "@assets/common.css";
 
 function Logout() {
   const { setUserData } = useContext(MainContext);
-  const navigate = useNavigate();
 
   const handleLogout = (e) => {
     e.preventDefault();
@@ -16,7 +16,7 @@ function Logout() {
         if (res.status === 200) {
           localStorage.clear();
           setUserData(null);
-          navigate("/");
+          window.location = "/";
         }
       })
       .catch((err) => console.error(err));
@@ -24,7 +24,11 @@ function Logout() {
 
   return (
     <div>
-      <button type="button" className="button-member" onClick={handleLogout}>
+      <button
+        type="button"
+        className="button-deconnectmember"
+        onClick={handleLogout}
+      >
         Se déconnecter
       </button>
     </div>

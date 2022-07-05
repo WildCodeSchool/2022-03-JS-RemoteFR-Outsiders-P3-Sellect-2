@@ -1,0 +1,90 @@
+.title-updateuseraccount {
+  font-weight: 900;
+  text-align: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.div-updateuseraccount {
+  margin: auto;
+  width: fit-content;
+  height: 75vh;
+}
+
+h2 {
+  margin: 0.5rem;
+}
+
+.form-updatepassword {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
+.form-updatepassword input {
+  display: flex;
+  flex-direction: column;
+  margin: 0.9rem;
+  padding-left: 0.3rem;
+  width: -webkit-fill-available;
+  font-size: 1.1rem;
+}
+
+.form-updatepassword button {
+  margin: auto;
+  margin-top: 0.5rem;
+  height: 2.6rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.form-updateinfos {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
+.form-updateinfos input {
+  flex-direction: row;
+  margin-left: 1rem;
+  padding-left: 0.3rem;
+  width: 12rem;
+  font-size: 1rem;
+}
+
+.div-updateinfos label {
+  display: flex;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.form-updateinfos button {
+  margin: auto;
+  margin-top: 0.5rem;
+  height: 2.6rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+.button-deconnectmember {
+  width: 10rem;
+  font-size: 1.2rem;
+  height: 2rem;
+  background-color: var(--connexion-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
