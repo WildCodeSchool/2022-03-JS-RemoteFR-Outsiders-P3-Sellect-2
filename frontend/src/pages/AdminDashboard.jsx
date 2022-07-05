@@ -1,9 +1,9 @@
-import axios from "axios";
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserCard from "@components/UserCard";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
+import API from "../services/api";
 import Modal from "@components/Modal";
 import { MainContext } from "../contexts/MainContext";
 
@@ -14,8 +14,7 @@ function AdminDashboard() {
   const { deleteModal, setDeleteModal } = useContext(MainContext);
 
   const getUsers = () => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users`)
+    API.get(`/users`)
       .then((res) => setUsers(res.data))
       .catch((err) => console.error(err));
   };

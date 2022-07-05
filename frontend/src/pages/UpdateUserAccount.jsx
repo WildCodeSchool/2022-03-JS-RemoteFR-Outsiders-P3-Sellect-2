@@ -1,9 +1,9 @@
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
+import API from "../services/api";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
 
@@ -18,8 +18,7 @@ function UpdateUserAccount() {
     if (!localStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${userId}`)
+    API.get(`/users/${userId}`)
       .then((res) => {
         setFirstname(res.data.firstname);
         setLastname(res.data.lastname);
@@ -31,6 +30,28 @@ function UpdateUserAccount() {
     setModal(false);
   };
 
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setPasswordError(true);
+      setTimeout(() => {
+        setPasswordError(false);
+      }, 5000);
+    } else {
+      API.put(`/users/${userId}`, {
+        email,
+        phoneNumber,
+        password,
+      })
+        .then(() => {
+          setTimeout(() => {
+            setModal(true);
+          }, 500);
+        })
+        .catch((err) => console.error(err));
+    }
+  };
+  
   return (
     <div>
       <Navbar />

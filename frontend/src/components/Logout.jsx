@@ -1,6 +1,6 @@
-import axios from "axios";
 import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
+import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
 
 function Logout() {
@@ -9,10 +9,9 @@ function Logout() {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/logout/users`, {
-        withCredentials: true,
-      })
+    API.get(`/logout/users`, {
+      withCredentials: true,
+    })
       .then((res) => {
         if (res.status === 200) {
           localStorage.clear();
