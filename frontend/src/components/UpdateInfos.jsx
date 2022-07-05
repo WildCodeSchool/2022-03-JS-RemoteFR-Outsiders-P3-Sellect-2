@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "@services/api";
 
 function UpdateInfos({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -7,8 +7,7 @@ function UpdateInfos({ setModal }) {
   const [phoneNumber, setPhoneNumber] = useState("");
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/${userId}`)
+    API.get(`/users/${userId}`)
       .then((res) => {
         setEmail(res.data.email);
         setPhoneNumber(res.data.phoneNumber);
@@ -18,11 +17,10 @@ function UpdateInfos({ setModal }) {
 
   const handleUpdateInfos = (e) => {
     e.preventDefault();
-    axios
-      .put(`${import.meta.env.VITE_BACKEND_URL}/infos/users/${userId}`, {
-        email,
-        phoneNumber,
-      })
+    API.put(`/infos/users/${userId}`, {
+      email,
+      phoneNumber,
+    })
       .then(() => {
         setTimeout(() => {
           setModal(true);
