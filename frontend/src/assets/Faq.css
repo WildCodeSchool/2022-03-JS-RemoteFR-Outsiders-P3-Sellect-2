@@ -67,6 +67,7 @@ details p ul {
 
 .contact h2 {
   font-size: 1.2rem;
+  color : black;
 }
 
 .contact a {
@@ -116,7 +117,7 @@ details p ul {
   }
 
   .contact h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .contact a {
