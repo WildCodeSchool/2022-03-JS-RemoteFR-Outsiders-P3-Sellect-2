@@ -6,6 +6,7 @@ import Footer from "@components/Footer";
 import Modal from "@components/Modal";
 import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
+import "@assets/Admindasboard.css";
 
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
@@ -37,12 +38,15 @@ function AdminDashboard() {
     <div>
       <Navbar />
       <h2>Liste Utilisateurs</h2>
-      <input
-        type="text"
-        placeholder="Rechercher un utilisateur"
-        value={searchUser}
-        onChange={(e) => setSearchUser(e.target.value)}
-      />
+      <div className="usersearch">
+        <input
+          type="text"
+          placeholder="Rechercher un utilisateur"
+          value={searchUser}
+          onChange={(e) => setSearchUser(e.target.value)}
+        />
+      </div>
+
       <ul>
         {users &&
           users
