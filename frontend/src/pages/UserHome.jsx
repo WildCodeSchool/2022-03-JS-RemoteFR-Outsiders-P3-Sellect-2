@@ -1,6 +1,6 @@
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
-import SignupModal from "@components/SignupModal";
+import Modal from "@components/Modal";
 // import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -30,10 +30,6 @@ function UserHome() {
         setModal(true);
       }, 1000);
     }
-    /* axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/data/users`)
-      .then((res) => console.log(res), setUserData(res.data))
-      .catch((err) => console.error(err)); */
   }, []);
 
   return (
@@ -44,7 +40,12 @@ function UserHome() {
         {" "}
         Mettre à jour mon compte
       </NavLink>
-      {modal && <SignupModal toggleModal={toggleModal} />}
+      {modal && (
+        <Modal
+          toggleModal={toggleModal}
+          modalMessage="Votre inscription a bien été prise en compte !"
+        />
+      )}
       <Footer />
     </div>
   );

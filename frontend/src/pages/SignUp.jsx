@@ -3,6 +3,7 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../assets/common.css";
 import "../assets/Signup.css";
+import Moment from "moment";
 import { MainContext } from "../contexts/MainContext";
 import signupImage from "../assets/img/signupImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
@@ -17,6 +18,7 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const signupDate = Moment().format("DD-MM-YYYY");
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -34,6 +36,7 @@ function SignUp() {
           email,
           phoneNumber,
           password,
+          signupDate,
         })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {
