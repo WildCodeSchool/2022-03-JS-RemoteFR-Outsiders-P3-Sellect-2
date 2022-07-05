@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Login.css";
 // import { MainContext } from "../contexts/MainContext";
@@ -15,12 +15,11 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/login/users`, {
-        email,
-        password,
-        withCredentials: true,
-      })
+    API.post(`/login/users`, {
+      email,
+      password,
+      withCredentials: true,
+    })
       .then((res) => {
         if (res.status === 200) {
           if (res.data.role === "ADMIN") {

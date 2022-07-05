@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Signup.css";
 import { MainContext } from "../contexts/MainContext";
@@ -27,14 +27,13 @@ function SignUp() {
         setPasswordError(false);
       }, 5000);
     } else {
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/auth/users`, {
-          firstname,
-          lastname,
-          email,
-          phoneNumber,
-          password,
-        })
+      API.post(`/auth/users`, {
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        password,
+      })
         .then((res) => {
           if (res.status === 200 || res.status === 201) {
             setIsFirstConnection(true);
