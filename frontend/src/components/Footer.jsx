@@ -30,8 +30,8 @@ export default function Footer() {
         </a>
       </div>
       <p className="copyright-un">
-        &copy;Copyright2022 - Tous Droits Réservés{" "}
-        <NavLink to="/mentions-legales">
+        &copy;Copyright 2022 - Tous Droits Réservés{" "}
+        <NavLink to="/mentions-legales" className="colorfooter">
           <span>- Mentions Légales</span>
         </NavLink>
       </p>

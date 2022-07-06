@@ -1,0 +1,119 @@
+.user_card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.usercard_details {
+  border: 1px solid #65bd60;
+  border-radius: 5px;
+  padding: 0.8em 0 0.8em 0.5em;
+  width: 95%;
+  height: auto;
+  background-color: var(--background-color);
+  color: black;
+  margin-top: 2em;
+}
+
+.usercard_details:nth-last-child(n) {
+  margin-bottom: 1em;
+}
+
+.usercard_summary {
+  font-weight: bold;
+  margin: -0.5em -0.5em 0;
+  padding: 0.5em;
+  font-size: 1.4rem;
+}
+
+.usercard_details:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: orange;
+  background-color: white;
+  transition: 0.6s;
+}
+
+.usercard_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: black;
+  font-size: 1.2rem;
+  width: 90%;
+  margin: auto;
+}
+
+.details_div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.details_div span {
+  font-weight: bold;
+  color: black;
+}
+
+.usercard_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
+.usercard_btn button {
+  border-radius: 20px;
+  padding: 0.4em;
+  margin-top: 1em;
+  font-size: calc(var(--font-size) * 0.6);
+}
+
+.usercard_btn button:hover {
+  cursor: pointer;
+}
+
+.usercard_btn .delete_btn {
+  background-color: orange;
+  color: white;
+  border: 1px solid orange;
+}
+
+.usercard_btn .add_btn {
+  color: #65bd60;
+  background-color: white;
+  border: 1px solid var(--navbar-color);
+}
+
+@media screen and (min-width: 750px) {
+  .user_card {
+    margin: 0 0 1em 0;
+  }
+
+  .usercard_details {
+    width: 60%;
+  }
+
+  .usercard_summary {
+    padding: 0.5em;
+    font-size: 1.6rem;
+  }
+
+  .usercard_div {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .details_div p {
+    font-size: 1.3rem;
+  }
+
+  .usercard_btn button {
+    margin: 1em 0 0 3em;
+    font-size: calc(var(--font-size) * 0.8);
+  }
+}

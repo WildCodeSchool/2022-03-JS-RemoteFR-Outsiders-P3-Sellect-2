@@ -15,18 +15,21 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    API.post(`/login/users`, {
-      email,
-      password,
-      withCredentials: true,
-    })
+    API.post(
+      `/login/users`,
+      {
+        email,
+        password,
+      },
+      { withCredentials: true }
+    )
       .then((res) => {
-        if (res.status === 200) {
-          if (res.data.role === "ADMIN") {
-            localStorage.setItem("isAdmin", true);
-          }
-          localStorage.setItem("userId", res.data.id);
-          localStorage.setItem("loggedIn", true);
+        localStorage.setItem("loggedIn", true);
+        localStorage.setItem("userId", res.data.id);
+        if (res.data.role === "ADMIN") {
+          localStorage.setItem("isAdmin", true);
+          navigate("/admin-dashboard");
+        } else {
           navigate("/mon-compte");
         }
       })

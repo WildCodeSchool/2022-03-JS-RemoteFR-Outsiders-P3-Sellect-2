@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import AdminDashboard from "@pages/AdminDashboard";
 import Page404 from "@pages/Page404";
 import UpdateUserAccount from "@pages/UpdateUserAccount";
+import UserFilesPage from "@pages/UserFilesPage";
 import Faq from "./pages/Faq";
 import UserHome from "./pages/UserHome";
 import Home from "./pages/Home";
@@ -32,6 +33,7 @@ function App() {
           path="/mon-compte/mettre-a-jour"
           element={<UpdateUserAccount />}
         />
+        <Route path="/mon-compte/fichiers" element={<UserFilesPage />} />
       </Routes>
     </div>
   );
