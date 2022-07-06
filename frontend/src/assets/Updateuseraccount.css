@@ -23,11 +23,14 @@
 @media screen and (min-width: 768px) {
   .updateimg {
     display: block;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .updateimg img {
     width: 480px;
     height: 300px;
-    margin: 0.5em 8em;
+    margin: 0.8em 5em;
   }
 }
