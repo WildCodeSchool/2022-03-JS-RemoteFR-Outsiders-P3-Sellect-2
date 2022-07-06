@@ -23,11 +23,11 @@
 @media screen and (min-width: 768px) {
   .updateimg {
     display: block;
-    justify-content: left;
   }
 
   .updateimg img {
     width: 480px;
     height: 300px;
+    margin: 0.5em 8em;
   }
 }

@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
 import change from "@assets/img/change.jpg";
+import infos from "@assets/img/infos.jpg";
 import API from "../services/api";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
@@ -44,6 +45,7 @@ function UpdateUserAccount() {
           <UpdateInfos setModal={setModal} />
           <div className="updateimg">
             <img src={change} alt="mise à jour mot de passe" />
+            <img src={infos} alt="mise à jour coordonnées" />
           </div>
           <UpdatePassword setModal={setModal} />
           {modal && (
