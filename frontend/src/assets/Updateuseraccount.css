@@ -10,3 +10,24 @@
   margin-top: 0.5rem;
   text-decoration: underline;
 }
+
+.updateimg {
+  display: none;
+}
+
+.updateimg img {
+  width: 180px;
+  height: 120px;
+}
+
+@media screen and (min-width: 768px) {
+  .updateimg {
+    display: block;
+    justify-content: left;
+  }
+
+  .updateimg img {
+    width: 480px;
+    height: 300px;
+  }
+}

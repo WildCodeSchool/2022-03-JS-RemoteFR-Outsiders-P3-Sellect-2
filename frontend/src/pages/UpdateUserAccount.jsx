@@ -5,6 +5,7 @@ import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
+import change from "@assets/img/change.jpg";
 import API from "../services/api";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
@@ -41,6 +42,9 @@ function UpdateUserAccount() {
         </h1>
         <div>
           <UpdateInfos setModal={setModal} />
+          <div className="updateimg">
+            <img src={change} alt="mise à jour mot de passe" />
+          </div>
           <UpdatePassword setModal={setModal} />
           {modal && (
             <Modal
