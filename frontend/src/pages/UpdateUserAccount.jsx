@@ -6,7 +6,8 @@ import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
 import API from "../services/api";
-import "@assets/Useraccount.css";
+import "@assets/Updateuseraccount.css";
+import "@assets/common.css";
 
 function UpdateUserAccount() {
   const userId = parseInt(localStorage.getItem("userId"), 10);

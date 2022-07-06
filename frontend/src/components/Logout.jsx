@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
-import "@assets/Useraccount.css";
+import "@assets/Logout.css";
 import "@assets/common.css";
 
 function Logout() {

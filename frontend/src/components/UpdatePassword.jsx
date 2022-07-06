@@ -1,6 +1,7 @@
 import API from "@services/api";
 import React, { useState } from "react";
-import "@assets/Useraccount.css";
+import "@assets/Updatepassword.css";
+import "@assets/common.css";
 
 function UpdatePassword({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);

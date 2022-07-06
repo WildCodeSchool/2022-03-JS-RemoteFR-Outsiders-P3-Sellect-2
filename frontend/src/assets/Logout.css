@@ -1,0 +1,10 @@
+.button-deconnectmember {
+  width: 10rem;
+  font-size: 1.2rem;
+  height: 2rem;
+  background-color: var(--connexion-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}

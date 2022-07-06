@@ -1,0 +1,42 @@
+.form-updateinfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 0.5em;
+  margin-bottom: 2em;
+  outline: 2px solid red;
+}
+
+.form-updateinfos input {
+  flex-direction: row;
+  margin-left: 1rem;
+  padding-left: 0.3rem;
+  width: 14rem;
+  font-size: 1rem;
+}
+
+.div-updateinfos label {
+  display: flex;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.form-updateinfos button {
+  margin: auto;
+  margin-top: 0.5rem;
+  height: 2.6rem;
+  width: 10rem;
+  font-size: 1.2rem;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .form-updateinfos {
+    flex-direction: row;
+    align-items: center;
+  }
+}

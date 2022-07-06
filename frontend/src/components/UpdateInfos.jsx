@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "@services/api";
+import "@assets/Updateinfos.css";
+import "@assets/common.css";
 
 function UpdateInfos({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
