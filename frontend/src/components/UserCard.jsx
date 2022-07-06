@@ -37,6 +37,9 @@ function UserCard({ users, setUsers, user }) {
             <p>
               <span>Date d'inscription:</span>&nbsp;{user.signupDate}
             </p>
+            <p>
+              <span>Code de parrainage:</span>&nbsp;{user.referralCode}
+            </p>
           </div>
           <div className="usercard_btn">
             <button type="button" onClick={handleDelete} className="delete_btn">

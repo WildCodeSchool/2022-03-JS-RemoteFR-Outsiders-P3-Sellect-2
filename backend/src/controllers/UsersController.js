@@ -78,7 +78,6 @@ class UsersController {
   static add = async (req, res) => {
     const { firstname, lastname, email, phoneNumber, password, signupDate } =
       req.body;
-    const hash = await bcrypt.hash(password, 10);
     const findByEmail = await models.user.findByEmail(email);
 
     try {
@@ -88,12 +87,38 @@ class UsersController {
           message: "Email already exists",
         });
       }
+      const hash = await bcrypt.hash(password, 10);
+
+      /**
+       * 
+       * const referralCode = () => {
+        const prenom = firstname.slice(0, 2);
+        const nom = lastname.slice(0, 2);
+        const tel = phoneNumber.slice(6);
+        const random = Math.floor(Math.random() * 10);
+
+        const refCode = `${nom} + ${prenom} + ${tel} + - + ${random}`;
+        return refCode;
+      };
+       */
+
+      const a = firstname.slice(0, 2);
+      const b = lastname.slice(0, 2);
+      const c = phoneNumber
+        .split("")
+        .map((el) => (el === " " ? "" : el))
+        .join("")
+        .slice(6, 10);
+      const d = Math.floor(Math.random() * 10000);
+      const referralCode = `${a + b + c}-${d}`;
+
       models.user
         .insert({
           firstname,
           lastname,
           email,
           phoneNumber,
+          referralCode,
           password: hash,
           role: "USER",
           signupDate,

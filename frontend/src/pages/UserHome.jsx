@@ -1,6 +1,7 @@
 import Footer from "@components/Footer";
 import Navbar from "@components/Navbar";
 import Modal from "@components/Modal";
+import ReferralCode from "@components/ReferralCode";
 // import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
@@ -36,6 +37,7 @@ function UserHome() {
     <div>
       <Navbar />
       <p>Bonjour</p>
+      <ReferralCode />
       <NavLink style={{ color: "blue" }} to="/mon-compte/mettre-a-jour">
         {" "}
         Mettre à jour mon compte
