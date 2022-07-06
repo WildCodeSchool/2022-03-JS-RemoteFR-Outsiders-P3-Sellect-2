@@ -33,7 +33,7 @@ function UpdateInfos({ setModal }) {
 
   return (
     <div>
-      <h2>Mettre à jour mes coordonnées:</h2>
+      <h2 className="updatedetails">Mettre à jour mes coordonnées:</h2>
       <form className="form-updateinfos" onSubmit={handleUpdateInfos}>
         <div className="div-updateinfos">
           <label htmlFor="email">

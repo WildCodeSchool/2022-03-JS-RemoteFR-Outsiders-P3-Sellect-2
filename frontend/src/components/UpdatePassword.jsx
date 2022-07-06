@@ -31,7 +31,7 @@ function UpdatePassword({ setModal }) {
 
   return (
     <div>
-      <h2>Changer mon mot de passe:</h2>
+      <h2 className="removepw">Changer mon mot de passe:</h2>
       <form className="form-updatepassword" onSubmit={handleUpdatePassword}>
         <div className="div-updatepassword">
           <input
