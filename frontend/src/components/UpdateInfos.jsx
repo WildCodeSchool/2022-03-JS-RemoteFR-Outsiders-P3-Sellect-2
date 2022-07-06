@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import API from "@services/api";
+import "@assets/Updateinfos.css";
+import "@assets/common.css";
 
 function UpdateInfos({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -31,19 +33,29 @@ function UpdateInfos({ setModal }) {
 
   return (
     <div>
-      <h2>Mettre à jour mes coordonnées:</h2>
-      <form onSubmit={handleUpdateInfos}>
-        <div>
-          <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            type="text"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
-          />
+      <h2 className="updatedetails">Mettre à jour mes coordonnées:</h2>
+      <form className="form-updateinfos" onSubmit={handleUpdateInfos}>
+        <div className="div-updateinfos">
+          <label htmlFor="email">
+            {" "}
+            Email :
+            <input
+              type="text"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </label>
+          <label htmlFor="phone">
+            {" "}
+            Téléphone :
+            <input
+              type="text"
+              id="phone"
+              value={phoneNumber}
+              onChange={(e) => setPhoneNumber(e.target.value)}
+            />
+          </label>
         </div>
         <button type="submit">Modifier</button>
       </form>

@@ -1,0 +1,76 @@
+.updatedetails {
+  margin-top: 1em;
+  font-size: 1.2em;
+}
+
+.form-updateinfos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+}
+
+.form-updateinfos input {
+  flex-direction: row;
+  margin-left: 1rem;
+  padding-left: 0.3rem;
+  width: 12rem;
+  font-size: 0.8rem;
+  text-align: center;
+  border: 1px solid orange;
+  border-radius: 10px;
+  padding: 0.2em;
+  cursor: pointer;
+}
+
+.div-updateinfos label {
+  display: flex;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.form-updateinfos button {
+  width: 8em;
+  font-size: 1rem;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.4em;
+  margin-top: 0.5em;
+}
+
+.form-updateinfos button:hover {
+  cursor: pointer;
+  border: 2px solid var(--navbar-color);
+  color: var(--navbar-color);
+  background-color: white;
+  transition: 0.5s;
+}
+
+@media screen and (min-width: 768px) {
+  .form-updateinfos {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1em;
+  }
+
+  .form-updateinfos input {
+    width: 16rem;
+    font-size: 1rem;
+    padding: 0.4em;
+  }
+
+  .form-updateinfos button {
+    margin-top: 0em;
+    margin-left: 2em;
+  }
+
+  .updatedetails {
+    margin-top: 1em;
+    font-size: 1.6em;
+  }
+}

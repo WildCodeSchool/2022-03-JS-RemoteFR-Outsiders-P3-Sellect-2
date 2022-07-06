@@ -1,0 +1,18 @@
+.button-deconnectmember {
+  width: 8rem;
+  font-size: 1rem;
+  height: 2rem;
+  background-color: var(--connexion-color);
+  border-radius: 20px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+.button-deconnectmember:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: orange;
+  background-color: white;
+  transition: 0.5s;
+}

@@ -1,5 +1,7 @@
 import API from "@services/api";
 import React, { useState } from "react";
+import "@assets/Updatepassword.css";
+import "@assets/common.css";
 
 function UpdatePassword({ setModal }) {
   const userId = parseInt(localStorage.getItem("userId"), 10);
@@ -29,9 +31,9 @@ function UpdatePassword({ setModal }) {
 
   return (
     <div>
-      <h2>Changer mon mot de passe:</h2>
-      <form onSubmit={handleUpdatePassword}>
-        <div>
+      <h2 className="removepw">Changer mon mot de passe:</h2>
+      <form className="form-updatepassword" onSubmit={handleUpdatePassword}>
+        <div className="div-updatepassword">
           <input
             type="password"
             required
