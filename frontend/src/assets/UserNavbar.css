@@ -1,0 +1,5 @@
+.container-usernavbar {
+  display: flex;
+  background-color: var(--navbar-color);
+  justify-content: space-between;
+}
