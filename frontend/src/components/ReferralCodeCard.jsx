@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import QRCode from "qrcode";
 
 function ReferralCodeCard({ user }) {
-  const [qrcode, setQrcode] = useState("");
-  const [url, setUrl] = useState("");
+  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const [qrcode, setQrcode] = useState(userId.ReferralCode);
+  const [url] = useState([]);
 
   const generateQR = () => {
     QRCode.toDataURL(
@@ -18,7 +19,6 @@ function ReferralCodeCard({ user }) {
       // eslint-disable-next-line no-shadow, consistent-return
       (err, url) => {
         if (err) return console.warn(err);
-        console.warn(url);
         setQrcode(url);
       }
     );
@@ -28,16 +28,15 @@ function ReferralCodeCard({ user }) {
     <div>
       <div>
         <p>
-          Bonjour &nbsp;{user.firstname}&nbsp;{user.lastname} Voici votre code
-          de parrainage:&nbsp;{user.referralCode}
+          Bonjour {`${user.firstname} ${user.lastname}`} Voici votre code de
+          parrainage:
         </p>
       </div>
       <div>
         <input
           type="text"
           placeholder="code parrainage"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
+          value={user.referralCode}
         />
       </div>
       <div>

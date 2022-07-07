@@ -3,31 +3,27 @@ import ReferralCodeCard from "@components/ReferralCodeCard";
 import API from "../services/api";
 
 function ReferralCode() {
-  const [users, setUsers] = useState([]);
+  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const [users, setUsers] = useState(userId);
 
-  const getUsers = () => {
-    API.get(`/users`)
-      .then((res) => setUsers(res.data))
+  const getOneUser = () => {
+    API.get(`/users/${users}`)
+      .then((res) => {
+        console.warn(res.data);
+        setUsers(res.data);
+      })
       .catch((err) => console.error(err));
   };
 
   useEffect(() => {
-    getUsers();
+    getOneUser();
   }, []);
 
   return (
     <div>
       <h2>Code Parrainage</h2>
 
-      <ul>
-        {users.map((user) => {
-          return (
-            <li key={user.id}>
-              <ReferralCodeCard user={user} />
-            </li>
-          );
-        })}
-      </ul>
+      <ReferralCodeCard user={users} />
     </div>
   );
 }
