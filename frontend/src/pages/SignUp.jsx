@@ -38,12 +38,10 @@ function SignUp() {
         signupDate,
       })
         .then((res) => {
-          if (res.status === 200 || res.status === 201) {
-            setIsFirstConnection(true);
-            localStorage.setItem("userId", res.data.id);
-            localStorage.setItem("loggedIn", true);
-            navigate("/mon-compte");
-          }
+          setIsFirstConnection(true);
+          localStorage.setItem("userId", res.data.id);
+          localStorage.setItem("loggedIn", true);
+          navigate("/mon-compte");
         })
         .catch((err) => {
           if (err) {
