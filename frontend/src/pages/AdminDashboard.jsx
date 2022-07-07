@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import UserCard from "@components/UserCard";
 import Navbar from "@components/Navbar";
 import Footer from "@components/Footer";
@@ -11,7 +11,7 @@ import "@assets/Admindasboard.css";
 function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [searchUser, setSearchUser] = useState("");
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { deleteModal, setDeleteModal } = useContext(MainContext);
 
   const getUsers = () => {
@@ -25,14 +25,12 @@ function AdminDashboard() {
   };
 
   useEffect(() => {
-    /**
-     * if (localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
+    if (localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
       navigate("/mon-compte");
     }
     if (!localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
       navigate("/");
     }
-     */
 
     getUsers();
   }, []);
