@@ -31,6 +31,7 @@ function AdminDashboard() {
     if (!localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
       navigate("/");
     }
+
     getUsers();
   }, []);
 
@@ -65,7 +66,8 @@ function AdminDashboard() {
                   .toLowerCase()
                   .includes(searchUser.toLowerCase()) ||
                 user.email.toLowerCase().includes(searchUser.toLowerCase()) ||
-                user.phoneNumber.includes(searchUser)
+                user.phoneNumber.includes(searchUser) ||
+                user.referralCode.includes(searchUser)
             )
             .map((user) => {
               return (
