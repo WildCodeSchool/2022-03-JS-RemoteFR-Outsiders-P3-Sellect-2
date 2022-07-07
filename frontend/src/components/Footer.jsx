@@ -29,18 +29,24 @@ export default function Footer() {
           <FaTwitter size="27" color="white" />
         </a>
       </div>
-      <p className="copyright-un">
-        &copy;Copyright 2022 - Tous Droits Réservés{" "}
-        <NavLink to="/mentions-legales" className="colorfooter">
-          <span>- Mentions Légales</span>
-        </NavLink>
-      </p>
-      <p className="copyright-deux">
-        Développé avec <FaHeart size="12" color="#B51942" /> par les{" "}
+      <div className="copyright-un">
+        <p>&copy;Copyright 2022 - Tous Droits Réservés </p>
+        <p>
+          <NavLink to="/mentions-legales" className="colorfooter">
+            - Mentions Légales
+          </NavLink>
+        </p>
+      </div>
+
+      <div className="copyright-deux">
+        <p>
+          {" "}
+          Développé avec <FaHeart size="12" color="#B51942" /> par les{" "}
+        </p>
         <NavLink to="/wilders" className="colorfooter">
           Wilders
         </NavLink>
-      </p>
+      </div>
     </footer>
   );
 }

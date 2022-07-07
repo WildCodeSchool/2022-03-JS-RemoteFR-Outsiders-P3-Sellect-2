@@ -16,35 +16,29 @@
   padding: 0 0.5em 0 0.5em;
 }
 
-.copyright-un {
-  width: 100%;
-  text-align: center;
-  color: white;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  font-size: 0.8rem;
-}
-
+.copyright-un,
 .copyright-deux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  text-align: center;
   color: white;
-  padding-bottom: 0.5em;
-  font-size: 0.8rem;
-}
-
-.footer .reseauxsociaux a {
-  margin: 0.2rem;
+  font-size: 0.7em;
+  padding-bottom: 0.4em;
 }
 
 .colorfooter {
   cursor: pointer;
   color: white;
   text-decoration: none;
+  font-size: 1.4em;
   font-weight: 900;
+  margin-left: 0.3em;
 }
 .colorfooter:hover {
   color: black;
+  transition: 0.6s;
 }
 
 /* CSS page Legal notice */
@@ -57,11 +51,6 @@
   display: flex;
   justify-content: center;
   margin-top: 2rem;
-}
-
-span {
-  font-weight: 900;
-  color: white;
 }
 
 .mentionslegales-div h2 {
@@ -112,4 +101,19 @@ section {
   margin: 1rem;
 
   text-align: center;
+}
+
+@media screen and (min-width: 760px) {
+  .reseauxsociaux a {
+    padding: 0 0.2em 0 0.2em;
+  }
+
+  .copyright-un,
+  .copyright-deux {
+    font-size: 1em;
+  }
+
+  .colorfooter {
+    font-size: 1.6em;
+  }
 }

@@ -1,21 +1,25 @@
 import Footer from "@components/Footer";
-import Navbar from "@components/Navbar";
 import Modal from "@components/Modal";
 import ReferralCode from "@components/ReferralCode";
+import UserNavbar from "@components/UserNavbar";
 // import axios from "axios";
-import React, { useContext, useEffect, useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
-import { MainContext } from "../contexts/MainContext";
+// import React, { useContext, useEffect, useState } from "react";
+// import { useNavigate } from "react-router-dom";
+import Calendly from "@components/Calendly";
+// import { MainContext } from "../contexts/MainContext";
 
 function UserHome() {
+  /** 
   const navigate = useNavigate();
   const {
     isFirstConnection,
     setIsFirstConnection,
-    /* userData,
-    setUserData, */
-  } = useContext(MainContext);
-  const [modal, setModal] = useState(false);
+     userData,
+    setUserData, 
+  } = useContext(MainContext); 
+
+
+  * const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
     setModal(false);
@@ -31,13 +35,15 @@ function UserHome() {
         setModal(true);
       }, 1000);
     }
-  }, []);
+  }, []); */
 
   return (
     <div>
-      <Navbar />
-      <p>Bonjour</p>
       <ReferralCode />
+      <UserNavbar />
+      <Calendly />
+      {/** 
+       * <p>Bonjour</p>
       <NavLink style={{ color: "blue" }} to="/mon-compte/mettre-a-jour">
         {" "}
         Mettre à jour mon compte
@@ -49,6 +55,7 @@ function UserHome() {
         />
       )}
       <Footer />
+      */}
     </div>
   );
 }
