@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import QRCode from "qrcode";
+import React from "react";
+// import QRCode from "qrcode";
 
-function ReferralCodeCard({ user }) {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+function ReferralCodeCard() {
+  return <div> have to delete</div>;
+  /** {
+   
+const userId = parseInt(localStorage.getItem("userId"), 10);
   const [qrcode, setQrcode] = useState(userId.ReferralCode);
   const [url] = useState([]);
 
@@ -38,22 +41,22 @@ function ReferralCodeCard({ user }) {
           placeholder="code parrainage"
           value={user.referralCode}
         />
+        <div className="btn-referralcode">
+          <button type="button" onClick={generateQR}>
+            Generer QRCode
+          </button>
+          {qrcode && (
+            <>
+              <img src={qrcode} alt="" />
+              <a href={qrcode} download="qrcode.png" style={{ color: "black" }}>
+                Telecharger
+              </a>
+            </>
+          )}
+        </div>
       </div>
-      <div>
-        <button type="button" onClick={generateQR}>
-          Generer QRCode
-        </button>
-        {qrcode && (
-          <>
-            <img src={qrcode} alt="" />
-            <a href={qrcode} download="qrcode.png" style={{ color: "black" }}>
-              Telecharger
-            </a>
-          </>
-        )}
-      </div>
-    </div>
-  );
+    </div> 
+  ); */
 }
 
 export default ReferralCodeCard;
