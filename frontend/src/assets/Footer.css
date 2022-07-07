@@ -38,6 +38,7 @@
 }
 .colorfooter:hover {
   color: black;
+  transition: 0.6s;
 }
 
 /* CSS page Legal notice */
