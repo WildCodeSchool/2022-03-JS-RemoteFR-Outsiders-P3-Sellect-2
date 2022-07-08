@@ -42,32 +42,34 @@ function ReferralCode() {
   }, []);
 
   return (
-    <div>
+    <div className="container-referralcode">
       <div>
-        <p>
-          Bonjour {`${users.firstname} ${users.lastname}`} Voici votre code de
-          parrainage:
-        </p>
+        <h1>
+          <span> Bonjour </span> {`${users.firstname} ${users.lastname}`}{" "}
+          <span> Voici votre code de parrainage:</span>
+        </h1>
       </div>
-      <div className="div-referralcode">
+      <div className="input-referralcode">
         <input
           type="text"
           placeholder="code parrainage"
           value={users.referralCode}
         />
-        <div className="btn-referralcode">
-          <button type="button" onClick={generateQR}>
-            Generer QRCode
-          </button>
-          {qrcode && (
-            <>
-              <img src={qrcode} alt="" />
-              <a href={qrcode} download="qrcode.png" style={{ color: "black" }}>
-                Telecharger
-              </a>
-            </>
-          )}
-        </div>
+      </div>
+      <div className="btn-referralcode">
+        <button type="button" onClick={generateQR}>
+          QRCode
+        </button>
+      </div>
+      <div className="qrcode">
+        {qrcode && (
+          <>
+            <img src={qrcode} alt="" />
+            <a href={qrcode} download="qrcode.png">
+              Telecharger
+            </a>
+          </>
+        )}
       </div>
     </div>
   );
