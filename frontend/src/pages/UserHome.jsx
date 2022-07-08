@@ -1,5 +1,3 @@
-import Footer from "@components/Footer";
-import Modal from "@components/Modal";
 import ReferralCode from "@components/ReferralCode";
 import UserNavbar from "@components/UserNavbar";
 // import axios from "axios";
@@ -39,8 +37,8 @@ function UserHome() {
 
   return (
     <div>
-      <ReferralCode />
       <UserNavbar />
+      <ReferralCode />
       <Calendly />
       {/** 
        * <p>Bonjour</p>
