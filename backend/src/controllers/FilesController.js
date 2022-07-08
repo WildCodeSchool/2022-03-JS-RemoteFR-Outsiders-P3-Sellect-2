@@ -14,13 +14,16 @@ class FilesController {
   };
 
   static read = (req, res) => {
-    const file = req.body;
-    file.userId = parseInt(req.params.id, 10);
-
+    // je récupére mon userId
+    // /files/users/:id
+    // /files/users/254 <- params.id
+    const userId = parseInt(req.params.id, 10);
+    // j'appel mon model pour avoir tout les fichiers
+    // dont l'id est userId
     models.file
-      .findByUserId(file)
+      .findByUserId(userId)
       .then((rows) => {
-        if (rows[0] == null) {
+        if (rows.length === 0) {
           res.sendStatus(404);
         } else {
           res.send(rows);

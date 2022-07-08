@@ -1,10 +1,22 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
 import "../assets/Usercard.css";
+import FileCard from "./FileCard";
+import AdminModalAudit from "./AdminModalAudit";
 
 function UserCard({ users, setUsers, user }) {
   const { setDeleteModal } = useContext(MainContext);
+  const [files, setFiles] = useState([]);
+  const [modal, setModal] = useState(false);
+
+  useEffect(() => {
+    API.get(`/files/users/${user.id}`)
+      .then((res) => {
+        setFiles(res.data);
+      })
+      .catch((err) => console.error(err));
+  }, []);
 
   const handleDelete = (e) => {
     // eslint-disable-next-line no-alert
@@ -42,12 +54,29 @@ function UserCard({ users, setUsers, user }) {
             <button type="button" onClick={handleDelete} className="delete_btn">
               Supprimer utilisateur
             </button>
-            <button type="button" onClick={handleDelete} className="add_btn">
+            <button
+              type="button"
+              onClick={() => setModal(true)}
+              className="add_btn"
+            >
               Envoyer document
             </button>
           </div>
         </div>
+        {files &&
+          files
+            .filter((file) => file.userId === user.id)
+            .reverse()
+            .map((file) => {
+              return (
+                <li key={file.id}>
+                  <FileCard file={file} />
+                </li>
+              );
+            })}
       </details>
+      <ul />
+      {modal && <AdminModalAudit setModal={setModal} user={user} />}
     </div>
   );
 }

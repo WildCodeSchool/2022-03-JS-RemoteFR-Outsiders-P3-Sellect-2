@@ -46,7 +46,6 @@ function AdminDashboard() {
           onChange={(e) => setSearchUser(e.target.value)}
         />
       </div>
-
       <ul>
         {users &&
           users
@@ -75,6 +74,7 @@ function AdminDashboard() {
               );
             })}
       </ul>
+      <ul />
       {deleteModal && (
         <Modal
           toggleModal={toggleModal}

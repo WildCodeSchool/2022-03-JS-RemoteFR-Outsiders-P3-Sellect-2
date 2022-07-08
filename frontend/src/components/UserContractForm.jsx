@@ -1,6 +1,7 @@
 import API from "@services/api";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Moment from "moment";
+import { MainContext } from "../contexts/MainContext";
 
 function UserContractForm() {
   const [file, setFile] = useState("");
@@ -8,6 +9,7 @@ function UserContractForm() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
   const [name, setName] = useState("");
   const sendDate = Moment().format("DD-MM-YYYY");
+  const { contracts, setContracts } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,8 +21,11 @@ function UserContractForm() {
       formData.append("category", category);
       formData.append("sendDate", sendDate);
       API.post("/upload/contracts", formData)
-        .then(() => {
-          // console.log(res.data);
+        .then((res) => {
+          setContracts(
+            ...contracts,
+            res.data /* {file, userId, name, category, sendDate} */ /* formData */
+          );
           setFile("");
           setCategory("");
           setName("");
@@ -33,9 +38,6 @@ function UserContractForm() {
       alert("Veuillez sélectionner un fichier.");
     }
   };
-  /* console.log(file)
-  console.log(category)
-  console.log(name) */
 
   return (
     <div>
