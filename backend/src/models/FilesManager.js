@@ -17,11 +17,9 @@ class FilesManager extends AbstractManager {
     );
   }
 
-  findByUserId(file) {
+  findByUserId(userId) {
     return this.connection
-      .query(`SELECT * FROM ${FilesManager.table} WHERE userId = ?`, [
-        file.userId,
-      ])
+      .query(`SELECT * FROM ${FilesManager.table} WHERE userId = ?`, [userId])
       .then((res) => res[0]);
   }
 

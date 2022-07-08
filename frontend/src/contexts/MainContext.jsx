@@ -6,6 +6,7 @@ function MainContextProvider({ children }) {
   const [isFirstConnection, setIsFirstConnection] = useState(false);
   const [userData, setUserData] = useState(null);
   const [deleteModal, setDeleteModal] = useState(false);
+  const [contracts, setContracts] = useState([]);
 
   return (
     <MainContext.Provider
@@ -16,6 +17,8 @@ function MainContextProvider({ children }) {
         setUserData,
         deleteModal,
         setDeleteModal,
+        contracts,
+        setContracts,
       }}
     >
       {children}

@@ -39,8 +39,8 @@ function UserHome() {
 
   return (
     <div>
-      <ReferralCode />
       <UserNavbar />
+      <ReferralCode />
       <Calendly />
       {/** 
        * <p>Bonjour</p>
