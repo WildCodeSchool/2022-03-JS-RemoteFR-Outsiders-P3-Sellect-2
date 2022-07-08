@@ -23,8 +23,10 @@ function UserContractForm() {
       API.post("/upload/contracts", formData)
         .then((res) => {
           setContracts(
-            ...contracts,
-            res.data /* {file, userId, name, category, sendDate} */ /* formData */
+            [
+              ...contracts,
+              res.data,
+            ] /* {file, userId, name, category, sendDate} */ /* formData */
           );
           setFile("");
           setCategory("");

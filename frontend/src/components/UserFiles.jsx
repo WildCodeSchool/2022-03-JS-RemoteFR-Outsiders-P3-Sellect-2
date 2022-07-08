@@ -19,8 +19,7 @@ function UserFiles() {
         );
       })
       .catch((err) => console.error(err));
-  }, []);
-  // console.log(contracts)
+  }, [contracts]);
 
   return (
     <div>
