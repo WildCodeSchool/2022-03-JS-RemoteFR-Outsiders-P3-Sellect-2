@@ -1,4 +1,4 @@
-h2 {
+.admindashboard-container h2 {
   color: #65bd60;
   font-size: calc(var(--font-size) * 1.6);
   text-align: center;

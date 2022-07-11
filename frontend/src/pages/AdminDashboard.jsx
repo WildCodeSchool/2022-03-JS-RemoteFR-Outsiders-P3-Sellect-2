@@ -35,7 +35,7 @@ function AdminDashboard() {
   }, []);
 
   return (
-    <div>
+    <div className="admindashboard-container">
       <Navbar />
       <h2>Liste Utilisateurs</h2>
       <div className="usersearch">
