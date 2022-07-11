@@ -7,7 +7,7 @@ import SponsorName from "./SponsorName";
 import UserFiles from "./UserFiles";
 
 function UserCard({ users, setUsers, user }) {
-  const { setDeleteModal, sponsor } = useContext(MainContext);
+  const { setDeleteModal } = useContext(MainContext);
   const [modal, setModal] = useState(false);
 
   const handleDelete = (e) => {
@@ -23,7 +23,7 @@ function UserCard({ users, setUsers, user }) {
           .catch((err) => console.error(err))
       : e.preventDefault();
   };
-  // console.log(sponsor)
+
   return (
     <div className="user_card">
       <details className="usercard_details">
@@ -43,11 +43,7 @@ function UserCard({ users, setUsers, user }) {
             </p>
             <SponsorName
               user={user.id}
-              sponsorMessage={
-                <p>
-                  <span>Parrain:</span>&nbsp;{sponsor}
-                </p>
-              }
+              admin={localStorage.getItem("isAdmin")}
             />
             <p>
               <span>Code de parrainage:</span>&nbsp;{user.referralCode}

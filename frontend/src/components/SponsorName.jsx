@@ -1,11 +1,9 @@
 import API from "@services/api";
-import React, { useState, useEffect /* , useContext */ } from "react";
-// import { MainContext } from "../contexts/MainContext";
+import React, { useState, useEffect } from "react";
 
-function SponsorName({ user, sponsorMessage }) {
+function SponsorName({ user, admin }) {
   const [sponsorCode, setSponsorCode] = useState("");
   const [sponsor, setSponsor] = useState("");
-  // const {sponsor, setSponsor} = useContext(MainContext);
   const [sponsorCodeReady, setSponsorCodeReady] = useState(false);
 
   useEffect(() => {
@@ -30,11 +28,14 @@ function SponsorName({ user, sponsorMessage }) {
   }
 
   return (
-    <span>
-      {sponsor && sponsorMessage}
-      {/* sponsor && localStorage.getItem("isAdmin") && <p><span>Parrain:</span>&nbsp;{sponsor}</p> */}
-      {/* sponsor && !localStorage.getItem("isAdmin") && <p>Vous êtes parrainé par {sponsor}.</p> */}
-    </span>
+    <div>
+      {sponsor && admin && (
+        <p>
+          <span>Parrain:</span>&nbsp;{sponsor}
+        </p>
+      )}
+      {sponsor && <p>Vous êtes parrainé par {sponsor}.</p>}
+    </div>
   );
 }
 
