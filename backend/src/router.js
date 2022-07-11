@@ -24,6 +24,7 @@ router.get("/users/:id", UsersController.read);
 router.delete("/users/:id", UsersController.delete);
 router.put("/infos/users/:id", UsersController.editInfos);
 router.put("/password/users/:id", UsersController.editPassword);
+router.get("/users/sponsors/:sponsorCode", UsersController.readSponsor);
 
 router.post("/upload/contracts", fileMiddleware, FilesController.addContract);
 router.post(

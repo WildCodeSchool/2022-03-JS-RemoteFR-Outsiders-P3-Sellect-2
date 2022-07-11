@@ -31,7 +31,6 @@ function AdminDashboard() {
     if (!localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
       navigate("/");
     }
-
     getUsers();
   }, []);
 

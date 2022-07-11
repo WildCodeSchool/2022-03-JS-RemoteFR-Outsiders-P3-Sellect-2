@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import QRCode from "qrcode";
 import API from "../services/api";
 import "@assets/ReferralCode.css";
+import SponsorName from "./SponsorName";
 
 function ReferralCode() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
   const [users, setUsers] = useState(userId);
-
   const [qrcode, setQrcode] = useState(userId.ReferralCode);
   const [url] = useState([]);
 
@@ -45,8 +45,12 @@ function ReferralCode() {
     <div className="container-referralcode">
       <div>
         <h1>
-          <span> Bonjour </span> {`${users.firstname} ${users.lastname}`}{" "}
-          <span> Voici votre code de parrainage:</span>
+          <span>Bonjour </span>
+          {`${users.firstname} ${users.lastname}. `}
+          <SponsorName user={userId} />
+          <span>
+            Envie de parrainer quelqu'un ? Voici votre code de parrainage:
+          </span>
         </h1>
       </div>
       <div className="input-referralcode">

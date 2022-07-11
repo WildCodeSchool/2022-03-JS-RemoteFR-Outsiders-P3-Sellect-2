@@ -5,13 +5,14 @@ class UsersManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UsersManager.table} (firstname, lastname, phoneNumber, email, password, referralCode, role, signupDate) values (?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${UsersManager.table} (firstname, lastname, phoneNumber, email, password, sponsorCode, referralCode, role, signupDate) values (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         user.firstname,
         user.lastname,
         user.phoneNumber,
         user.email,
         user.password,
+        user.sponsorCode,
         user.referralCode,
         user.role,
         user.signupDate,
@@ -45,6 +46,15 @@ class UsersManager extends AbstractManager {
       `update ${UsersManager.table} set password = ? where id = ?`,
       [user.password, user.id]
     );
+  }
+
+  findBySponsorCode(sponsorCode) {
+    return this.connection
+      .query(
+        `SELECT firstname, lastname FROM ${UsersManager.table} WHERE referralCode = ?`,
+        [sponsorCode]
+      )
+      .then((res) => res[0]);
   }
 }
 

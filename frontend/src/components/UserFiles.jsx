@@ -1,15 +1,16 @@
 import API from "@services/api";
 import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../contexts/MainContext";
-import FileStructureModel from "./FileStructureModel";
+import FileCard from "./FileCard";
 
-function UserFiles() {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
-  const { contracts, setContracts } = useContext(MainContext);
+function UserFiles({ user }) {
+  const [contracts, setContracts] = useState([]);
   const [auditReports, setAuditReports] = useState([]);
+  const { isContractSent, setIsContractSent } = useContext(MainContext);
+  const { isAuditReportSent, setIsAuditReportSent } = useContext(MainContext);
 
   useEffect(() => {
-    API.get(`/files/users/${userId}`)
+    API.get(`/files/users/${user}`)
       .then((res) => {
         setAuditReports(
           res.data.filter((el) => el.category.includes("Compte-rendu d'audit"))
@@ -17,9 +18,11 @@ function UserFiles() {
         setContracts(
           res.data.filter((el) => !el.category.includes("Compte-rendu d'audit"))
         );
+        setIsAuditReportSent(false);
+        setIsContractSent(false);
       })
       .catch((err) => console.error(err));
-  }, [contracts]);
+  }, [isAuditReportSent, isContractSent]);
 
   return (
     <div>
@@ -29,7 +32,7 @@ function UserFiles() {
           auditReports.reverse().map((auditReport) => {
             return (
               <li key={auditReport.id}>
-                <FileStructureModel file={auditReport} />
+                <FileCard file={auditReport} />
               </li>
             );
           })}
@@ -40,7 +43,7 @@ function UserFiles() {
           contracts.reverse().map((contract) => {
             return (
               <li key={contract.id}>
-                <FileStructureModel file={contract} />
+                <FileCard file={contract} />
               </li>
             );
           })}

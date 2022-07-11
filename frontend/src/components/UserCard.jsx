@@ -1,22 +1,14 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
 import "../assets/Usercard.css";
-import FileCard from "./FileCard";
 import AdminModalAudit from "./AdminModalAudit";
+import SponsorName from "./SponsorName";
+import UserFiles from "./UserFiles";
 
 function UserCard({ users, setUsers, user }) {
-  const { setDeleteModal } = useContext(MainContext);
-  const [files, setFiles] = useState([]);
+  const { setDeleteModal, sponsor } = useContext(MainContext);
   const [modal, setModal] = useState(false);
-
-  useEffect(() => {
-    API.get(`/files/users/${user.id}`)
-      .then((res) => {
-        setFiles(res.data);
-      })
-      .catch((err) => console.error(err));
-  }, []);
 
   const handleDelete = (e) => {
     // eslint-disable-next-line no-alert
@@ -31,7 +23,7 @@ function UserCard({ users, setUsers, user }) {
           .catch((err) => console.error(err))
       : e.preventDefault();
   };
-
+  // console.log(sponsor)
   return (
     <div className="user_card">
       <details className="usercard_details">
@@ -49,6 +41,14 @@ function UserCard({ users, setUsers, user }) {
             <p>
               <span>Date d'inscription:</span>&nbsp;{user.signupDate}
             </p>
+            <SponsorName
+              user={user.id}
+              sponsorMessage={
+                <p>
+                  <span>Parrain:</span>&nbsp;{sponsor}
+                </p>
+              }
+            />
             <p>
               <span>Code de parrainage:</span>&nbsp;{user.referralCode}
             </p>
@@ -66,17 +66,7 @@ function UserCard({ users, setUsers, user }) {
             </button>
           </div>
         </div>
-        {files &&
-          files
-            .filter((file) => file.userId === user.id)
-            .reverse()
-            .map((file) => {
-              return (
-                <li key={file.id}>
-                  <FileCard file={file} />
-                </li>
-              );
-            })}
+        <UserFiles user={user.id} />
       </details>
       <ul />
       {modal && <AdminModalAudit setModal={setModal} user={user} />}

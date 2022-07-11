@@ -6,7 +6,11 @@ function MainContextProvider({ children }) {
   const [isFirstConnection, setIsFirstConnection] = useState(false);
   const [userData, setUserData] = useState(null);
   const [deleteModal, setDeleteModal] = useState(false);
-  const [contracts, setContracts] = useState([]);
+  const [sponsor, setSponsor] = useState("");
+  const [isAuditReportSent, setIsAuditReportSent] = useState(false);
+  const [isContractSent, setIsContractSent] = useState(false);
+  const [isFileSent, setIsFileSent] = useState(false);
+  const [isFileModal, setIsFileModal] = useState(false);
 
   return (
     <MainContext.Provider
@@ -17,8 +21,16 @@ function MainContextProvider({ children }) {
         setUserData,
         deleteModal,
         setDeleteModal,
-        contracts,
-        setContracts,
+        sponsor,
+        setSponsor,
+        isAuditReportSent,
+        setIsAuditReportSent,
+        isContractSent,
+        setIsContractSent,
+        isFileSent,
+        setIsFileSent,
+        isFileModal,
+        setIsFileModal,
       }}
     >
       {children}
