@@ -118,11 +118,11 @@
   }
 
   .bloc1_right img {
-    width: 80%;
+    width: 60%;
     height: 50%;
   }
 
-  .btn {
+  .bloc1_left .btn {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
