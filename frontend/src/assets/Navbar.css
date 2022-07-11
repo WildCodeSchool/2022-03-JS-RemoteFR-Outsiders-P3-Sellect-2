@@ -183,20 +183,4 @@ a {
   .btn-div {
     flex-direction: row;
   }
-
-  /* nav .items:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    border: 1px solid orange;
-    border-radius: 20px;
-    padding: 0.4em;
-  } */
-
-  nav a:hover {
-    cursor: pointer;
-    transition: 0.5s;
-    border: 1px solid orange;
-    border-radius: 20px;
-    padding: 0.5em;
-  }
 }
