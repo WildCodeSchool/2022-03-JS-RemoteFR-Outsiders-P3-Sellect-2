@@ -76,9 +76,25 @@ class UsersController {
   };
 
   static add = async (req, res) => {
-    const { firstname, lastname, email, phoneNumber, password, signupDate } =
-      req.body;
+    const {
+      firstname,
+      lastname,
+      email,
+      phoneNumber,
+      sponsorCode,
+      password,
+      signupDate,
+    } = req.body;
     const findByEmail = await models.user.findByEmail(email);
+    const hash = await bcrypt.hash(password, 10);
+    const referralCode = `${firstname.slice(0, 2)}${lastname.slice(
+      0,
+      2
+    )}${phoneNumber
+      .split("")
+      .map((el) => (el === " " ? "" : el))
+      .join("")
+      .slice(6)}-${Math.floor(Math.random() * 10000)}`;
 
     try {
       if (findByEmail.length > 0) {
@@ -87,30 +103,6 @@ class UsersController {
           message: "Email already exists",
         });
       }
-      const hash = await bcrypt.hash(password, 10);
-
-      /**
-       * 
-       * const referralCode = () => {
-        const prenom = firstname.slice(0, 2);
-        const nom = lastname.slice(0, 2);
-        const tel = phoneNumber.slice(6);
-        const random = Math.floor(Math.random() * 10);
-
-        const refCode = `${nom} + ${prenom} + ${tel} + - + ${random}`;
-        return refCode;
-      };
-       */
-
-      const a = firstname.slice(0, 2);
-      const b = lastname.slice(0, 2);
-      const c = phoneNumber
-        .split("")
-        .map((el) => (el === " " ? "" : el))
-        .join("")
-        .slice(6, 10);
-      const d = Math.floor(Math.random() * 10000);
-      const referralCode = `${a + b + c}-${d}`;
 
       models.user
         .insert({
@@ -118,6 +110,7 @@ class UsersController {
           lastname,
           email,
           phoneNumber,
+          sponsorCode,
           referralCode,
           password: hash,
           role: "USER",
@@ -202,6 +195,24 @@ class UsersController {
       .delete(req.params.id)
       .then(() => {
         res.status(204).json({ message: "User deleted" });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static readSponsor = (req, res) => {
+    const { sponsorCode } = req.params;
+
+    models.user
+      .findBySponsorCode(sponsorCode)
+      .then(([rows]) => {
+        if (rows == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
       })
       .catch((err) => {
         console.error(err);

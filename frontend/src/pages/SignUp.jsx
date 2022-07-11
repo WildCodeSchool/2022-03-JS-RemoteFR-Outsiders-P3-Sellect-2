@@ -18,6 +18,7 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [sponsorCode, setSponsorCode] = useState("");
   const signupDate = Moment().format("DD-MM-YYYY");
   const navigate = useNavigate();
 
@@ -36,6 +37,7 @@ function SignUp() {
         phoneNumber,
         password,
         signupDate,
+        sponsorCode,
       })
         .then((res) => {
           setIsFirstConnection(true);
@@ -91,6 +93,12 @@ function SignUp() {
             value={phoneNumber}
             required
             onChange={(e) => setPhoneNumber(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Code de parrainage"
+            value={sponsorCode}
+            onChange={(e) => setSponsorCode(e.target.value)}
           />
           <input
             type="password"

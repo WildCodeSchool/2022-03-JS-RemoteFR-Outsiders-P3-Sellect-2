@@ -9,7 +9,8 @@ function UserContractForm() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
   const [name, setName] = useState("");
   const sendDate = Moment().format("DD-MM-YYYY");
-  const { contracts, setContracts } = useContext(MainContext);
+  const { setIsContractSent } = useContext(MainContext);
+  const { setIsFileModal } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,13 +22,9 @@ function UserContractForm() {
       formData.append("category", category);
       formData.append("sendDate", sendDate);
       API.post("/upload/contracts", formData)
-        .then((res) => {
-          setContracts(
-            [
-              ...contracts,
-              res.data,
-            ] /* {file, userId, name, category, sendDate} */ /* formData */
-          );
+        .then(() => {
+          setIsContractSent(true);
+          setIsFileModal(true);
           setFile("");
           setCategory("");
           setName("");

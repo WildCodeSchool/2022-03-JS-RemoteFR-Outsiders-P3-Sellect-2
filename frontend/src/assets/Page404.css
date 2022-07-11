@@ -1,0 +1,33 @@
+.page-404 {
+  height: 100vh;
+  position: relative;
+  background-color: var(--navbar-color);
+  color: white !important;
+}
+
+.page-404-text {
+  color: white !important;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--navbar-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-404-text h2 {
+  color: white !important;
+}
+
+#page-404-link:hover {
+  color: black;
+  transition: 0.5s;
+}
+
+#page-404-link {
+  padding-right: 2rem;
+}

@@ -1,16 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Moment from "moment";
 import API from "@services/api";
+import { MainContext } from "../contexts/MainContext";
 
 function AdminModalAudit({ setModal, user }) {
   const [file, setFile] = useState("");
   const [name, setName] = useState("");
-  const [fileSent, setFileSent] = useState(false);
+  const [isFileSent, setIsFileSent] = useState(false);
   const sendDate = Moment().format("DD-MM-YYYY");
+  const { setIsAuditReportSent } = useContext(MainContext);
 
   const closeModal = () => {
     setModal(false);
-    setFileSent(false);
+    setIsFileSent(false);
   };
 
   const handleSubmit = (e) => {
@@ -24,7 +26,8 @@ function AdminModalAudit({ setModal, user }) {
       .then(() => {
         setFile("");
         setName("");
-        setFileSent(true);
+        setIsFileSent(true);
+        setIsAuditReportSent(true);
       })
       .catch((err) => {
         console.error(err);
@@ -45,7 +48,7 @@ function AdminModalAudit({ setModal, user }) {
           </button>
         </div>
         <div className="modal-message">
-          {fileSent ? (
+          {isFileSent ? (
             <p>Votre compte-rendu d'audit a bien été envoyé.</p>
           ) : (
             <form onSubmit={handleSubmit}>
