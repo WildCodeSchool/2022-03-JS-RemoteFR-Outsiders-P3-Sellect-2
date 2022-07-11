@@ -75,10 +75,10 @@ export default function Faq() {
       </details>
 
       <details>
-        <summary>Tarif ?</summary>
+        <summary>Quel est le montant d'un audit ?</summary>
         <p>
           Le montant de l’audit est de 65 euros TTC à régler dès la prise de
-          rendez-vous. Celui-ci pourra être remboursée sans condition en cas
+          rendez-vous. Celui-ci pourra être remboursé sans condition en cas
           d’annulation.{" "}
         </p>
       </details>
