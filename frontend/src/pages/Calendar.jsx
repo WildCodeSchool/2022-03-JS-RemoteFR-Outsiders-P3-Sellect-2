@@ -55,7 +55,6 @@ export default function Calendar() {
               pour que vous retrouviez un réel pouvoir d'achat.
             </p>
           </div>
-
           <div className="illustration">
             <img src={audit} alt="photo_audit" />
           </div>

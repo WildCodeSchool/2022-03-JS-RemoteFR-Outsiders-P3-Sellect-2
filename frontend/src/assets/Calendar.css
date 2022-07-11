@@ -67,8 +67,8 @@
   .instruction1,
   .instruction2,
   .instruction3 {
-    width: 40%;
-    height: 62vh;
+    width: 42%;
+    align-self: stretch;
   }
 
   .instruction1 p,

@@ -26,7 +26,7 @@ export default function Bloc1() {
               Je réserve mon audit
             </button>
           </Link>
-          <Link to="/parrainage">
+          <a href="#parrainage">
             <button
               type="button"
               className="parrainage"
@@ -34,7 +34,7 @@ export default function Bloc1() {
             >
               Je deviens apporteur d'affaires
             </button>
-          </Link>
+          </a>
         </div>
       </div>
       <div className="bloc1_right">
