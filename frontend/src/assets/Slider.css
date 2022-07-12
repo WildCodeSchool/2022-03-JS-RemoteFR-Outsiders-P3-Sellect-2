@@ -1,7 +1,7 @@
 .carousel-root {
   width: 100%;
   margin: auto;
-  height: 54vh;
+  height: 50vh;
 }
 
 .carousel-div {
@@ -31,13 +31,11 @@
 
 .carousel .slide img {
   width: 90%;
-  position: absolute;
-  bottom: 0.6rem;
 }
 
 .carousel .thumbs {
   position: absolute;
-  bottom: 0;
+  bottom: -2rem;
   width: 90%;
   margin: auto;
   display: flex;
@@ -81,7 +79,7 @@
 
 .carousel .control-dots {
   position: absolute;
-  bottom: 4rem;
+  bottom: 3rem;
   margin: 10px 0;
   color: black;
 
@@ -96,11 +94,27 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 450px) {
+@media screen and (min-width: 390px) {
   .carousel-root {
     height: 31rem;
     padding-top: 4vh;
-    height: 71vh;
+    height: 51vh;
+  }
+
+  .carousel .overlay a {
+    height: 2rem;
+    padding-bottom: 0px;
+  }
+
+  .carousel .thumbs {
+    height: 14vh;
+  }
+}
+@media screen and (min-width: 768px) {
+  .carousel-root {
+    height: 31rem;
+    padding-top: 4vh;
+    height: 93vh;
   }
 
   .carousel .slide img {
@@ -110,7 +124,7 @@
   }
 
   .carousel .slider-wrapper.axis-horizontal .slider .slide {
-    height: 34rem;
+    height: 35rem;
   }
 
   .img-carousel-div {
@@ -119,12 +133,12 @@
 
   .carousel .thumbs {
     position: absolute;
-    bottom: 5rem;
+    bottom: -3rem;
   }
 
   .carousel .control-dots {
     position: absolute;
-    top: 22rem;
+    top: 30rem;
   }
 
   .carousel .overlay {
@@ -132,22 +146,22 @@
   }
   .carousel .overlay h2 {
     font-size: xx-large;
+    margin-top: 8rem;
   }
 
   .carousel .overlay a {
     font-size: xx-large;
   }
-}
 
-@media all and (device-width: 768px) {
-  .carousel-div .img1 {
-    height: 22vh;
-  }
-  .carousel-root {
-    height: 52vh;
+  .carousel-div h1 {
+    position: relative;
+    top: 6rem;
+    right: 17rem;
+    font-size: calc(var(--font-size) * 2);
   }
 }
 
+/** 
 @media all and (device-width: 540px) {
   .carousel-root {
     height: 70vh;
@@ -168,7 +182,7 @@
     height: 11rem;
   }
   .carousel-root {
-    height: 40vh;
+    height: 43vh;
   }
 }
 
@@ -178,9 +192,11 @@
   }
 }
 
+*/
+
 @media all and (device-width: 1024px) {
   .carousel-root {
-    height: 85vh;
+    height: 112vh;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -194,7 +210,7 @@
   .carousel-root {
     margin: 2em 0;
     width: 75%;
-    height: 50vh;
+    height: 90vh;
   }
 
   .carousel-div {
@@ -207,6 +223,8 @@
   .carousel-div h1 {
     margin: 1.2em;
     font-size: calc(var(--font-size) * 2.2);
+    position: inherit;
+    margin-top: 7rem;
   }
 
   .img-carousel-div {
