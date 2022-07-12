@@ -102,6 +102,13 @@ class FilesController {
         res.sendStatus(500);
       });
   };
+
+  static download = (req, res) => {
+    // je récupère le params passer par l'url
+    const { name } = req.params;
+    // je renvoi via un status code 200 mon document.
+    res.status(200).download(`${__dirname}/../../uploads/${name}`, name);
+  };
 }
 
 module.exports = FilesController;

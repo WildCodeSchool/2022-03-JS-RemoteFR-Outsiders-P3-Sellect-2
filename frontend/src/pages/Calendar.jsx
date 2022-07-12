@@ -1,15 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "@assets/common.css";
 import "@assets/Calendar.css";
 import audit from "@assets/img/audit.svg";
-import Navbar from "@components/Navbar";
+import UserNavbar from "@components/UserNavbar";
 import Calendly from "@components/Calendly";
 import Footer from "@components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Calendar() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("loggedIn")) {
+      navigate("/connexion");
+    }
+  });
+
   return (
     <div>
-      <Navbar />
+      <UserNavbar />
       <section className="calendar_container">
         <div className="title">
           <h1>PRENEZ RENDEZ-VOUS POUR VOTRE AUDIT !</h1>

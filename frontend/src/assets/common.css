@@ -30,6 +30,7 @@
   color: var(--navbar-color);
   font-weight: 900;
   font-size: 1.2rem;
+  margin-left: 0.4rem;
 }
 
 .link-other-pages:hover {

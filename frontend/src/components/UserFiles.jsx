@@ -29,24 +29,28 @@ function UserFiles({ user }) {
       {auditReports.length !== 0 && <h2>Compte-rendus d'audits</h2>}
       <ul>
         {auditReports &&
-          auditReports.reverse().map((auditReport) => {
-            return (
-              <li key={auditReport.id}>
-                <FileCard file={auditReport} />
-              </li>
-            );
-          })}
+          auditReports
+            .map((auditReport) => {
+              return (
+                <li key={auditReport.id}>
+                  <FileCard file={auditReport} />
+                </li>
+              );
+            })
+            .reverse()}
       </ul>
       {contracts.length !== 0 && <h2>Contrats</h2>}
       <ul>
         {contracts &&
-          contracts.reverse().map((contract) => {
-            return (
-              <li key={contract.id}>
-                <FileCard file={contract} />
-              </li>
-            );
-          })}
+          contracts
+            .map((contract) => {
+              return (
+                <li key={contract.id}>
+                  <FileCard file={contract} />
+                </li>
+              );
+            })
+            .reverse()}
       </ul>
     </div>
   );

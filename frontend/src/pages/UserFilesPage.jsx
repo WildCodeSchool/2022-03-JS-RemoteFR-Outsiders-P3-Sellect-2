@@ -1,6 +1,6 @@
 import Footer from "@components/Footer";
 import Modal from "@components/Modal";
-import Navbar from "@components/Navbar";
+import UserNavbar from "@components/UserNavbar";
 import UserContractForm from "@components/UserContractForm";
 import UserFiles from "@components/UserFiles";
 import React, { useEffect, useContext } from "react";
@@ -24,7 +24,7 @@ function UserFilesPage() {
 
   return (
     <div>
-      <Navbar />
+      <UserNavbar />
       <UserContractForm />
       <UserFiles user={userId} />
       <Footer />

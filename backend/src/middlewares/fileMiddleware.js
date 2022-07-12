@@ -11,7 +11,7 @@ const fileMiddleware = (req, res, next) => {
   const form = new formidable.IncomingForm({
     uploadDir: UPLOADS,
     keepExtensions: true,
-    multiple: true,
+    multiples: true,
   });
 
   form.parse(req, (err, fields, files) => {

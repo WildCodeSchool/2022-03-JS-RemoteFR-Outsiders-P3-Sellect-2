@@ -46,7 +46,7 @@
 
 .signup-form-container p {
   padding-top: 5rem;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 .signup-container input {
@@ -109,6 +109,10 @@
   /*transform: translate(-50%, -50%);*/
   font-size: 2rem;
   line-height: 3.7rem;
+}
+
+.link-container {
+  display: flex;
 }
 
 @media screen and (max-width: 768px) {
