@@ -1,0 +1,59 @@
+.filecard,
+.filecard_details {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filecard_details {
+  border: 1px solid #65bd60;
+  border-radius: 5px;
+  padding: 0.8em 0 0.8em 0.4em;
+  width: 95%;
+  height: auto;
+  background-color: var(--grey-background);
+  color: black;
+  margin-top: 1em;
+}
+
+.filecard_details:nth-last-child(n) {
+  margin-bottom: 1em;
+}
+
+.filecard_summary {
+  font-weight: bold;
+  margin: -0.5em -0;
+  font-size: 1em;
+}
+
+.filecard_details p {
+  margin-bottom: 1em;
+}
+
+.filecard_link {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.filecard_link a {
+  font-size: 0.8em;
+  color: #65bd60;
+  margin: 0;
+  padding: 0;
+}
+
+.filecard_link a:hover {
+  color: orange;
+}
+
+@media screen and (min-width: 750px) {
+  .filecard_details {
+    width: 70%;
+  }
+
+  .filecard_link a {
+    font-size: 1em;
+  }
+}
