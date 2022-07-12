@@ -4,7 +4,6 @@ import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Filecard.css";
 
-
 function FileCard({ file }) {
   /**
    * Cette fonction permet de téléchager un document depuis le backend
@@ -36,9 +35,9 @@ function FileCard({ file }) {
         )}
         <p>Date d'envoi:&nbsp;{file.sendDate}</p>
         <div className="filecard_link">
-      <button type="button" onClick={() => handleDownload()}>
-        Télécharger
-      </button>
+          <button type="button" onClick={() => handleDownload()}>
+            Télécharger
+          </button>
         </div>
       </details>
     </div>
