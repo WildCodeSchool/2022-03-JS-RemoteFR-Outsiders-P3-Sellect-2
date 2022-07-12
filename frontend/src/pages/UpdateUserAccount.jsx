@@ -39,7 +39,7 @@ function UpdateUserAccount() {
       <UserNavbar />
       <div className="div-updateuseraccount">
         <h1 className="title-updateuseraccount">
-          {firstname}&nbsp;{lastname}
+          {firstname} {lastname}
         </h1>
         <div>
           <UpdateInfos setModal={setModal} />
