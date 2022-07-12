@@ -7,7 +7,6 @@
   justify-content: center;
   align-items: center;
   position: relative;
-
 }
 
 .footer .reseauxsociaux {
@@ -118,11 +117,13 @@ section {
 @media screen and (min-width: 760px) {
   .footer .reseauxsociaux a {
     padding: 0 1em 0 1em;
+  }
+
   .footer {
     top: 12rem;
     position: relative;
   }
-  
+
   .reseauxsociaux a {
     padding: 0 0.2em 0 0.2em;
   }
@@ -137,7 +138,6 @@ section {
     font-size: 1.2em;
   }
 }
-
 
 @media screen and (min-width: 1280px) {
   .footer {

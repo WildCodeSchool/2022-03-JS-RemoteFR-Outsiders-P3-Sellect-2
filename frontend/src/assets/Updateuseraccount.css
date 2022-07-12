@@ -22,7 +22,6 @@
 }
 
 @media screen and (max-width: 375px) {
-
   .div-updateuseraccount {
     height: 79vh;
     text-align: center;
@@ -30,7 +29,6 @@
 }
 
 @media screen and (min-width: 768px) {
-
   .div-updateuseraccount {
     height: auto;
     text-align: center;
@@ -48,5 +46,3 @@
     margin: 0.8em 5em;
   }
 }
-
-
