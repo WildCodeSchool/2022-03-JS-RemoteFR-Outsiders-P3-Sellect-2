@@ -2,6 +2,8 @@ import API from "@services/api";
 import React, { useContext, useEffect, useState } from "react";
 import { MainContext } from "../contexts/MainContext";
 import FileCard from "./FileCard";
+import "../assets/common.css";
+import "../assets/Userfiles.css";
 
 function UserFiles({ user }) {
   const [contracts, setContracts] = useState([]);
@@ -25,7 +27,7 @@ function UserFiles({ user }) {
   }, [isAuditReportSent, isContractSent]);
 
   return (
-    <div>
+    <div className="userfile">
       {auditReports.length !== 0 && <h2>Compte-rendus d'audits</h2>}
       <ul>
         {auditReports &&

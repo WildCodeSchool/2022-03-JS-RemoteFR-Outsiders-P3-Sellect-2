@@ -75,10 +75,11 @@ export default function Faq() {
       </details>
 
       <details>
-        <summary>L’abonnement ?</summary>
+        <summary>Quel est le montant d'un audit ?</summary>
         <p>
-          Le montant de l’abonnement est de 120 € sous forme de cotisation
-          mensuel soit 10 €/ mois.{" "}
+          Le montant de l’audit est de 65 euros TTC à régler dès la prise de
+          rendez-vous. Celui-ci pourra être remboursé sans condition en cas
+          d’annulation.{" "}
         </p>
       </details>
       <div className="contact">

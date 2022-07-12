@@ -1,23 +1,30 @@
 .footer {
   background-color: var(--navbar-color);
-  bottom: 0;
+  top: 6rem;
   width: 100%;
-  /*position: fixed;*/
-}
-
-.reseauxsociaux {
-  padding-top: 8px;
-  margin: 0.3rem;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  position: relative;
+
 }
 
-.reseauxsociaux a {
+.footer .reseauxsociaux {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.5em;
+}
+
+.footer .reseauxsociaux a {
   padding: 0 0.5em 0 0.5em;
+  margin: 0;
 }
 
-.copyright-un,
-.copyright-deux {
+.footer .copyright-un,
+.footer .copyright-deux {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -25,17 +32,22 @@
   width: 100%;
   color: white;
   font-size: 0.7em;
-  padding-bottom: 0.4em;
+  padding-bottom: 0.2em;
 }
 
-.colorfooter {
+.copyright-un .colorfooter,
+.copyright-deux .colorfooter {
   cursor: pointer;
   color: white;
-  text-decoration: none;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 900;
   margin-left: 0.3em;
 }
+
+.colorfooter {
+  padding-bottom: 0;
+}
+
 .colorfooter:hover {
   color: black;
   transition: 0.6s;
@@ -104,16 +116,32 @@ section {
 }
 
 @media screen and (min-width: 760px) {
+  .footer .reseauxsociaux a {
+    padding: 0 1em 0 1em;
+  .footer {
+    top: 12rem;
+    position: relative;
+  }
+  
   .reseauxsociaux a {
     padding: 0 0.2em 0 0.2em;
   }
 
-  .copyright-un,
-  .copyright-deux {
-    font-size: 1em;
+  .footer .copyright-un,
+  .footer .copyright-deux {
+    font-size: 1.4em;
   }
 
-  .colorfooter {
-    font-size: 1.6em;
+  .copyright-un .colorfooter,
+  .copyright-deux .colorfooter {
+    font-size: 1.2em;
+  }
+}
+
+
+@media screen and (min-width: 1280px) {
+  .footer {
+    position: relative;
+    top: 12rem;
   }
 }

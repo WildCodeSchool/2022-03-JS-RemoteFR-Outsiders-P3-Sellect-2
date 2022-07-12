@@ -23,9 +23,9 @@ function HomeGoals() {
             produits et services évoluent chaque jour.
           </p>
           <p>
-            L’association souhaite faire maintenir à ses membres un pouvoir
-            d’achat <span>le plus optimisé possible</span>, le tout en proposant
-            une refonte globale des contrats.
+            L’association souhaite que ses membres conservent un pouvoir d’achat{" "}
+            <span>le plus optimisé possible</span>, le tout en proposant une
+            refonte globale des contrats.
           </p>
           <p>
             Je propose également des <span>outils et astuces</span> qui

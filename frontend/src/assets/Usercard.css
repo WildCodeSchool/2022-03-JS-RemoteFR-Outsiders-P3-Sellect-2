@@ -27,14 +27,6 @@
   font-size: 1.4rem;
 }
 
-.usercard_details:hover {
-  cursor: pointer;
-  color: orange;
-  border-color: orange;
-  background-color: white;
-  transition: 0.6s;
-}
-
 .usercard_div {
   display: flex;
   flex-direction: column;

@@ -28,7 +28,7 @@ function UserCard({ users, setUsers, user }) {
     <div className="user_card">
       <details className="usercard_details">
         <summary className="usercard_summary">
-          Nom:&nbsp;{user.firstname}&nbsp;{user.lastname}
+          &nbsp;{user.firstname}&nbsp;{user.lastname}
         </summary>
         <div className="usercard_div">
           <div className="details_div">
@@ -64,7 +64,6 @@ function UserCard({ users, setUsers, user }) {
         </div>
         <UserFiles user={user.id} />
       </details>
-      <ul />
       {modal && <AdminModalAudit setModal={setModal} user={user} />}
     </div>
   );

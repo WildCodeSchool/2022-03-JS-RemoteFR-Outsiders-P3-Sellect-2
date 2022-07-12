@@ -1,7 +1,8 @@
 .div-updateuseraccount {
   margin: auto;
   width: fit-content;
-  height: 75vh;
+  padding-top: 3rem;
+  max-height: 83vh;
 }
 
 .title-updateuseraccount {
@@ -20,17 +21,32 @@
   height: 120px;
 }
 
+@media screen and (max-width: 375px) {
+
+  .div-updateuseraccount {
+    height: 79vh;
+    text-align: center;
+  }
+}
+
 @media screen and (min-width: 768px) {
+
+  .div-updateuseraccount {
+    height: auto;
+    text-align: center;
+  }
   .updateimg {
-    display: block;
+    display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
   }
 
   .updateimg img {
-    width: 480px;
-    height: 300px;
+    width: 20rem;
+    height: 9rem;
     margin: 0.8em 5em;
   }
 }
+
+

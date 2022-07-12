@@ -1,6 +1,9 @@
 import React from "react";
 import download from "downloadjs";
 import API from "../services/api";
+import "../assets/common.css";
+import "../assets/Filecard.css";
+
 
 function FileCard({ file }) {
   /**
@@ -23,15 +26,21 @@ function FileCard({ file }) {
   };
 
   return (
-    <div>
-      <p>Nom:&nbsp;{file.name}</p>
-      {file.category !== "Compte-rendu d'audit" && (
-        <p>Catégorie:&nbsp;{file.category}</p>
-      )}
-      <p>Date d'envoi:&nbsp;{file.sendDate}</p>
+    <div className="filecard">
+      <details className="filecard_details">
+        <summary className="filecard_summary">
+          <p>&nbsp;{file.name}</p>
+        </summary>
+        {file.category !== "Compte-rendu d'audit" && (
+          <p>Catégorie:&nbsp;{file.category}</p>
+        )}
+        <p>Date d'envoi:&nbsp;{file.sendDate}</p>
+        <div className="filecard_link">
       <button type="button" onClick={() => handleDownload()}>
         Télécharger
       </button>
+        </div>
+      </details>
     </div>
   );
 }

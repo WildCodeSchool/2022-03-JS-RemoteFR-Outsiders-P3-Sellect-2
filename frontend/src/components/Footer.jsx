@@ -41,7 +41,7 @@ export default function Footer() {
       <div className="copyright-deux">
         <p>
           {" "}
-          Développé avec <FaHeart size="12" color="#B51942" /> par les{" "}
+          Développé avec <FaHeart size="14" color="#B51942" /> par les{" "}
         </p>
         <NavLink to="/wilders" className="colorfooter">
           Wilders

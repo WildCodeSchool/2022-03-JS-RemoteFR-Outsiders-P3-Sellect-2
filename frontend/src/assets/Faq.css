@@ -84,13 +84,13 @@ details p ul {
     margin: 0 0 1em 0;
   }
 
-  .faq-div > h1 {
-    margin: 1em;
-    text-align: left;
-    font-size: calc(var(--font-size) * 2);
+  .faq-div h1 {
+    margin-bottom: 1em;
+    font-size: calc(var(--font-size) * 2.2);
+    margin-top: 0;
   }
 
-  details {
+  .fad-div details {
     width: 70%;
   }
 
