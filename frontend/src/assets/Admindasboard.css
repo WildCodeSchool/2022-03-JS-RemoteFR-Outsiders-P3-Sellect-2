@@ -5,6 +5,10 @@
   margin-top: 1em;
 }
 
+.admindashboard-container ul {
+  text-decoration: none;
+}
+
 .usersearch {
   display: flex;
   flex-direction: column;
