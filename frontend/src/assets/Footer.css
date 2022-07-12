@@ -12,8 +12,9 @@
   justify-content: center;
 }
 
-.reseauxsociaux a {
-  padding: 0 0.5em 0 0.5em;
+.footer.reseauxsociaux a {
+  padding: 0 0.3em 0 0.3em;
+  margin: 0;
 }
 
 .copyright-un,

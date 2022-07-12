@@ -19,6 +19,7 @@
   color: #65bd60;
   font-size: calc(var(--font-size) * 1.6);
   text-align: center;
+  margin-top: 1em;
 }
 
 .bloc1_left h2 {
