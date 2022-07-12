@@ -17,15 +17,27 @@ export default function Bloc1() {
           <span>La seule dépense</span> qui fait baisser toutes les autres.
         </p>
         <div className="btn">
-          <Link to="/calendrier">
-            <button
-              type="button"
-              className="audit"
-              /* onClick={handleClick} */
-            >
-              Je réserve mon audit
-            </button>
-          </Link>
+          {localStorage.getItem("loggedIn") ? (
+            <Link to="/calendrier">
+              <button
+                type="button"
+                className="audit"
+                /* onClick={handleClick} */
+              >
+                Je réserve mon audit
+              </button>
+            </Link>
+          ) : (
+            <Link to="/connexion">
+              <button
+                type="button"
+                className="audit"
+                /* onClick={handleClick} */
+              >
+                Je réserve mon audit
+              </button>
+            </Link>
+          )}
           <a href="#parrainage">
             <button
               type="button"

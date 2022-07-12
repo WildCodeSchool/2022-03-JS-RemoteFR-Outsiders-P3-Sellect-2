@@ -43,7 +43,7 @@ function SignUp() {
           setIsFirstConnection(true);
           localStorage.setItem("userId", res.data.id);
           localStorage.setItem("loggedIn", true);
-          navigate("/mon-compte");
+          navigate("/mon-compte/calendrier");
         })
         .catch((err) => {
           if (err) {
@@ -126,7 +126,7 @@ function SignUp() {
             <button type="submit">S'INSCRIRE</button>
           </div>
         </form>
-        <p>
+        <p className="link-container">
           Déja membre ?{" "}
           <NavLink to="/connexion" className="link-other-pages">
             Connectez-vous !

@@ -7,9 +7,9 @@ import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
 import change from "@assets/img/change.jpg";
 import infos from "@assets/img/infos.jpg";
-import API from "../services/api";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
+import API from "../services/api";
 
 function UpdateUserAccount() {
   const userId = parseInt(localStorage.getItem("userId"), 10);

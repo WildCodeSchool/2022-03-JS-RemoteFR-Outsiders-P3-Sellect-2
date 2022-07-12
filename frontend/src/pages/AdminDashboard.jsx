@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import UserCard from "@components/UserCard";
-import Navbar from "@components/Navbar";
+import UserNavbar from "@components/UserNavbar";
 import Footer from "@components/Footer";
 import Modal from "@components/Modal";
 import API from "../services/api";
@@ -36,7 +36,7 @@ function AdminDashboard() {
 
   return (
     <div className="admindashboard-container">
-      <Navbar />
+      <UserNavbar />
       <h2>Liste Utilisateurs</h2>
       <div className="usersearch">
         <input
@@ -64,8 +64,7 @@ function AdminDashboard() {
                   .toLowerCase()
                   .includes(searchUser.toLowerCase()) ||
                 user.email.toLowerCase().includes(searchUser.toLowerCase()) ||
-                user.phoneNumber.includes(searchUser) ||
-                user.referralCode.includes(searchUser)
+                user.phoneNumber.includes(searchUser)
             )
             .map((user) => {
               return (

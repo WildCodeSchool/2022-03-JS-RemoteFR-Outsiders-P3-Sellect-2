@@ -34,5 +34,7 @@ router.post(
 );
 router.get("/files/users", FilesController.browse);
 router.get("/files/users/:id", FilesController.read);
+// Route qui permet de télécharger un fichier
+router.get("/download/file/:name", FilesController.download);
 
 module.exports = router;

@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import React, { useState, useEffect } from "react";
-// import sellect2 from "../assets/img/sellect2.svg";
 import logosellect from "../assets/img/logosellect.svg";
 import toggle from "../assets/img/toggle.svg";
 import "../assets/Navbar.css";
@@ -25,11 +24,6 @@ export default function Navbar() {
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
-
-  /* function handleClick(e) {
-    e.preventDefault();
-    console.warn("Le lien a été cliqué.");
-  } */
 
   return (
     <>
@@ -84,7 +78,7 @@ export default function Navbar() {
                     items.isActive ? "items-activated" : "items"
                   }
                 >
-                  Partenariat
+                  Partenariats
                 </a>
               </nav>
             </div>
@@ -96,20 +90,12 @@ export default function Navbar() {
             ) : (
               <div className="btn-div">
                 <NavLink to="/inscription" className="items">
-                  <button
-                    className="button-member"
-                    type="button"
-                    /* onClick={handleClick} */
-                  >
+                  <button className="button-member" type="button">
                     Devenir membre
                   </button>
                 </NavLink>
                 <NavLink to="/connexion" className="items">
-                  <button
-                    className="button-connect"
-                    type="button"
-                    /* onClick={handleClick} */
-                  >
+                  <button className="button-connect" type="button">
                     Se connecter
                   </button>
                 </NavLink>

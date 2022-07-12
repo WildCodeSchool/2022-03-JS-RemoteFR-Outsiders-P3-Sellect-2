@@ -28,9 +28,9 @@ function Login() {
         localStorage.setItem("userId", res.data.id);
         if (res.data.role === "ADMIN") {
           localStorage.setItem("isAdmin", true);
-          navigate("/admin-dashboard");
+          navigate("/mon-compte/admin-dashboard");
         } else {
-          navigate("/mon-compte");
+          navigate("/mon-compte/calendrier");
         }
       })
       .catch((err) => {
@@ -79,7 +79,7 @@ function Login() {
             <button type="submit">SE CONNECTER</button>
           </div>
         </form>
-        <p>
+        <p className="link-container">
           Pas de compte ?{" "}
           <NavLink to="/inscription" className="link-other-pages">
             Inscrivez-vous !
