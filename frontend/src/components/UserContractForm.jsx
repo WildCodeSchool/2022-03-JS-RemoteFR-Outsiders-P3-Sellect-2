@@ -2,6 +2,8 @@ import API from "@services/api";
 import React, { useContext, useState } from "react";
 import Moment from "moment";
 import { MainContext } from "../contexts/MainContext";
+import "../assets/common.css";
+import "../assets/Usercontractform.css";
 
 function UserContractForm() {
   const [file, setFile] = useState("");
@@ -39,7 +41,7 @@ function UserContractForm() {
   };
 
   return (
-    <div>
+    <div className="usercontractform">
       <form onSubmit={handleSubmit}>
         <input
           type="file"

@@ -1,0 +1,23 @@
+.usercontractform {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 72vh;
+  margin: 1em 0 0 1em;
+}
+
+.usercontractform form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.usercontractform input,
+.usercontractform select,
+.usercontractform button {
+  margin-top: 2em;
+}
