@@ -2,7 +2,6 @@
   width: 100%;
   margin: auto;
   height: 54vh;
-  padding-top: 2vh;
 }
 
 .carousel-div {
@@ -14,7 +13,6 @@
   color: #65bd60;
   font-size: calc(var(--font-size) * 1.6);
   text-align: center;
-  margin-top: 1em;
 }
 
 .carousel-div .img1 {
@@ -194,20 +192,21 @@
   }
 
   .carousel-root {
-    margin-bottom: 2rem;
+    margin: 2em 0;
     width: 75%;
+    height: 50vh;
   }
 
   .carousel-div {
     display: flex;
     flex-direction: row;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 100%;
   }
 
   .carousel-div h1 {
-    margin: 1.5em;
-    font-size: calc(var(--font-size) * 2);
+    margin: 1.2em;
+    font-size: calc(var(--font-size) * 2.2);
   }
 
   .img-carousel-div {
