@@ -32,7 +32,7 @@ function UpdateInfos({ setModal }) {
   };
 
   return (
-    <div>
+    <div className="updateinfos">
       <h2 className="updatedetails">Mettre à jour mes coordonnées:</h2>
       <form className="form-updateinfos" onSubmit={handleUpdateInfos}>
         <div className="div-updateinfos">
@@ -44,6 +44,7 @@ function UpdateInfos({ setModal }) {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="email"
             />
           </label>
           <label htmlFor="phone">

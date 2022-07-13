@@ -1,14 +1,13 @@
 .div-updateuseraccount {
   margin: auto;
   width: fit-content;
-  padding-top: 3rem;
-  max-height: 83vh;
+  padding-top: 2rem;
 }
 
 .title-updateuseraccount {
   font-weight: 900;
   text-align: center;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   text-decoration: underline;
 }
 
@@ -29,20 +28,46 @@
 }
 
 @media screen and (min-width: 768px) {
-  .div-updateuseraccount {
-    height: auto;
-    text-align: center;
+  .title-updateuseraccount {
+    margin-bottom: 2em;
+    width: 100%;
   }
+
+  .updateuseraccount {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 5em;
+  }
+
+  .div-updateuseraccount {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .modalaccount {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+  }
+
   .updateimg {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
   }
 
   .updateimg img {
-    width: 20rem;
-    height: 9rem;
-    margin: 0.8em 5em;
+    width: 50em;
+    height: 40em;
+    margin: 0.8em 1em;
   }
 }

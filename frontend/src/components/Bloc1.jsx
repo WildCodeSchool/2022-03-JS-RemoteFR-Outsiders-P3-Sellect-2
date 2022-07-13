@@ -18,7 +18,7 @@ export default function Bloc1() {
         </p>
         <div className="btn">
           {localStorage.getItem("loggedIn") ? (
-            <Link to="/calendrier">
+            <Link to="mon-compte/calendrier">
               <button
                 type="button"
                 className="audit"
