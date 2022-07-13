@@ -11,7 +11,10 @@
   },
   "dependencies": {
     "axios": "^0.27.2",
+    "downloadjs": "^1.4.7",
+    "moment": "^2.29.3",
     "prop-types": "^15.8.1",
+    "qrcode": "^1.5.0",
     "react": "^18.0.0",
     "react-calendly": "^4.0.1",
     "react-dom": "^18.0.0",

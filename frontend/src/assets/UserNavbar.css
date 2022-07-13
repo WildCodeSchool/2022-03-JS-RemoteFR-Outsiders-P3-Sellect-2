@@ -1,0 +1,50 @@
+.container-usernavbar {
+  display: flex;
+  background-color: var(--navbar-color);
+  justify-content: space-between;
+}
+
+.menu-usernavbar {
+  display: flex;
+  width: 38%;
+}
+
+.itemsusernavbar,
+a {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+  align-items: flex-end;
+  padding-bottom: 1rem;
+}
+
+.itemsusernavbar:hover {
+  color: black;
+  font-size: 1.7rem;
+}
+
+.itemsusernavbar-activated {
+  cursor: pointer;
+  color: black;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  font-size: 1.7rem;
+}
+
+nav .itemsusernavbar,
+a {
+  font-weight: 900;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+.itemsusernavbar-activated,
+a {
+  font-size: 1.5rem;
+  margin-left: 2rem;
+}

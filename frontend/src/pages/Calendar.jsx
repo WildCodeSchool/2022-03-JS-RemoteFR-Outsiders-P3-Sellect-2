@@ -1,30 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "@assets/common.css";
 import "@assets/Calendar.css";
 import audit from "@assets/img/audit.svg";
-import Navbar from "@components/Navbar";
+import UserNavbar from "@components/UserNavbar";
 import Calendly from "@components/Calendly";
 import Footer from "@components/Footer";
+import { useNavigate } from "react-router-dom";
 
 export default function Calendar() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!localStorage.getItem("loggedIn")) {
+      navigate("/connexion");
+    }
+  });
+
   return (
     <div>
-      <Navbar />
+      <UserNavbar />
       <section className="calendar_container">
         <div className="title">
           <h1>PRENEZ RENDEZ-VOUS POUR VOTRE AUDIT !</h1>
         </div>
         <div className="instructions_container">
           <div className="instruction1">
-            <h1>1 - Contenu de l'audit</h1>
+            <h1>1 - Audit personnalisé</h1>
             <p>
-              ► Réalisez votre <span>audit personnalisé,</span>
-            </p>
-            <p>
-              ► Etablissement{" "}
-              <span>
-                d'un cahier des charges précis sur vos attentes et besoins
-              </span>{" "}
+              ►{" "}
+              <span>Cahier des charges précis de vos attentes et besoins</span>{" "}
               sur tous types de contrats,
             </p>
             <p>
@@ -35,8 +39,7 @@ export default function Calendar() {
               ► Présentation des <span>contrats proposés</span>,
             </p>
             <p>
-              ► Mise en avant des gains potentiels par le remplacement des
-              contrats.
+              ► Mise en avant des <span>gains potentiels</span>.
             </p>
           </div>
 
@@ -58,10 +61,9 @@ export default function Calendar() {
                 via son partenaire la prise en charge des démarches
                 administratives
               </span>{" "}
-              pour que vous retrouviez votre réel pouvoir d'achat.
+              pour que vous retrouviez un réel pouvoir d'achat.
             </p>
           </div>
-
           <div className="illustration">
             <img src={audit} alt="photo_audit" />
           </div>

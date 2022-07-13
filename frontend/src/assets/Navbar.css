@@ -39,9 +39,11 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  padding-bottom: 0.5em;
 }
 
-.items {
+.items,
+a {
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -49,10 +51,7 @@
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
-}
-
-.items:hover {
-  color: black;
+  margin: 0;
 }
 
 .items-activated {
@@ -66,12 +65,13 @@
 
 .btn-div {
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-evenly;
   height: 1.8rem;
 }
 
 .button-member {
-  background-color: rgb(231, 164, 39);
+  background-color: orange;
   border: none;
   text-align: center;
   text-decoration: none;
@@ -83,26 +83,38 @@
   font-size: calc(var(--font-size) * 0.6);
   padding: 0 0.5em 0 0.5em;
   cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
 .button-connect {
-  background-color: var(--connexion-color);
-  border: none;
+  color: #65bd60;
+  background-color: white;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   border-radius: 20px;
-  color: white;
   border: 2px solid var(--navbar-color);
   font-weight: 500;
   font-size: calc(var(--font-size) * 0.6);
   padding: 0 0.5em 0 0.5em;
   cursor: pointer;
+  margin-bottom: 0.5em;
 }
 
-button:hover {
-  color: black;
-  transition: color 0.35s, color 0.35s;
+.button-member:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: var(--navbar-color);
+  background-color: white;
+  transition: 0.5s;
+}
+
+.button-connect:hover {
+  cursor: pointer;
+  color: orange;
+  border-color: #65bd60;
+  background-color: white;
+  transition: 0.5s;
 }
 
 @media screen and (min-width: 750px) {
@@ -129,16 +141,19 @@ button:hover {
     height: auto;
   }
 
-  nav .items {
+  nav .items,
+  nav a {
     font-weight: 900;
     margin-left: 2rem;
     font-size: 1.5rem;
   }
 
-  .items-activated {
+  .items-activated,
+  nav a {
     font-size: 1.5rem;
     margin-left: 2rem;
   }
+
   .btn-div {
     position: absolute;
     right: 1rem;
@@ -154,11 +169,51 @@ button:hover {
   .button-connect {
     height: 2rem;
     font-size: calc(var(--font-size) * 0.8);
+    margin: 0 1em 0 1em;
   }
 }
 
 @media screen and (min-width: 1100px) {
   .btn-div {
     flex-direction: row;
+  }
+
+  .liste-nav a:hover {
+    text-decoration: underline orange;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav .items,
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  .items-activated,
+  nav a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav .items,
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  .items-activated,
+  nav a {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .btn-div {
+    height: 2.8rem;
+  }
+
+  .button-connect,
+  .button-member {
+    height: 2rem;
   }
 }

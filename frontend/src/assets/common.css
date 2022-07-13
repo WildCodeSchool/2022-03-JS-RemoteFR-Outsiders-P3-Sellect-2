@@ -16,6 +16,7 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: var(--font);
+  scroll-behavior: smooth;
 }
 
 .error {
@@ -29,6 +30,7 @@
   color: var(--navbar-color);
   font-weight: 900;
   font-size: 1.2rem;
+  margin-left: 0.4rem;
 }
 
 .link-other-pages:hover {

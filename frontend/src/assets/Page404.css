@@ -1,0 +1,45 @@
+.page-404 {
+  height: 100vh;
+  position: relative;
+  background-color: var(--navbar-color);
+  color: white !important;
+}
+
+.page-404-text {
+  color: white !important;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  color: var(--navbar-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.page-404-text h2 {
+  color: white !important;
+  font-size: 2.2rem;
+  padding-top: 2rem;
+}
+
+.page-404-text h1 {
+  font-size: 4rem;
+  padding-top: 2rem;
+}
+
+.page-404-text p {
+  padding-top: 2rem;
+  font-size: 1.4rem;
+}
+
+#page-404-link:hover {
+  transition: 0.5s;
+  text-decoration: underline;
+}
+
+#page-404-link {
+  color: black;
+}

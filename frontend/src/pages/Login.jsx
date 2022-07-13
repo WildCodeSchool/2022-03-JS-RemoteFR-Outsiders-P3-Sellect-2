@@ -1,14 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Login.css";
-import { MainContext } from "../contexts/MainContext";
+// import { MainContext } from "../contexts/MainContext";
 import loginImage from "../assets/img/loginImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
 function Login() {
-  const { setIsLoggedIn } = useContext(MainContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState(false);
@@ -16,20 +15,26 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/login/users`, {
+    API.post(
+      `/login/users`,
+      {
         email,
         password,
-        withCredentials: true,
-      })
+      },
+      { withCredentials: true }
+    )
       .then((res) => {
-        if (res.status === 200) {
-          setIsLoggedIn(true);
-          navigate("/mon-compte");
+        localStorage.setItem("loggedIn", true);
+        localStorage.setItem("userId", res.data.id);
+        if (res.data.role === "ADMIN") {
+          localStorage.setItem("isAdmin", true);
+          navigate("/mon-compte/admin-dashboard");
+        } else {
+          navigate("/mon-compte/calendrier");
         }
       })
       .catch((err) => {
-        console.error(err);
+        // console.error(err.message);
         if (err) {
           setLoginError(true);
           setTimeout(() => {
@@ -74,7 +79,7 @@ function Login() {
             <button type="submit">SE CONNECTER</button>
           </div>
         </form>
-        <p>
+        <p className="link-container">
           Pas de compte ?{" "}
           <NavLink to="/inscription" className="link-other-pages">
             Inscrivez-vous !

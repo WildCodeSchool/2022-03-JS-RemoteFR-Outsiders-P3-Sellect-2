@@ -4,10 +4,10 @@ import "../assets/HomeBlock3.css";
 
 function HomeGoals() {
   return (
-    <div className="home-block3-container">
+    <div className="home-block3-container" id="goals">
       <div className="home-block3-content">
         <div className="home-block3-content-header">
-          <h2>NOS OBJECTIFS</h2>
+          <h1>NOS OBJECTIFS</h1>
           <p>
             <span>Sellect</span> souhaite devenir un acteur majeur pour le
             pouvoir d'achat !
@@ -23,9 +23,9 @@ function HomeGoals() {
             produits et services évoluent chaque jour.
           </p>
           <p>
-            L’association souhaite faire maintenir à ses membres un pouvoir
-            d’achat <span>le plus optimisé possible</span>, le tout en proposant
-            une refonte globale des contrats.
+            L’association souhaite que ses membres conservent un pouvoir d’achat{" "}
+            <span>le plus optimisé possible</span>, le tout en proposant une
+            refonte globale des contrats.
           </p>
           <p>
             Je propose également des <span>outils et astuces</span> qui

@@ -1,17 +1,14 @@
 import { NavLink } from "react-router-dom";
-import React, { useState, useEffect, useContext } from "react";
-// import sellect2 from "../assets/img/sellect2.svg";
+import React, { useState, useEffect } from "react";
 import logosellect from "../assets/img/logosellect.svg";
 import toggle from "../assets/img/toggle.svg";
 import "../assets/Navbar.css";
 import "../assets/common.css";
-import { MainContext } from "../contexts/MainContext";
 import Logout from "./Logout";
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const { isLoggedIn } = useContext(MainContext);
 
   const toggleNav = () => {
     setToggleMenu(!toggleMenu);
@@ -27,11 +24,6 @@ export default function Navbar() {
       window.removeEventListener("resize", changeWidth);
     };
   }, []);
-
-  /* function handleClick(e) {
-    e.preventDefault();
-    console.warn("Le lien a été cliqué.");
-  } */
 
   return (
     <>
@@ -64,54 +56,46 @@ export default function Navbar() {
                 >
                   Accueil
                 </NavLink>
-                <NavLink
-                  to="/nos-engagements"
+                <a
+                  href="#goals"
                   className={(items) =>
                     items.isActive ? "items-activated" : "items"
                   }
                 >
-                  Nos engagements
-                </NavLink>
-                <NavLink
-                  to="/faq"
+                  Nos objectifs
+                </a>
+                <a
+                  href="#faq"
                   className={(items) =>
                     items.isActive ? "items-activated" : "items"
                   }
                 >
                   FAQ
-                </NavLink>
-                <NavLink
-                  to="/partenariat"
+                </a>
+                <a
+                  href="#partenariat"
                   className={(items) =>
                     items.isActive ? "items-activated" : "items"
                   }
                 >
-                  Partenariat
-                </NavLink>
+                  Partenariats
+                </a>
               </nav>
             </div>
 
-            {isLoggedIn ? (
+            {localStorage.getItem("loggedIn") ? (
               <div className="btn-div">
                 <Logout />
               </div>
             ) : (
               <div className="btn-div">
                 <NavLink to="/inscription" className="items">
-                  <button
-                    className="button-member"
-                    type="button"
-                    /* onClick={handleClick} */
-                  >
+                  <button className="button-member" type="button">
                     Devenir membre
                   </button>
                 </NavLink>
                 <NavLink to="/connexion" className="items">
-                  <button
-                    className="button-connect"
-                    type="button"
-                    /* onClick={handleClick} */
-                  >
+                  <button className="button-connect" type="button">
                     Se connecter
                   </button>
                 </NavLink>

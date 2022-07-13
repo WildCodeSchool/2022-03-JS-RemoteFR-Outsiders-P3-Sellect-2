@@ -14,34 +14,39 @@ export default function Footer() {
     <footer className="footer">
       <div className="reseauxsociaux">
         <a href="https://www.wildcodeschool.com/fr-FR">
-          <FaInstagram size="27" color="#fbad50" />
+          <FaInstagram size="27" color="white" />
         </a>
         <a href="https://www.wildcodeschool.com/fr-FR">
-          <FaFacebook size="27" color="#3b5998" />
+          <FaFacebook size="27" color="white" />
         </a>
         <a href="https://www.wildcodeschool.com/fr-FR">
-          <FaYoutube size="27" color="#B51942" />
+          <FaYoutube size="27" color="white" />
         </a>
         <a href="https://www.wildcodeschool.com/fr-FR">
-          <FaLinkedin size="27" color="#0e76a8" />
+          <FaLinkedin size="27" color="white" />
         </a>
         <a href="https://www.wildcodeschool.com/fr-FR">
-          <FaTwitter size="27" color="#1DA1F2" />
+          <FaTwitter size="27" color="white" />
         </a>
       </div>
-      <p className="copyright-un">
-        &copy;Copyright2022. Tous Droits Réservés.{" "}
-        <NavLink to="/mentions-legales" className="colorfooter">
-          Mentions Légales
-        </NavLink>
-      </p>
+      <div className="copyright-un">
+        <p>&copy;Copyright 2022 - Tous Droits Réservés </p>
+        <p>
+          <NavLink to="/mentions-legales" className="colorfooter">
+            - Mentions Légales
+          </NavLink>
+        </p>
+      </div>
 
-      <p className="copyright-deux">
-        Développé avec <FaHeart size="12" color="#B51942" /> par les{" "}
+      <div className="copyright-deux">
+        <p>
+          {" "}
+          Développé avec <FaHeart size="14" color="#B51942" /> par les{" "}
+        </p>
         <NavLink to="/wilders" className="colorfooter">
           Wilders
         </NavLink>
-      </p>
+      </div>
     </footer>
   );
 }

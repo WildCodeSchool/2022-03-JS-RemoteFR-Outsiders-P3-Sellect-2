@@ -8,14 +8,14 @@ import "../assets/Slider.css";
 
 export default function Slider() {
   return (
-    <div className="carousel-div">
+    <div className="carousel-div" id="partenariat">
+      <h1>PARTENARIATS</h1>
       <img className="img1" src={tips} alt="tips" />
-      <Carousel autoPlay interval={2000} infiniteLoop>
+      <Carousel autoPlay interval={3000} infiniteLoop>
         <div className="img-carousel-div">
           <img src={cteasy} alt="logo cteasy" />
           <div className="overlay">
-            <h2> Cteasy</h2>
-            <p>
+            <h2 className="overlay_title">
               {" "}
               <a
                 href="https://www.cteasy.com/fr/"
@@ -23,22 +23,23 @@ export default function Slider() {
                 rel="noreferrer"
               >
                 {" "}
-                Contrôle technique{" "}
+                Cteasy{" "}
               </a>{" "}
-            </p>
+            </h2>
+            <p className="overlay_text"> Contrôle technique </p>
           </div>
         </div>
         <div className="img-carousel-div">
           <img src={hosman} alt="logo hosman" />
           <div className="overlay">
-            <h2 className="overlay_title"> Hosman </h2>
-            <p className="overlay_text">
+            <h2 className="overlay_title">
               {" "}
               <a href="https://www.hosman.co/" target="_blank" rel="noreferrer">
                 {" "}
-                Immobilier moins cher{" "}
-              </a>
-            </p>
+                Hosman{" "}
+              </a>{" "}
+            </h2>
+            <p className="overlay_text"> Immobilier moins cher </p>
           </div>
         </div>
       </Carousel>

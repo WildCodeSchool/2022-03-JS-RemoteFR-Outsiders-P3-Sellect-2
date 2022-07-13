@@ -19,8 +19,10 @@ app.use(express.json());
 
 app.use(cookieParser());
 
+const UPLOAD_DIR = path.join(__dirname, "../../backend/uploads");
+console.warn(UPLOAD_DIR);
 // Serve the public folder for public resources
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(UPLOAD_DIR));
 
 // Serve REACT APP
 app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));

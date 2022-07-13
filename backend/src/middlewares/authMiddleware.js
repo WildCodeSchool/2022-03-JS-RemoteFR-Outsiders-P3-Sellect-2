@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 
 const authorization = (req, res, next) => {
   const token = req.cookies.sellectUserToken;
+  // console.log({ token });
   if (!token) {
     return res.status(401).json({ message: "Not logged in" });
   }
@@ -11,7 +12,7 @@ const authorization = (req, res, next) => {
     req.user = decoded;
     return next();
   } catch (err) {
-    return res.status(401).json({ message: "Not logged in" });
+    return res.status(401).json({ message: "Error token" });
   }
 };
 
@@ -32,10 +33,11 @@ const authorization = (req, res, next) => {
 
 const isAdmin = (req, res, next) => {
   const token = req.cookies.sellectUserToken;
+  // console.log({ token });
   const data = jwt.verify(token, process.env.SECRET_JWT);
   req.userRole = data.role;
 
-  if (req.role === "ADMIN") {
+  if (req.userRole === "ADMIN") {
     return next();
   }
   return res.sendStatus(403);

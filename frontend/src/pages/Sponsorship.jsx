@@ -2,14 +2,11 @@ import React from "react";
 import "@assets/common.css";
 import "@assets/Sponsorship.css";
 import parrainage from "@assets/img/parrainage.svg";
-import Navbar from "@components/Navbar";
-import Footer from "@components/Footer";
 
 export default function Sponsorship() {
   return (
     <div>
-      <Navbar />
-      <section className="sponsor_container">
+      <section className="sponsor_container" id="parrainage">
         <div className="title">
           <h1>DEVENEZ PARRAIN SELLECT !</h1>
         </div>
@@ -49,7 +46,6 @@ export default function Sponsorship() {
           </div>
         </div>
       </section>
-      <Footer />
     </div>
   );
 }

@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 0;
+  width: 100%;
 }
 
 .bloc1_left {
@@ -15,47 +17,77 @@
 
 .bloc1_left h1 {
   color: #65bd60;
-  font-size: calc(var(--font-size) * 2);
-  margin-left: 0.3em;
+  font-size: calc(var(--font-size) * 1.6);
+  text-align: center;
+  margin-top: 1em;
 }
 
 .bloc1_left h2 {
-  font-size: calc(var(--font-size) * 1.5);
-  margin: 0.5em;
+  font-size: calc(var(--font-size) * 1.4);
+  margin: 1em;
 }
 
 .bloc1_left p {
   font-weight: bolder;
-  margin: 0.5em;
+  margin-left: 1.4em;
 }
 
 .bloc1_left span {
   color: #65bd60;
 }
 
-.btn {
+.bloc1_left .btn {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 1em;
   width: 100%;
-  margin-top: 2em;
+  text-align: center;
 }
 
 .btn button {
-  margin-bottom: 1em;
   border-radius: 20px;
-  padding: 0.4em;
-  border: 1px solid #65bd60;
+  padding: 0.6em;
   font-size: calc(var(--font-size) * 0.7);
 }
 
-.btn button:hover {
+.btn .audit {
+  background-color: orange;
+  color: white;
+  border: 1px solid orange;
+  margin-top: 1em;
+}
+
+.btn .parrainage {
+  background-color: #65bd60;
+  color: white;
+  border: 1px solid #65bd60;
+  margin-top: 0.6rem;
+}
+
+.audit:hover {
   cursor: pointer;
   color: orange;
   border-color: orange;
   background-color: white;
   transition: 0.5s;
+}
+
+.audit a {
+  margin: 0;
+}
+
+.parrainage:hover {
+  cursor: pointer;
+  color: #65bd60;
+  border-color: #65bd60;
+  background-color: white;
+  transition: 0.5s;
+}
+
+.parrainage a {
+  margin: 0;
 }
 
 .bloc1_right {
@@ -87,11 +119,11 @@
   }
 
   .bloc1_right img {
-    width: 80%;
+    width: 60%;
     height: 50%;
   }
 
-  .btn {
+  .bloc1_left .btn {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
@@ -101,13 +133,13 @@
   .btn button {
     margin-bottom: 1em;
     border-radius: 20px;
-    padding: 0.8em;
     margin-top: 5em;
-    font-size: calc(var(--font-size) * 0.8);
+    font-size: calc(var(--font-size) * 1);
   }
 
   .bloc1_left h1 {
-    margin: 1.5em;
+    margin: 1em;
+    font-size: calc(var(--font-size) * 2.2);
   }
 
   .bloc1_left h2 {

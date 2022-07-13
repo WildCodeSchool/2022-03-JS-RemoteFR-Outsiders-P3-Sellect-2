@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
 
-class AuthController {
+class UsersController {
   static browse = (req, res) => {
     models.user
       .findAll()
@@ -18,13 +18,16 @@ class AuthController {
   };
 
   static read = (req, res) => {
+    const user = req.body;
+    user.id = parseInt(req.params.id, 10);
+
     models.user
-      .find(req.params.id)
+      .findById(user)
       .then(([rows]) => {
-        if (rows[0] == null) {
+        if (rows == null) {
           res.sendStatus(404);
         } else {
-          res.send(rows[0]);
+          res.send(rows);
         }
       })
       .catch((err) => {
@@ -33,15 +36,32 @@ class AuthController {
       });
   };
 
-  static edit = (req, res) => {
-    const user = req.body;
-
-    // TODO validations (length, format...)
-
-    user.id = parseInt(req.params.id, 10);
+  static editInfos = async (req, res) => {
+    const { phoneNumber, email } = req.body;
+    const id = parseInt(req.params.id, 10);
 
     models.user
-      .update(user)
+      .updateInfos({ id, phoneNumber, email })
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static editPassword = async (req, res) => {
+    const { password } = req.body;
+    const id = parseInt(req.params.id, 10);
+    const hash = await bcrypt.hash(password, 10);
+
+    models.user
+      .updatePassword({ id, password: hash })
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -56,9 +76,25 @@ class AuthController {
   };
 
   static add = async (req, res) => {
-    const { firstname, lastname, email, phoneNumber, password } = req.body;
-    const hash = await bcrypt.hash(password, 10);
+    const {
+      firstname,
+      lastname,
+      email,
+      phoneNumber,
+      sponsorCode,
+      password,
+      signupDate,
+    } = req.body;
     const findByEmail = await models.user.findByEmail(email);
+    const hash = await bcrypt.hash(password, 10);
+    const referralCode = `${firstname.slice(0, 2)}${lastname.slice(
+      0,
+      2
+    )}${phoneNumber
+      .split("")
+      .map((el) => (el === " " ? "" : el))
+      .join("")
+      .slice(6)}-${Math.floor(Math.random() * 10000)}`;
 
     try {
       if (findByEmail.length > 0) {
@@ -67,20 +103,23 @@ class AuthController {
           message: "Email already exists",
         });
       }
+
       models.user
         .insert({
           firstname,
           lastname,
           email,
           phoneNumber,
+          sponsorCode,
+          referralCode,
           password: hash,
           role: "USER",
+          signupDate,
         })
         .then((result) => {
           res.status(201).send({
-            id: result.insertId,
+            id: result[0].insertId,
             message: "User created",
-            // user: req.body,
           });
         })
         .catch((err) => {
@@ -129,6 +168,8 @@ class AuthController {
         );
         return res.cookie("sellectUserToken", token).json({
           message: "User logged",
+          role: result[0].role,
+          id: result[0].id,
         });
       })
       .catch((err) => {
@@ -153,7 +194,25 @@ class AuthController {
     models.user
       .delete(req.params.id)
       .then(() => {
-        res.sendStatus(204);
+        res.status(204).json({ message: "User deleted" });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static readSponsor = (req, res) => {
+    const { sponsorCode } = req.params;
+
+    models.user
+      .findBySponsorCode(sponsorCode)
+      .then(([rows]) => {
+        if (rows == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
       })
       .catch((err) => {
         console.error(err);
@@ -162,4 +221,4 @@ class AuthController {
   };
 }
 
-module.exports = AuthController;
+module.exports = UsersController;

@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
-import axios from "axios";
+import Moment from "moment";
+import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Signup.css";
 import { MainContext } from "../contexts/MainContext";
@@ -8,7 +9,7 @@ import signupImage from "../assets/img/signupImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
 function SignUp() {
-  const { setIsLoggedIn, setIsFirstConnection } = useContext(MainContext);
+  const { setIsFirstConnection } = useContext(MainContext);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
@@ -17,6 +18,8 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [sponsorCode, setSponsorCode] = useState("");
+  const signupDate = Moment().format("DD-MM-YYYY");
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -27,20 +30,20 @@ function SignUp() {
         setPasswordError(false);
       }, 5000);
     } else {
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/auth/users`, {
-          firstname,
-          lastname,
-          email,
-          phoneNumber,
-          password,
-        })
+      API.post(`/auth/users`, {
+        firstname,
+        lastname,
+        email,
+        phoneNumber,
+        password,
+        signupDate,
+        sponsorCode,
+      })
         .then((res) => {
-          if (res.status === 200 || res.status === 201) {
-            setIsLoggedIn(true);
-            setIsFirstConnection(true);
-            navigate("/mon-compte");
-          }
+          setIsFirstConnection(true);
+          localStorage.setItem("userId", res.data.id);
+          localStorage.setItem("loggedIn", true);
+          navigate("/mon-compte/calendrier");
         })
         .catch((err) => {
           if (err) {
@@ -92,6 +95,12 @@ function SignUp() {
             onChange={(e) => setPhoneNumber(e.target.value)}
           />
           <input
+            type="text"
+            placeholder="Code de parrainage"
+            value={sponsorCode}
+            onChange={(e) => setSponsorCode(e.target.value)}
+          />
+          <input
             type="password"
             placeholder="Mot de passe"
             value={password}
@@ -117,7 +126,7 @@ function SignUp() {
             <button type="submit">S'INSCRIRE</button>
           </div>
         </form>
-        <p>
+        <p className="link-container">
           Déja membre ?{" "}
           <NavLink to="/connexion" className="link-other-pages">
             Connectez-vous !

@@ -1,0 +1,48 @@
+.div-updateuseraccount {
+  margin: auto;
+  width: fit-content;
+  padding-top: 3rem;
+  max-height: 83vh;
+}
+
+.title-updateuseraccount {
+  font-weight: 900;
+  text-align: center;
+  margin-top: 0.5rem;
+  text-decoration: underline;
+}
+
+.updateimg {
+  display: none;
+}
+
+.updateimg img {
+  width: 180px;
+  height: 120px;
+}
+
+@media screen and (max-width: 375px) {
+  .div-updateuseraccount {
+    height: 79vh;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .div-updateuseraccount {
+    height: auto;
+    text-align: center;
+  }
+  .updateimg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .updateimg img {
+    width: 20rem;
+    height: 9rem;
+    margin: 0.8em 5em;
+  }
+}

@@ -1,22 +1,22 @@
-import axios from "axios";
 import React, { useContext } from "react";
-import { useNavigate } from "react-router-dom";
+import API from "../services/api";
 import { MainContext } from "../contexts/MainContext";
+import "@assets/Logout.css";
+import "@assets/common.css";
 
 function Logout() {
-  const { setIsLoggedIn, setUserData } = useContext(MainContext);
-  const navigate = useNavigate();
+  const { setUserData } = useContext(MainContext);
 
   const handleLogout = (e) => {
     e.preventDefault();
-    axios
-      .get("http://localhost:5000/logout/users", { withCredentials: true })
+    API.get(`/logout/users`, {
+      withCredentials: true,
+    })
       .then((res) => {
-        // console.log(res.data);
         if (res.status === 200) {
-          setIsLoggedIn(false);
+          localStorage.clear();
           setUserData(null);
-          navigate("/");
+          window.location = "/";
         }
       })
       .catch((err) => console.error(err));
@@ -24,7 +24,11 @@ function Logout() {
 
   return (
     <div>
-      <button type="button" className="button-member" onClick={handleLogout}>
+      <button
+        type="button"
+        className="button-deconnectmember"
+        onClick={handleLogout}
+      >
         Se déconnecter
       </button>
     </div>
