@@ -87,7 +87,10 @@ section {
 .wilders {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
+
 .div-img-wilders {
   margin: auto;
   display: flex;
@@ -97,21 +100,20 @@ section {
 }
 .div-img-wilders img {
   width: 21rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .wilders h2 {
-  padding-top: 6rem;
-  font-size: -webkit-xxx-large;
+  padding-top: 4rem;
+  font-size: 2em;
   text-align: center;
-  margin: 1rem;
+  margin: 2rem 0;
 }
 
 .wilders p {
   font-size: larger;
-  margin: 1rem;
-
   text-align: center;
+  margin: 1em 0;
 }
 
 @media screen and (min-width: 760px) {
@@ -136,6 +138,21 @@ section {
   .copyright-un .colorfooter,
   .copyright-deux .colorfooter {
     font-size: 1.2em;
+  }
+
+  .wilders h2 {
+    padding-top: 5rem;
+    font-size: -webkit-xxx-large;
+  }
+
+  .wilders p {
+    margin: 2em 0;
+  }
+
+  .div-img-wilders img {
+    width: 25em;
+    height: 32em;
+    border-radius: 30px;
   }
 }
 
