@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "@assets/common.css";
 import "@assets/Bloc1.css";
 import bloc1 from "@assets/img/bloc1.jpg";
-import { Link } from "react-router-dom";
+import Trustpilot from "./Trustpilot";
 
 export default function Bloc1() {
   return (
@@ -48,6 +49,7 @@ export default function Bloc1() {
             </button>
           </a>
         </div>
+        <Trustpilot />
       </div>
       <div className="bloc1_right">
         <img src={bloc1} alt="photo_contrat" />
