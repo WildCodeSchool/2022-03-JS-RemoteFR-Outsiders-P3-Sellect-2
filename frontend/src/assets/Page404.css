@@ -21,13 +21,25 @@
 
 .page-404-text h2 {
   color: white !important;
+  font-size: 2.2rem;
+  padding-top: 2rem;
+}
+
+.page-404-text h1 {
+  font-size: 4rem;
+  padding-top: 2rem;
+}
+
+.page-404-text p {
+  padding-top: 2rem;
+  font-size: 1.4rem;
 }
 
 #page-404-link:hover {
-  color: black;
   transition: 0.5s;
+  text-decoration: underline;
 }
 
 #page-404-link {
-  padding-right: 2rem;
+  color: black;
 }
