@@ -5,7 +5,6 @@ import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
-import change from "@assets/img/change.jpg";
 import infos from "@assets/img/infos.jpg";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
@@ -37,26 +36,26 @@ function UpdateUserAccount() {
   return (
     <div>
       <UserNavbar />
-      <div className="div-updateuseraccount">
-        <h1 className="title-updateuseraccount">
-          {firstname} {lastname}
-        </h1>
-        <div>
-          <UpdateInfos setModal={setModal} />
-          <div className="updateimg">
-            <img src={change} alt="mise à jour mot de passe" />
-            <img src={infos} alt="mise à jour coordonnées" />
+      <div className="updateuseraccount">
+        <div className="div-updateuseraccount">
+          <h1 className="title-updateuseraccount">
+            {firstname} {lastname}
+          </h1>
+          <div className="modalaccount">
+            <UpdateInfos setModal={setModal} />
+            <UpdatePassword setModal={setModal} />
+            {modal && (
+              <Modal
+                toggleModal={toggleModal}
+                modalMessage="Vos modifications ont bien été enregistrées."
+              />
+            )}
           </div>
-          <UpdatePassword setModal={setModal} />
-          {modal && (
-            <Modal
-              toggleModal={toggleModal}
-              modalMessage="Vos modifications ont bien été enregistrées."
-            />
-          )}
+        </div>
+        <div className="updateimg">
+          <img src={infos} alt="mise à jour coordonnées" />
         </div>
       </div>
-
       <Footer />
     </div>
   );
