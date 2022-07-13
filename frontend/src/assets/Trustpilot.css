@@ -1,0 +1,20 @@
+.link-trustpilot {
+  color: black;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.link-trustpilot:hover {
+  color: var(--navbar-color);
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.div-trustpilot {
+  width: -webkit-fill-available;
+}
+
+.div-trustpilot .p-trustpilot {
+  display: flex;
+  flex-direction: row;
+}
