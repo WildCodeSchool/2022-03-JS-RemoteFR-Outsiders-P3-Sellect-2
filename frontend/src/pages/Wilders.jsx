@@ -24,11 +24,7 @@ export default function Wilders() {
           <br />
           Les développeurs de SELLECT{" "}
         </h2>
-        <p>
-          {" "}
-          Nous avons voulu un site web performant et pratique pour Sellect.
-        </p>
-        <p> Réalisée par une équipe motivée </p>
+        <p> Nous avons voulu un site web utile et pratique pour Sellect.</p>
       </div>
 
       <div className="div-img-wilders">
