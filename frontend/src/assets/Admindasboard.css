@@ -27,7 +27,7 @@
 }
 
 @media screen and (min-width: 750px) {
-  h2 {
+  .admindashboard-container h2 {
     font-size: calc(var(--font-size) * 2.4);
   }
 

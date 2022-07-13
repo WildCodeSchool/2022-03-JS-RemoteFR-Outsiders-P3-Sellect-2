@@ -51,6 +51,7 @@ a {
   display: flex;
   justify-content: center;
   font-size: 1.2rem;
+  margin: 0;
 }
 
 .items-activated {
@@ -141,14 +142,14 @@ a {
   }
 
   nav .items,
-  a {
+  nav a {
     font-weight: 900;
     margin-left: 2rem;
     font-size: 1.5rem;
   }
 
   .items-activated,
-  a {
+  nav a {
     font-size: 1.5rem;
     margin-left: 2rem;
   }
@@ -179,5 +180,40 @@ a {
 
   .liste-nav a:hover {
     text-decoration: underline orange;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  nav .items,
+  nav a {
+    font-size: 1.2rem;
+  }
+
+  .items-activated,
+  nav a {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  nav .items,
+  nav a {
+    font-size: 1.1rem;
+  }
+
+  .items-activated,
+  nav a {
+    font-size: 1.1rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .btn-div {
+    height: 2.8rem;
+  }
+
+  .button-connect,
+  .button-member {
+    height: 2rem;
   }
 }
