@@ -37,15 +37,24 @@
   justify-content: space-evenly;
 }
 
-.filecard_link a {
-  font-size: 0.8em;
-  color: #65bd60;
-  margin: 0;
-  padding: 0;
+.filecard_link button {
+  font-size: 0.9em;
+  width: 8em;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.4em;
+  margin-top: 2em;
 }
 
-.filecard_link a:hover {
-  color: orange;
+.filecard_link button:hover {
+  cursor: pointer;
+  border: 2px solid var(--navbar-color);
+  color: var(--navbar-color);
+  background-color: white;
+  transition: 0.5s;
 }
 
 @media screen and (min-width: 750px) {

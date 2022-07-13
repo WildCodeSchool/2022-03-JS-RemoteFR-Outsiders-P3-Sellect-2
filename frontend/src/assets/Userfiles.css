@@ -1,3 +1,8 @@
+.userfile h2 {
+  color: var(--navbar-color);
+  text-align: center;
+}
+
 .userfile ul li {
   list-style: none;
 }
