@@ -18,11 +18,12 @@ class UsersController {
   };
 
   static read = (req, res) => {
-    const user = req.body;
-    user.id = parseInt(req.params.id, 10);
+    // const user = req.body;
+    // user.id = parseInt(req.params.id, 10);
+    const userId = parseInt(req.params.id, 10);
 
     models.user
-      .findById(user)
+      .findById(userId)
       .then(([rows]) => {
         if (rows == null) {
           res.sendStatus(404);

@@ -2,6 +2,7 @@ import React, { useState, useContext } from "react";
 import Moment from "moment";
 import API from "@services/api";
 import { MainContext } from "../contexts/MainContext";
+import "@assets/AuditModal.css";
 
 function AdminModalAudit({ setModal, user }) {
   const [file, setFile] = useState("");
@@ -24,8 +25,6 @@ function AdminModalAudit({ setModal, user }) {
     formData.append("sendDate", sendDate);
     API.post(`/upload/audit-reports`, formData)
       .then(() => {
-        setFile("");
-        setName("");
         setIsFileSent(true);
         setIsAuditReportSent(true);
       })
@@ -35,21 +34,25 @@ function AdminModalAudit({ setModal, user }) {
   };
 
   return (
-    <div className="modal">
-      <div aria-hidden="true" onClick={closeModal} className="modal-overlay" />
-      <div className="modal-content">
-        <div className="modal-header">
+    <div className="audit-modal">
+      <div
+        aria-hidden="true"
+        onClick={closeModal}
+        className="audit-modal-overlay"
+      />
+      <div className="audit-modal-content">
+        <div className="audit-modal-header">
           <button
             type="button"
-            className="modal-close-button"
+            className="audit-modal-close-button"
             onClick={closeModal}
           >
             &times;
           </button>
         </div>
-        <div className="modal-message">
+        <div className="audit-modal-message">
           {isFileSent ? (
-            <p>Votre compte-rendu d'audit a bien été envoyé.</p>
+            <h3>Votre compte-rendu d'audit a bien été envoyé.</h3>
           ) : (
             <form onSubmit={handleSubmit}>
               <input
@@ -63,7 +66,9 @@ function AdminModalAudit({ setModal, user }) {
                 required
                 onChange={(e) => setName(e.target.value)}
               />
-              {file !== "" && <button type="submit">Envoyer</button>}
+              <div>
+                {file && name && <button type="submit">Envoyer</button>}
+              </div>
             </form>
           )}
         </div>

@@ -87,6 +87,7 @@
     position: absolute;
     right: 9rem;
     top: 11rem;
+    padding-top: 4rem;
   }
 }
 
@@ -95,5 +96,6 @@
     position: absolute;
     right: 20rem;
     top: 11rem;
+    padding-top: 4rem;
   }
 }

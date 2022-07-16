@@ -1,0 +1,109 @@
+.audit-modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 200ms ease-in-out;
+  border: 6px solid var(--navbar-color);
+  border-radius: 25px;
+  background-color: var(--page-background-color);
+  color: var(--navbar-color);
+  height: auto;
+  min-height: 18rem;
+  width: 25vw;
+  min-width: 20rem;
+}
+
+.audit-modal-overlay {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.audit-modal-close-button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  padding-right: 1rem;
+  padding-top: 0.2rem;
+  color: var(--navbar-color);
+}
+
+.audit-modal-close-button:hover {
+  color: orange;
+}
+
+.audit-modal-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.audit-modal-message {
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 0.6rem;
+}
+
+.audit-modal-message h2 {
+  font-size: 1.4rem;
+}
+
+.audit-modal-message h3 {
+  font-size: 1.6rem;
+  margin-top: 1.8rem;
+}
+
+.audit-modal-message button {
+  font-size: 1rem;
+  width: 8em;
+  background-color: var(--navbar-color);
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  padding: 0.3em;
+  margin-top: 2em;
+  margin-bottom: 3rem;
+  border: 2px solid var(--navbar-color);
+}
+
+.audit-modal-message button:hover {
+  cursor: pointer;
+  border: 2px solid var(--navbar-color);
+  color: var(--navbar-color);
+  background-color: white;
+  transition: 0.5s;
+}
+
+.audit-modal-message input {
+  margin-top: 1.6rem;
+  padding: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid orange;
+  font-size: 1rem;
+}
+
+.audit-modal-message input:focus {
+  outline-color: var(--navbar-color);
+  box-shadow: 0 0 4px var(--navbar-color);
+}
+
+.audit-modal-message input[type="file"] {
+  margin-top: 1.6rem;
+  padding: 0.4rem;
+  border-radius: 10px;
+  border: 1px solid var(--navbar-color);
+  color: black;
+  background-color: white;
+}

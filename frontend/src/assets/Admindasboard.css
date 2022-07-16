@@ -28,7 +28,7 @@
 
 @media screen and (min-width: 750px) {
   .admindashboard-container h2 {
-    font-size: calc(var(--font-size) * 2.4);
+    font-size: calc(var(--font-size) * 2);
   }
 
   .usersearch input {
@@ -37,5 +37,6 @@
     width: 30%;
     padding: 0.5em;
     font-size: 1em;
+    margin-bottom: 2rem;
   }
 }

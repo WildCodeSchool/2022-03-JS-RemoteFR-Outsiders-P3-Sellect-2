@@ -5,7 +5,7 @@ class FilesManager extends AbstractManager {
 
   insert(file) {
     return this.connection.query(
-      `insert into ${FilesManager.table} (id, userId, name, content, category, sendDate) values (?, ?, ?, ?, ?, ?)`,
+      `INSERT into ${FilesManager.table} (id, userId, name, content, category, sendDate, initialCost) values (?, ?, ?, ?, ?, ?, ?)`,
       [
         file.id,
         file.userId,
@@ -13,6 +13,7 @@ class FilesManager extends AbstractManager {
         file.content,
         file.category,
         file.sendDate,
+        file.initialCost,
       ]
     );
   }
@@ -23,10 +24,32 @@ class FilesManager extends AbstractManager {
       .then((res) => res[0]);
   }
 
-  update(file) {
+  updateContract(file) {
     return this.connection.query(
-      `update ${FilesManager.table} set title = ? where id = ?`,
-      [file.title, file.id]
+      `UPDATE ${FilesManager.table} set name = ?, content = ?, newSendDate = ?, newCost = ?, gain = ? where id = ?`,
+      [
+        file.name,
+        file.content,
+        file.newSendDate,
+        file.newCost,
+        file.gain,
+        file.id,
+      ]
+    );
+  }
+
+  findGainsByUserId(userId) {
+    return this.connection
+      .query(`SELECT gain FROM ${FilesManager.table} WHERE userId = ?`, [
+        userId,
+      ])
+      .then((res) => res[0]);
+  }
+
+  deleteAll(userId) {
+    return this.connection.query(
+      `DELETE FROM ${FilesManager.table} WHERE userId = ?`,
+      [userId]
     );
   }
 }

@@ -11,6 +11,7 @@ function UserContractForm() {
   const userId = parseInt(localStorage.getItem("userId"), 10);
   const [name, setName] = useState("");
   const sendDate = Moment().format("DD-MM-YYYY");
+  const [initialCost, setInitialCost] = useState(0);
   const { setIsContractSent } = useContext(MainContext);
   const { setIsFileModal } = useContext(MainContext);
 
@@ -22,14 +23,14 @@ function UserContractForm() {
       formData.append("userId", userId);
       formData.append("name", name);
       formData.append("category", category);
+      formData.append("initialCost", initialCost);
       formData.append("sendDate", sendDate);
       API.post("/upload/contracts", formData)
         .then(() => {
           setIsContractSent(true);
-          setIsFileModal(true);
-          setFile("");
-          setCategory("");
-          setName("");
+          setTimeout(() => {
+            setIsFileModal(true);
+          }, 500);
         })
         .catch((err) => {
           console.error(err);
@@ -42,6 +43,7 @@ function UserContractForm() {
 
   return (
     <div className="usercontractform">
+      <h2>Envoyer un contrat</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="file"
@@ -69,6 +71,12 @@ function UserContractForm() {
           </option>
           <option value="Autres">Autres</option>
         </select>
+        <input
+          type="number"
+          required
+          placeholder="Montant du contrat par mois (Ex: 160)"
+          onChange={(e) => setInitialCost(parseInt(e.target.value, 10))}
+        />
         <button type="submit">Envoyer</button>
       </form>
     </div>

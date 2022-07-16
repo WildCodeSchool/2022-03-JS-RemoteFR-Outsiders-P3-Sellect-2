@@ -3,7 +3,6 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Login.css";
-// import { MainContext } from "../contexts/MainContext";
 import loginImage from "../assets/img/loginImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
@@ -34,7 +33,6 @@ function Login() {
         }
       })
       .catch((err) => {
-        // console.error(err.message);
         if (err) {
           setLoginError(true);
           setTimeout(() => {

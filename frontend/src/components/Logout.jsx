@@ -1,12 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import API from "../services/api";
-import { MainContext } from "../contexts/MainContext";
 import "@assets/Logout.css";
 import "@assets/common.css";
 
 function Logout() {
-  const { setUserData } = useContext(MainContext);
-
   const handleLogout = (e) => {
     e.preventDefault();
     API.get(`/logout/users`, {
@@ -15,7 +12,6 @@ function Logout() {
       .then((res) => {
         if (res.status === 200) {
           localStorage.clear();
-          setUserData(null);
           window.location = "/";
         }
       })
