@@ -236,9 +236,9 @@ class UsersController {
     const info = await transporter.sendMail({
       from: "sellect@outlook.fr",
       to: "besamba.gloria@gmail.com",
-      subject: "Votre compte Sellect a été crée.",
+      subject: "Votre compte Sellect a été crée!",
       text: "Le test pour nodemailer sellect",
-      html: "<b> Bienvenue sur votre compte Sellect. Pendant les 12 prochains mois, nous serons à vos côtés pour optimiser tous vos contrats d'assurances.</b>", // html body
+      html: "<b> Bienvenue sur votre compte Sellect. Pendant les 12 prochains mois, nous serons à vos côtés pour optimiser tous vos contrats d'assurances. A tout de suite sur Sellect!</b>", // html body
     });
 
     res.status(200).json({
