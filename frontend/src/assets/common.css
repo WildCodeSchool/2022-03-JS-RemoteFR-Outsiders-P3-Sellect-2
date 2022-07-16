@@ -8,6 +8,7 @@
   width: 100%;
   --page-background-color: rgb(245, 245, 240);
   --grey-background: rgb(242, 242, 242);
+  --delete-color: rgb(167, 72, 72);
 }
 
 * {
@@ -36,4 +37,12 @@
 .link-other-pages:hover {
   color: orange;
   transition: 0.5s;
+}
+
+details {
+  cursor: default !important;
+}
+
+summary {
+  cursor: pointer;
 }

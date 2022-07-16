@@ -28,9 +28,9 @@ class UsersManager extends AbstractManager {
       .then((res) => res[0]);
   }
 
-  findById(user) {
+  findById(userId) {
     return this.connection
-      .query(`SELECT * FROM ${UsersManager.table} WHERE id = ?`, [user.id])
+      .query(`SELECT * FROM ${UsersManager.table} WHERE id = ?`, [userId])
       .then((res) => res[0]);
   }
 

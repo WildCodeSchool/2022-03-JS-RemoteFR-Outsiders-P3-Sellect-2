@@ -35,15 +35,36 @@ class FilesController {
       });
   };
 
-  static edit = (req, res) => {
-    const file = req.body;
-
-    // TODO validations (length, format...)
-
-    file.id = parseInt(req.params.id, 10);
+  static readGains = (req, res) => {
+    const userId = parseInt(req.params.id, 10);
 
     models.file
-      .update(file)
+      .findGainsByUserId(userId)
+      .then((rows) => {
+        if (rows.length === 0) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static editContract = (req, res) => {
+    req.body = {
+      ...req.body,
+      id: parseInt(req.params.id, 10),
+      content: req.files.file.newFilename,
+      newCost: parseInt(req.body.newCost, 10),
+      gain: parseInt(req.body.gain, 10),
+    };
+    const file = req.body;
+
+    models.file
+      .updateContract(file)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -96,6 +117,24 @@ class FilesController {
       .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static deleteFiles = (req, res) => {
+    const userId = parseInt(req.params.id, 10);
+
+    models.file
+      .deleteAll(userId)
+      .then((rows) => {
+        if (rows.length === 0) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows);
+        }
       })
       .catch((err) => {
         console.error(err);

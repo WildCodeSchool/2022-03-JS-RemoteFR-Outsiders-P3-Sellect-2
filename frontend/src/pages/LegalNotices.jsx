@@ -15,27 +15,13 @@ export default function Mentionslegales() {
             <h2> 1. DENOMINATION SOCIALE </h2>
             <p>
               {" "}
-              <span> SELLECT </span> Association Loi 1901 – Agrément :
-              W332031996 du 24 Mai 2022 Siret : En cours d’attribution Adresse :
-              Sur demande par mail Tél : 06.12.67.94.31 E- mail
-              :sellect33@gmail.com Chargé du développement et de la
-              communication : MARCHAL Joffrey - Président REALISATION DU SITE
+              <span>SELLECT&nbsp;</span> Association Loi 1901 – Agrément :
+              W332031996 du 24 Mai 2022. Siret : En cours d’attribution. Adresse
+              : Sur demande par mail. Tél : 06.12.67.94.31. E-mail :
+              sellect33@gmail.com. Chargé du développement et de la
+              communication : MARCHAL Joffrey - Président. REALISATION DU SITE,
               Conception graphique : Wild Code School. Charte graphique : Mme
-              MARCHAL Co-présidente Chargée de la communication et l'image de
-              l’association{" "}
-            </p>
-          </section>
-          <section>
-            <h2> 1. DENOMINATION SOCIALE </h2>
-            <p>
-              {" "}
-              <span> SELLECT </span> Association Loi 1901 – Agrément :
-              W332031996 du 24 Mai 2022 Siret : En cours d’attribution Adresse :
-              Sur demande par mail Tél : 06.12.67.94.31 E- mail
-              :sellect33@gmail.com Chargé du développement et de la
-              communication : MARCHAL Joffrey - Président REALISATION DU SITE
-              Conception graphique : Wild Code School. Charte graphique : Mme
-              MARCHAL Co-présidente Chargée de la communication et l'image de
+              MARCHAL Co-présidente, Chargée de la communication et l'image de
               l’association{" "}
             </p>
           </section>
@@ -46,9 +32,9 @@ export default function Mentionslegales() {
               En contrepartie de l’accès, de la consultation et de l’utilisation
               du site SELLECT, vous êtes tenu d’accepter les présentes clauses
               d’utilisation et de vous y conformer ainsi qu’aux lois et
-              réglementations en vigueur. Si vous n’acceptez pas l’une
-              quelconque de ces clauses, NE CONSULTEZ PAS CE SITE ET NE
-              TELECHARGEZ AUCUN DOCUMENT DE CE SITE.{" "}
+              réglementations en vigueur. Si vous n’acceptez pas une quelconque
+              de ces clauses, NE CONSULTEZ PAS CE SITE ET NE TELECHARGEZ AUCUN
+              DOCUMENT DE CE SITE.{" "}
             </p>
           </section>
           <section>

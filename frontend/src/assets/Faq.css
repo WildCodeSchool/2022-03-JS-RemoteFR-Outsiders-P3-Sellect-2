@@ -41,6 +41,8 @@ details p {
   color: black;
   font: bolder;
   font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 details p ul {

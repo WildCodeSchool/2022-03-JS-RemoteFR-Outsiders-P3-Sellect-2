@@ -36,5 +36,15 @@ router.get("/files/users", FilesController.browse);
 router.get("/files/users/:id", FilesController.read);
 // Route qui permet de télécharger un fichier
 router.get("/download/file/:name", FilesController.download);
+router.delete("/files/:id", FilesController.delete);
+router.delete("/all-files/:id", FilesController.deleteFiles);
+// router.put("/new-cost/contracts/:id", FilesController.editCost);
+router.put(
+  "/update/new-contracts/:id",
+  fileMiddleware,
+  FilesController.editContract
+);
+// router.put("/gain/contracts/:id", FilesController.editGain);
+router.get("/gains/users/:id", FilesController.readGains);
 
 module.exports = router;

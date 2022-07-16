@@ -16,7 +16,7 @@ function Modal({ toggleModal, modalMessage }) {
           </button>
         </div>
         <div className="modal-message">
-          <h2>{modalMessage}</h2>
+          <h3>{modalMessage}</h3>
         </div>
       </div>
     </div>

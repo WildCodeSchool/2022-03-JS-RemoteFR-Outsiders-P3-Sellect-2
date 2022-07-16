@@ -5,7 +5,7 @@
 .home-block3-container {
   display: flex;
   justify-content: space-around;
-  background-color: rgb(222, 222, 222);
+  background-color: #dddddf;
   padding: 0 1rem 0 1rem;
   margin-bottom: 1rem;
 }
@@ -24,7 +24,7 @@
   /* width: 100vw;*/
   display: flex;
   justify-content: center;
-  background-color: rgb(222, 222, 222);
+  background-color: #dddddf;
 }
 
 .home-block3-content {

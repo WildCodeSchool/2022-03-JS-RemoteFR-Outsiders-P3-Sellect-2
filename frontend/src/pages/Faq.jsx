@@ -14,7 +14,7 @@ export default function Faq() {
               En rejoignant la communauté SELLECT, nous vous garantissons une
               refonte globale de vos dépenses. Chaque année vous aurez la
               garantie de payer le prix le plus juste et ainsi faire des
-              économies,
+              économies.
             </li>
             <li>
               Nous gardons une veille sur TOUS vos contrats. Nous vous
@@ -22,7 +22,7 @@ export default function Faq() {
             </li>
             <li>
               Les analyses se font via nos outils. Plus de démarchage
-              téléphonique vos coordonnées restent privées
+              téléphonique vos coordonnées restent privées.
             </li>
             <li>
               Astuces bons et plans, Nous vous faisons partager via notre
@@ -37,23 +37,23 @@ export default function Faq() {
         <summary> Que contient l’Audit ?</summary>
         <p>
           {" "}
-          L’audit est composé de trois phases
+          L’audit est composé de trois phases:
           <ul>
             <li>
-              Premier rendez-vous: Nous collectons les informations sur les
+              Premier rendez-vous: nous collectons les informations sur les
               différents contrats que vous souhaitez améliorer. Nous établissons
               ensemble un cahier des charges dans lequel vous définissez les
               limites de chaque futur contrat. Ce rendez-vous peut être en
               physique ou à distance par visioconférence.
             </li>
-            Deuxième phase:
             <li>
-              Création d’un compte utilisateur, Création d'un tableau de bord
-              pour la gestion et le lancement de l’analyse. Analyse comparative
-              des résultats obtenus et du cahier des charges.
+              Deuxième phase: création d’un compte utilisateur. Création d'un
+              tableau de bord pour la gestion et le lancement de l’analyse.
+              Analyse comparative des résultats obtenus et du cahier des
+              charges.
             </li>
             <li>
-              Troisième phase: Présentation au client du gain potentiel
+              Troisième phase: présentation au client du gain potentiel
               d'économie.
             </li>
           </ul>
@@ -66,11 +66,11 @@ export default function Faq() {
           {" "}
           Vous restez maître de vos contrats. Si vous souhaitez mettre en œuvre
           tout ou une partie des changements nous nous chargeons via notre
-          partenaire de lancer les démarches et ce sans frais supplémentaire.
+          partenaire de lancer les démarches et ce sans frais supplémentaires.
         </p>
         <p>
-          Que se passe en cas de changement de situation ? Reprenez contact avec
-          votre référent de proximité afin d’actualiser votre situation.
+          Que se passe-t-il en cas de changement de situation ? Reprenez contact
+          avec votre référent de proximité afin d’actualiser votre situation.
         </p>
       </details>
 
