@@ -34,16 +34,22 @@ section {
   display: block;
 }
 
-.denomination span {
+.mentionslegales-div span {
   font-weight: bolder;
 }
 
 .mentionslegales-div p {
-  display: flex;
-  width: 70%;
   margin: auto;
+  white-space: pre-line;
 }
 
 .mentionslegales-div .denomination p {
   margin-top: 0.5rem;
+}
+
+@media screen and (min-width: 760px) {
+  .mentionslegales-div h3 {
+    display: flex;
+    width: 70%;
+  }
 }
