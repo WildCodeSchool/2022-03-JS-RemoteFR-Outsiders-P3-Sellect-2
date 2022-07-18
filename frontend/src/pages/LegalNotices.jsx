@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import "../assets/common.css";
-import "../assets/Footer.css";
+import "../assets/LegalNotices.css";
 
 export default function Mentionslegales() {
   return (
@@ -13,17 +13,46 @@ export default function Mentionslegales() {
         <div>
           <section>
             <h2> 1. DENOMINATION SOCIALE </h2>
-            <p>
+            <div className="denomination">
               {" "}
-              <span>SELLECT&nbsp;</span> Association Loi 1901 – Agrément :
-              W332031996 du 24 Mai 2022. Siret : En cours d’attribution. Adresse
-              : Sur demande par mail. Tél : 06.12.67.94.31. E-mail :
-              sellect33@gmail.com. Chargé du développement et de la
-              communication : MARCHAL Joffrey - Président. REALISATION DU SITE,
-              Conception graphique : Wild Code School. Charte graphique : Mme
-              MARCHAL Co-présidente, Chargée de la communication et l'image de
-              l’association{" "}
-            </p>
+              <p>
+                <span>SELLECT</span>
+              </p>
+              <p>
+                Association Loi 1901 – Agrément :
+                <span>W332031996 du 24 Mai 2022</span>{" "}
+              </p>
+              <p>
+                {" "}
+                Siret : <span> En cours d’attribution </span>{" "}
+              </p>
+              <p> Adresse : Sur demande par mail</p>
+              <p>
+                {" "}
+                Tél : <span>06.12.67.94.31</span> E-mail :{" "}
+                <span> sellect33@gmail.com</span>
+              </p>
+              <p>
+                <span>
+                  {" "}
+                  Chargé du développement et de la communication : MARCHAL
+                  Joffrey - Président.
+                </span>
+              </p>
+              <h3>REALISATION DU SITE</h3>
+              <p>
+                {" "}
+                Conception graphique : <span>Wild Code School.</span>
+              </p>
+              <p>
+                Charte graphique :{" "}
+                <span>
+                  {" "}
+                  Mme MARCHAL Co-présidente, Chargée de la communication et
+                  l'image de l’association.
+                </span>{" "}
+              </p>
+            </div>
           </section>
           <section>
             <h2> 2. ACCEPTATION DES CONDITIONS D’UTILISATION</h2>

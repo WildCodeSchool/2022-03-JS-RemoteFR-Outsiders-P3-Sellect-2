@@ -1,0 +1,50 @@
+/* CSS page wilders */
+
+.wilders {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.div-img-wilders {
+  margin: auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+.div-img-wilders img {
+  width: 21rem;
+  margin-bottom: 2rem;
+}
+
+.wilders h2 {
+  padding-top: 4rem;
+  font-size: 2em;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.wilders p {
+  font-size: larger;
+  text-align: center;
+  margin: 1em 0;
+}
+
+@media screen and (min-width: 760px) {
+  .wilders h2 {
+    padding-top: 5rem;
+    font-size: -webkit-xxx-large;
+  }
+
+  .wilders p {
+    margin: 2em 0;
+  }
+
+  .div-img-wilders img {
+    width: 55vh;
+    height: 55vh;
+    border-radius: 30px;
+  }
+}
