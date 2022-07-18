@@ -1,0 +1,49 @@
+/* CSS page Legal notice */
+.mentionslegales-div {
+  width: 90%;
+  margin: auto;
+}
+
+.mentionslegales-div h1 {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.mentionslegales-div h2 {
+  display: flex;
+  width: 70%;
+  margin-bottom: 2rem;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+
+.mentionslegales-div h3 {
+  display: flex;
+  width: 70%;
+  margin-bottom: 2rem;
+  margin: auto;
+  margin-top: 2rem;
+}
+
+section {
+  margin-top: 2rem;
+}
+
+.denomination {
+  display: block;
+}
+
+.denomination span {
+  font-weight: bolder;
+}
+
+.mentionslegales-div p {
+  display: flex;
+  width: 70%;
+  margin: auto;
+}
+
+.mentionslegales-div .denomination p {
+  margin-top: 0.5rem;
+}

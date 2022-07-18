@@ -17,4 +17,7 @@
 .div-trustpilot .p-trustpilot {
   display: flex;
   flex-direction: row;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  justify-content: center;
 }

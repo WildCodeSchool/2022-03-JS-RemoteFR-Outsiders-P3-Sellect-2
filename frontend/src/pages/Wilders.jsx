@@ -2,11 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import christophesellect from "../assets/img/christophesellect.jpg";
 import audrensellect from "../assets/img/audrensellect.jpg";
-import logosellect from "../assets/img/logosellect.svg";
+// import logosellect from "../assets/img/logosellect.svg";
 import gloriasellect from "../assets/img/gloriasellect.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 import logowild from "../assets/img/logowild.png";
-import "../assets/Footer.css";
+import "../assets/Wilders.css";
 
 export default function Wilders() {
   return (
@@ -30,7 +30,7 @@ export default function Wilders() {
       <div className="div-img-wilders">
         <img src={christophesellect} alt="developpeur" className="img-dev" />
         <img src={audrensellect} alt="developpeur" className="img-dev" />
-        <img src={logosellect} alt="developpeur" className="img-dev" />
+        {/** <img src={logosellect} alt="developpeur" className="img-dev" />  */}
         <img src={gloriasellect} alt="developpeur" className="img-dev" />
       </div>
     </div>
