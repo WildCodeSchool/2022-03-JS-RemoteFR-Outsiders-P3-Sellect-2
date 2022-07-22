@@ -1,39 +1,49 @@
 /* CSS page wilders */
 
 .wilders {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  }
-  
-  .div-img-wilders {
-    margin: auto;
-    display: flex;
-    width: 80%;
-    justify-content: space-around;
-    flex-flow: wrap;
-  }
-  .div-img-wilders img {
-    width: 21rem;
-    margin-bottom: 2rem;
-  }
-  
-  .wilders h2 {
-    padding-top: 4rem;
-    font-size: 2em;
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
-  .wilders p {
-    font-size: larger;
-    text-align: center;
-    margin: 1em 0;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 
-  @media screen and (min-width: 760px) {
-    
+.div-img-wilders {
+  margin: auto;
+  display: flex;
+  width: 80%;
+  justify-content: space-around;
+  flex-flow: wrap;
+}
+.div-img-wilders img {
+  width: 18rem;
+}
+
+.wilders h2 {
+  padding-top: 4rem;
+  font-size: 2em;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.wilders p {
+  font-size: larger;
+  text-align: center;
+  margin: 1em 0;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.wilder-un p,
+.wilder-deux p,
+.wilder-trois p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+@media screen and (min-width: 760px) {
   .wilders h2 {
     padding-top: 5rem;
     font-size: -webkit-xxx-large;
@@ -41,6 +51,7 @@
 
   .wilders p {
     margin: 2em 0;
+    font-size: 1.5rem;
   }
 
   .div-img-wilders img {
@@ -48,4 +59,7 @@
     height: 55vh;
     border-radius: 30px;
   }
+  .div-img-wilders img {
+    margin-bottom: 0;
   }
+}

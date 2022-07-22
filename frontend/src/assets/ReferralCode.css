@@ -10,8 +10,12 @@
   width: 80%;
   margin: auto;
 }
-
-.input-referralcode input {
+.inputbutton-referralcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-referralcode {
   height: 10rem;
   width: -webkit-fill-available;
   margin: auto;
@@ -25,11 +29,6 @@
 }
 
 .btn-referralcode {
-  display: flex;
-  justify-content: center;
-}
-
-.btn-referralcode button {
   height: 3rem;
   width: 10rem;
   font-size: 1.5rem;
@@ -46,6 +45,10 @@
   align-items: center;
 }
 
+.qrcode img {
+  width: 40vh;
+}
+
 /**.qrcode img {
   width: max-content;
 }*/
@@ -60,42 +63,34 @@
   color: white;
   font-weight: bold;
   margin-left: 0px;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-  .input-referralcode input {
+  .referral-flex {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .input-referralcode {
     width: auto;
+    margin-top: auto;
+  }
+  .qrcode {
+    display: flex;
   }
 
   .btn-referralcode {
     display: block;
-  }
-
-  .qrcode {
-    position: absolute;
-    right: 3rem;
-    top: 14rem;
+    justify-content: center;
   }
 
   .qrcode img {
-    width: 15rem;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .qrcode {
-    position: absolute;
-    right: 9rem;
-    top: 11rem;
-    padding-top: 4rem;
+    height: 30vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .qrcode {
-    position: absolute;
-    right: 20rem;
-    top: 11rem;
-    padding-top: 4rem;
+  .qrcode img {
+    height: 24vh;
   }
 }

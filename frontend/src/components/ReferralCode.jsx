@@ -53,27 +53,34 @@ function ReferralCode() {
           </span>
         </h1>
       </div>
-      <div className="input-referralcode">
-        <input
-          type="text"
-          placeholder="code parrainage"
-          value={users.referralCode}
-        />
-      </div>
-      <div className="btn-referralcode">
-        <button type="button" onClick={generateQR}>
-          QRCode
-        </button>
-      </div>
-      <div className="qrcode">
-        {qrcode && (
-          <>
-            <img src={qrcode} alt="" />
-            <a href={qrcode} download="qrcode.png">
-              Telecharger
-            </a>
-          </>
-        )}
+      <div className="referral-flex">
+        <div className="inputbutton-referralcode">
+          <input
+            type="text"
+            placeholder="code parrainage"
+            value={users.referralCode}
+            className="input-referralcode"
+          />
+
+          <button
+            type="button"
+            className="btn-referralcode"
+            onClick={generateQR}
+          >
+            QRCode
+          </button>
+        </div>
+
+        <div>
+          {qrcode && (
+            <div className="qrcode">
+              <img src={qrcode} alt="" />
+              <a href={qrcode} download="qrcode.png">
+                Telecharger
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
