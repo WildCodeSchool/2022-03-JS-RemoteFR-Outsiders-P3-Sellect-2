@@ -15,8 +15,7 @@
   flex-flow: wrap;
 }
 .div-img-wilders img {
-  width: 21rem;
-  margin-bottom: 2rem;
+  width: 18rem;
 }
 
 .wilders h2 {
@@ -30,6 +29,18 @@
   font-size: larger;
   text-align: center;
   margin: 1em 0;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 1.5rem;
+}
+
+.wilder-un p,
+.wilder-deux p,
+.wilder-trois p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-style: italic;
 }
 
 @media screen and (min-width: 760px) {
@@ -40,11 +51,15 @@
 
   .wilders p {
     margin: 2em 0;
+    font-size: 1.5rem;
   }
 
   .div-img-wilders img {
     width: 55vh;
     height: 55vh;
     border-radius: 30px;
+  }
+  .div-img-wilders img {
+    margin-bottom: 0;
   }
 }

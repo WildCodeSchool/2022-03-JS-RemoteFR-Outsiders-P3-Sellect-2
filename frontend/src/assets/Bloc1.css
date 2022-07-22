@@ -146,9 +146,16 @@
 
   .bloc1_left p {
     margin-left: 1em;
+    font-size: 1.3rem;
   }
 
   .bloc1_right img {
     height: 70vh;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .div-trustpilot .p-trustpilot {
+    margin-top: 10rem;
   }
 }
