@@ -56,6 +56,12 @@ class UsersManager extends AbstractManager {
       )
       .then((res) => res[0]);
   }
+
+  findUsersNumber() {
+    return this.connection
+      .query(`SELECT COUNT(id) AS "number" FROM ${UsersManager.table}`)
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = UsersManager;

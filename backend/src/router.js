@@ -5,6 +5,8 @@ const {
   UsersController,
   FilesController,
 } = require("./controllers");
+
+const { authorization, isAdmin } = require("./middlewares/authMiddleware");
 const fileMiddleware = require("./middlewares/fileMiddleware");
 
 const router = express.Router();
@@ -16,34 +18,52 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.post("/auth/users", UsersController.add);
-router.get("/users", /* authorization, isAdmin, */ UsersController.browse);
+router.get("/users", authorization, isAdmin, UsersController.browse);
 router.post("/login/users", UsersController.login);
-router.get("/logout/users", /* authorization, */ UsersController.logout);
-router.get("/users/:id", UsersController.read);
-router.delete("/users/:id", UsersController.delete);
-router.put("/infos/users/:id", UsersController.editInfos);
-router.put("/password/users/:id", UsersController.editPassword);
-router.get("/users/sponsors/:sponsorCode", UsersController.readSponsor);
+router.get("/logout/users", UsersController.logout);
+router.get("/users/:id", authorization, UsersController.read);
+router.delete("/users/:id", authorization, isAdmin, UsersController.delete);
+router.put("/infos/users/:id", authorization, UsersController.editInfos);
+router.put("/password/users/:id", authorization, UsersController.editPassword);
+router.get(
+  "/users/sponsors/:sponsorCode",
+  authorization,
+  UsersController.readSponsor
+);
+router.get("/users-number", UsersController.browseUsersNumber);
 
-router.post("/upload/contracts", fileMiddleware, FilesController.addContract);
+router.post(
+  "/upload/contracts",
+  authorization,
+  fileMiddleware,
+  FilesController.addContract
+);
 router.post(
   "/upload/audit-reports",
+  authorization,
+  isAdmin,
   fileMiddleware,
   FilesController.addAuditReport
 );
-router.get("/files/users", FilesController.browse);
-router.get("/files/users/:id", FilesController.read);
-// Route qui permet de télécharger un fichier
-router.get("/download/file/:name", FilesController.download);
-router.delete("/files/:id", FilesController.delete);
-router.delete("/all-files/:id", FilesController.deleteFiles);
-// router.put("/new-cost/contracts/:id", FilesController.editCost);
+router.get("/files/users", authorization, isAdmin, FilesController.browse);
+router.get("/files/users/:id", authorization, FilesController.read);
+router.get("/download/file/:name", authorization, FilesController.download);
+router.delete("/files/:id", authorization, isAdmin, FilesController.delete);
+router.delete(
+  "/all-files/:id",
+  authorization,
+  isAdmin,
+  FilesController.deleteFiles
+);
 router.put(
   "/update/new-contracts/:id",
+  authorization,
+  isAdmin,
   fileMiddleware,
   FilesController.editContract
 );
-// router.put("/gain/contracts/:id", FilesController.editGain);
-router.get("/gains/users/:id", FilesController.readGains);
+router.get("/gains/users/:id", authorization, FilesController.readGains);
+router.get("/audit-reports-number", FilesController.browseAuditReportsNumber);
+router.get("/total-gains-per-month", FilesController.browseTotalGainsPerMonth);
 
 module.exports = router;

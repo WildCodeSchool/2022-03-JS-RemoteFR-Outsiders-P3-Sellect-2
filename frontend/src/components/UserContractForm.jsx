@@ -17,28 +17,23 @@ function UserContractForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("userId", userId);
-      formData.append("name", name);
-      formData.append("category", category);
-      formData.append("initialCost", initialCost);
-      formData.append("sendDate", sendDate);
-      API.post("/upload/contracts", formData)
-        .then(() => {
-          setIsContractSent(true);
-          setTimeout(() => {
-            setIsFileModal(true);
-          }, 500);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      // eslint-disable-next-line no-alert
-      alert("Veuillez sélectionner un fichier.");
-    }
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("userId", userId);
+    formData.append("name", name);
+    formData.append("category", category);
+    formData.append("initialCost", initialCost);
+    formData.append("sendDate", sendDate);
+    API.post("/upload/contracts", formData)
+      .then(() => {
+        setIsContractSent(true);
+        setTimeout(() => {
+          setIsFileModal(true);
+        }, 500);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (

@@ -42,6 +42,42 @@ function ReferralCode() {
   }, []);
 
   return (
+  <div>
+        <div className="sponsor_instructions_container">
+        <h2>Comment fonctionne le parrainage ?</h2>
+        <div className="sponsor_instructions_content">
+          <ol>
+            <li>Vous avez un code unique !</li>
+            <p>
+              On l'a pensé pour vous ! Votre code se compose des 2 premières
+              lettres de votre prénom, des 2 premières lettres de votre nom de
+              famille, puis des 4 derniers chiffres de votre numéro de téléphone
+              et enfin d'une série de 4 nombres générés aléatoirement.
+            </p>
+            <li>Partagez votre code parrain</li>
+            <p>Via SMS, What's App, email, QR Code... avec tous vos proches.</p>
+            <li>Votre filleul débute sa souscription</li>
+            <p>
+              En saissisant votre code parrainage dans le parcours de
+              souscription depuis le site. Vous serez alors tous les deux soumis
+              aux conditions de l'offre commercial en cours à ce moment-là.
+            </p>
+            <li>
+              Vos récompenses sont automatiquement versées sur vos comptes
+            </li>
+            <p>
+              Une fois que l'abonnement de votre filleul est validé par nos
+              services (sous respect des conditions de l'offre). Vous recevrez
+              alors un email de confirmation.
+            </p>
+            <li>Profitez !</li>
+            <p>
+              ...et continuez car plus vous parrainez, plus vous êtes
+              récompensés.
+            </p>
+          </ol>
+        </div>
+      </div>
     <div className="container-referralcode">
       <div>
         <h1>
