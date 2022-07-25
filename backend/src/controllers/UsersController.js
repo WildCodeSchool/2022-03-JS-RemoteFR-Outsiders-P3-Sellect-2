@@ -1,9 +1,8 @@
 require("dotenv").config();
-const nodemailer = require("nodemailer");
-
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
+const sendMail = require("../services/sendMail");
 
 class UsersController {
   static browse = (req, res) => {
@@ -119,6 +118,7 @@ class UsersController {
           signupDate,
         })
         .then((result) => {
+          sendMail(email, "Creation compte", "Le test pour nodemailer sellect");
           res.status(201).send({
             id: result[0].insertId,
             message: "User created",
@@ -220,33 +220,6 @@ class UsersController {
         console.error(err);
         res.sendStatus(500);
       });
-  };
-
-  static sendMail = async (req, res) => {
-    const transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: 587,
-      secure: false,
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS,
-      },
-    });
-
-    // send mail with defined transport object
-    const info = await transporter.sendMail({
-      from: "sellect@outlook.fr",
-      to: "besamba.gloria@gmail.com",
-      subject: "Votre compte Sellect a été crée!",
-      text: "Le test pour nodemailer sellect",
-      html: "<b> Bienvenue sur votre compte Sellect. Pendant les 12 prochains mois, nous serons à vos côtés pour optimiser tous vos contrats d'assurances. A tout de suite sur Sellect!</b>", // html body
-    });
-
-    res.status(200).json({
-      message: "Confirmation email inscription Sellect envoyée",
-      messageInfo: info.messageId,
-      preview: nodemailer.getTestMessageUrl(info),
-    });
   };
 }
 
