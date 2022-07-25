@@ -14,14 +14,10 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    API.post(
-      `/login/users`,
-      {
-        email,
-        password,
-      },
-      { withCredentials: true }
-    )
+    API.post(`/login/users`, {
+      email,
+      password,
+    })
       .then((res) => {
         localStorage.setItem("loggedIn", true);
         localStorage.setItem("userId", res.data.id);

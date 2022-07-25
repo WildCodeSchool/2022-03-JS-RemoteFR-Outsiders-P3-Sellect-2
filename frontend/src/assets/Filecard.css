@@ -57,12 +57,12 @@
   border: 2px solid var(--navbar-color);
 }
 
-.filecard_link button:last-of-type {
+#delete_btn {
   background-color: var(--delete-color);
   border: 2px solid var(--delete-color);
 }
 
-.filecard_link button:last-of-type:hover {
+#delete_btn:hover {
   background-color: var(--delete-color);
   border: 2px solid var(--delete-color);
   color: var(--delete-color);

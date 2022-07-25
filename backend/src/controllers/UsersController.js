@@ -18,9 +18,19 @@ class UsersController {
       });
   };
 
+  static browseUsersNumber = (req, res) => {
+    models.user
+      .findUsersNumber()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
-    // const user = req.body;
-    // user.id = parseInt(req.params.id, 10);
     const userId = parseInt(req.params.id, 10);
 
     models.user
@@ -162,6 +172,7 @@ class UsersController {
           {
             id: result[0].id,
             email: result[0].email,
+            role: result[0].role,
           },
           process.env.SECRET_JWT,
           {

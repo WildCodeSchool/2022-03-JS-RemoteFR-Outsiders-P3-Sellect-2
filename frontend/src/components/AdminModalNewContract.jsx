@@ -14,26 +14,21 @@ function AdminModalNewContract({ file, setContractModal }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (file) {
-      const formData = new FormData();
-      formData.append("name", name);
-      formData.append("file", contract);
-      formData.append("newSendDate", newSendDate);
-      formData.append("newCost", newCost);
-      formData.append("gain", file.initialCost - newCost);
-      API.put(`/update/new-contracts/${file.id}`, formData)
-        .then(() => {
-          setIsContractSent(true);
-          setIsGainReady(true);
-          setIsContractMessageReady(true);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      // eslint-disable-next-line no-alert
-      alert("Veuillez sélectionner un fichier.");
-    }
+    const formData = new FormData();
+    formData.append("name", name);
+    formData.append("file", contract);
+    formData.append("newSendDate", newSendDate);
+    formData.append("newCost", newCost);
+    formData.append("gain", file.initialCost - newCost);
+    API.put(`/update/new-contracts/${file.id}`, formData)
+      .then(() => {
+        setIsContractSent(true);
+        setIsGainReady(true);
+        setIsContractMessageReady(true);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   const closeModal = () => {

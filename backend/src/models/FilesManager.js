@@ -52,6 +52,20 @@ class FilesManager extends AbstractManager {
       [userId]
     );
   }
+
+  findAuditReportsNumber() {
+    return this.connection
+      .query(
+        `SELECT COUNT(id) AS "number" FROM ${FilesManager.table} WHERE file.category = "Compte-rendu d'audit"`
+      )
+      .then((res) => res[0]);
+  }
+
+  findTotalGainsPerMonth() {
+    return this.connection
+      .query(`SELECT SUM(gain) AS "total" FROM ${FilesManager.table}`)
+      .then((res) => res[0]);
+  }
 }
 
 module.exports = FilesManager;

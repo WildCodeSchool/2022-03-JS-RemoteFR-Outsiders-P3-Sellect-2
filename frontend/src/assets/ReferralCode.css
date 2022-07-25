@@ -1,6 +1,7 @@
-.container-referralcode h1 {
+.container-referralcode h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
 
 .container-referralcode {
@@ -72,7 +73,7 @@
   }
 
   .qrcode {
-    position: absolute;
+    /*position: absolute;*/
     right: 3rem;
     top: 14rem;
   }
@@ -84,7 +85,7 @@
 
 @media screen and (min-width: 960px) {
   .qrcode {
-    position: absolute;
+    /*position: absolute;*/
     right: 9rem;
     top: 11rem;
     padding-top: 4rem;
@@ -93,9 +94,35 @@
 
 @media screen and (min-width: 1200px) {
   .qrcode {
-    position: absolute;
+    /*position: absolute;*/
     right: 20rem;
     top: 11rem;
     padding-top: 4rem;
   }
+}
+
+.sponsor_instructions_container {
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.sponsor_instructions_content {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.sponsor_instructions_container h2,
+.sponsor_instructions_content li {
+  color: var(--navbar-color);
+}
+
+.sponsor_instructions_content li {
+  margin-top: 1rem;
+}
+
+.container-referralcode span {
+  color: var(--navbar-color);
 }

@@ -116,7 +116,11 @@ function FileCard({ file, files, setFiles, admin }) {
             </button>
           )}
           {admin && (
-            <button type="button" onClick={() => handleDelete()}>
+            <button
+              id="delete_btn"
+              type="button"
+              onClick={() => handleDelete()}
+            >
               Supprimer
             </button>
           )}

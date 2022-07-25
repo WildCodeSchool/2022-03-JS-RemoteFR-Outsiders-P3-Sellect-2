@@ -13,6 +13,30 @@ class FilesController {
       });
   };
 
+  static browseAuditReportsNumber = (req, res) => {
+    models.file
+      .findAuditReportsNumber()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static browseTotalGainsPerMonth = (req, res) => {
+    models.file
+      .findTotalGainsPerMonth()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     // je récupére mon userId
     // /files/users/:id

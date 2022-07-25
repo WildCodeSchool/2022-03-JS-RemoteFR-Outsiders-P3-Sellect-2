@@ -6,9 +6,7 @@ import "@assets/common.css";
 function Logout() {
   const handleLogout = (e) => {
     e.preventDefault();
-    API.get(`/logout/users`, {
-      withCredentials: true,
-    })
+    API.get(`/logout/users`)
       .then((res) => {
         if (res.status === 200) {
           localStorage.clear();
