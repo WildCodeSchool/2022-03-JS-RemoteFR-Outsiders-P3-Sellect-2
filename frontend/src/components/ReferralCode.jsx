@@ -42,8 +42,8 @@ function ReferralCode() {
   }, []);
 
   return (
-    <div>
-      <div className="sponsor_instructions_container">
+  <div>
+        <div className="sponsor_instructions_container">
         <h2>Comment fonctionne le parrainage ?</h2>
         <div className="sponsor_instructions_content">
           <ol>
@@ -78,38 +78,43 @@ function ReferralCode() {
           </ol>
         </div>
       </div>
-      <div className="container-referralcode">
-        <div>
-          <h2>
-            Bonjour&nbsp;
-            <span>{`${users.firstname} ${users.lastname}`}.</span>
-            <SponsorName user={userId} />
-            <p>
-              Envie de parrainer quelqu'un ? Voici votre{" "}
-              <span>code de parrainage</span>:
-            </p>
-          </h2>
-        </div>
-        <div className="input-referralcode">
+    <div className="container-referralcode">
+      <div>
+        <h1>
+          <span>Bonjour </span>
+          {`${users.firstname} ${users.lastname}. `}
+          <SponsorName user={userId} />
+          <span>
+            Envie de parrainer quelqu'un ? Voici votre code de parrainage:
+          </span>
+        </h1>
+      </div>
+      <div className="referral-flex">
+        <div className="inputbutton-referralcode">
           <input
             type="text"
             placeholder="code parrainage"
             value={users.referralCode}
+            className="input-referralcode"
           />
-        </div>
-        <div className="btn-referralcode">
-          <button type="button" onClick={generateQR}>
+
+          <button
+            type="button"
+            className="btn-referralcode"
+            onClick={generateQR}
+          >
             QRCode
           </button>
         </div>
-        <div className="qrcode">
+
+        <div>
           {qrcode && (
-            <>
+            <div className="qrcode">
               <img src={qrcode} alt="" />
               <a href={qrcode} download="qrcode.png">
                 Telecharger
               </a>
-            </>
+            </div>
           )}
         </div>
       </div>

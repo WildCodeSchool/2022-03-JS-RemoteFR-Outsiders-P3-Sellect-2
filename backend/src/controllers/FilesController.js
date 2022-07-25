@@ -1,4 +1,5 @@
 const models = require("../models");
+const sendMail = require("../services/sendMail");
 
 class FilesController {
   static browse = (req, res) => {
@@ -105,10 +106,16 @@ class FilesController {
   static addContract = (req, res) => {
     req.body = { ...req.body, content: req.files.file.newFilename };
     const file = req.body;
+    // const { email } = req.body.email;
+    console.warn(req.user);
 
     models.file
       .insert(file)
       .then(([result]) => {
+        //   sendMail(
+        //    `${email}`,
+        //   "Nous avons bien reçu vos documents, nous les traiteront dans les meilleurs delais"
+        // );
         res.status(201).send({ ...file, id: result.insertId });
       })
       .catch((err) => {
@@ -124,10 +131,13 @@ class FilesController {
       category: "Compte-rendu d'audit",
     };
     const file = req.body;
-
+    // console.warn(parseInt(req.body.userId, 10));
     models.file
       .insert(file)
       .then(([result]) => {
+        models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+          sendMail(user.email, "Compte-rendu audit", "Voilà votre cr sellect");
+        });
         res.status(201).send({ ...file, id: result.insertId });
       })
       .catch((err) => {

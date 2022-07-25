@@ -5,6 +5,7 @@ const {
   UsersController,
   FilesController,
 } = require("./controllers");
+
 const { authorization, isAdmin } = require("./middlewares/authMiddleware");
 const fileMiddleware = require("./middlewares/fileMiddleware");
 
@@ -18,7 +19,6 @@ router.delete("/items/:id", ItemController.delete);
 
 router.post("/auth/users", UsersController.add);
 router.get("/users", authorization, isAdmin, UsersController.browse);
-router.get("/users/mail", UsersController.sendMail);
 router.post("/login/users", UsersController.login);
 router.get("/logout/users", UsersController.logout);
 router.get("/users/:id", authorization, UsersController.read);
