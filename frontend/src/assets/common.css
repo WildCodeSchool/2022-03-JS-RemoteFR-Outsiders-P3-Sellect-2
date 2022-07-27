@@ -6,8 +6,9 @@
   --font-size: 1em;
   --line-height: 1.5;
   width: 100%;
-  --page-background-color: rgb(245, 245, 240);
+  --page-background-color: rgb(245, 245, 245);
   --grey-background: rgb(242, 242, 242);
+  --delete-color: rgb(167, 72, 72);
 }
 
 * {
@@ -17,6 +18,10 @@
   text-decoration: none;
   font-family: var(--font);
   scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--page-background-color);
 }
 
 .error {
@@ -36,4 +41,12 @@
 .link-other-pages:hover {
   color: orange;
   transition: 0.5s;
+}
+
+details {
+  cursor: default !important;
+}
+
+summary {
+  cursor: pointer;
 }

@@ -12,27 +12,44 @@ function AdminDashboard() {
   const [users, setUsers] = useState([]);
   const [searchUser, setSearchUser] = useState("");
   const navigate = useNavigate();
-  const { deleteModal, setDeleteModal } = useContext(MainContext);
+  const {
+    deleteUserModal,
+    setDeleteUserModal,
+    deleteFileModal,
+    setDeleteFileModal,
+    isUserDeleted,
+    setIsUserDeleted,
+  } = useContext(MainContext);
 
   const getUsers = () => {
     API.get(`/users`)
-      .then((res) => setUsers(res.data))
+      .then((res) => {
+        setUsers(res.data);
+        setIsUserDeleted(false);
+      })
       .catch((err) => console.error(err));
   };
 
   const toggleModal = () => {
-    setDeleteModal(false);
+    setDeleteUserModal(false);
+    setDeleteFileModal(false);
   };
 
   useEffect(() => {
-    if (localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
+    if (
+      sessionStorage.getItem("loggedIn") &&
+      !sessionStorage.getItem("isAdmin")
+    ) {
       navigate("/mon-compte");
     }
-    if (!localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
+    if (
+      !sessionStorage.getItem("loggedIn") &&
+      !sessionStorage.getItem("isAdmin")
+    ) {
       navigate("/");
     }
     getUsers();
-  }, []);
+  }, [isUserDeleted]);
 
   return (
     <div className="admindashboard-container">
@@ -49,12 +66,6 @@ function AdminDashboard() {
       <ul>
         {users &&
           users
-            .reverse()
-            // .sort((a, b) =>
-            // a.lastname.toLowerCase() < b.lastname.toLowerCase() ? -1 : 1
-            // newDate(a.signupDate) - newDate(b.signupDate)
-            // a.signupDate < b.signupDate ? -1 : 1
-            // )
             .filter(
               (user) =>
                 user.firstname
@@ -72,13 +83,20 @@ function AdminDashboard() {
                   <UserCard users={users} setUsers={setUsers} user={user} />
                 </li>
               );
-            })}
+            })
+            .reverse()}
       </ul>
       <ul />
-      {deleteModal && (
+      {deleteUserModal && (
         <Modal
           toggleModal={toggleModal}
           modalMessage="L'utilisateur a bien été supprimé."
+        />
+      )}
+      {deleteFileModal && (
+        <Modal
+          toggleModal={toggleModal}
+          modalMessage="Ce document a bien été supprimé."
         />
       )}
       <Footer />

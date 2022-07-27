@@ -8,40 +8,37 @@ import "../assets/Usercontractform.css";
 function UserContractForm() {
   const [file, setFile] = useState("");
   const [category, setCategory] = useState("");
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [name, setName] = useState("");
   const sendDate = Moment().format("DD-MM-YYYY");
+  const [initialCost, setInitialCost] = useState(0);
   const { setIsContractSent } = useContext(MainContext);
   const { setIsFileModal } = useContext(MainContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (file) {
-      const formData = new FormData();
-      formData.append("file", file);
-      formData.append("userId", userId);
-      formData.append("name", name);
-      formData.append("category", category);
-      formData.append("sendDate", sendDate);
-      API.post("/upload/contracts", formData)
-        .then(() => {
-          setIsContractSent(true);
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("userId", userId);
+    formData.append("name", name);
+    formData.append("category", category);
+    formData.append("initialCost", initialCost);
+    formData.append("sendDate", sendDate);
+    API.post("/upload/contracts", formData)
+      .then(() => {
+        setIsContractSent(true);
+        setTimeout(() => {
           setIsFileModal(true);
-          setFile("");
-          setCategory("");
-          setName("");
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    } else {
-      // eslint-disable-next-line no-alert
-      alert("Veuillez sélectionner un fichier.");
-    }
+        }, 500);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
     <div className="usercontractform">
+      <h2>Envoyer un contrat</h2>
       <form onSubmit={handleSubmit}>
         <input
           type="file"
@@ -69,6 +66,12 @@ function UserContractForm() {
           </option>
           <option value="Autres">Autres</option>
         </select>
+        <input
+          type="number"
+          required
+          placeholder="Montant du contrat par mois (Ex: 160)"
+          onChange={(e) => setInitialCost(parseInt(e.target.value, 10))}
+        />
         <button type="submit">Envoyer</button>
       </form>
     </div>

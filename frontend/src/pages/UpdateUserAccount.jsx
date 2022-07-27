@@ -5,20 +5,19 @@ import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
-import infos from "@assets/img/infos.jpg";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
 import API from "../services/api";
 
 function UpdateUserAccount() {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [firstname, setFirstname] = useState("");
   const [lastname, setLastname] = useState("");
   const [modal, setModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
+    if (!sessionStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
     API.get(`/users/${userId}`)
@@ -51,9 +50,6 @@ function UpdateUserAccount() {
               />
             )}
           </div>
-        </div>
-        <div className="updateimg">
-          <img src={infos} alt="mise à jour coordonnées" />
         </div>
       </div>
       <Footer />

@@ -1,8 +1,8 @@
 require("dotenv").config();
-
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
+// const sendMail = require("../services/sendMail");
 
 class UsersController {
   static browse = (req, res) => {
@@ -17,12 +17,23 @@ class UsersController {
       });
   };
 
+  static browseUsersNumber = (req, res) => {
+    models.user
+      .findUsersNumber()
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
-    const user = req.body;
-    user.id = parseInt(req.params.id, 10);
+    const userId = parseInt(req.params.id, 10);
 
     models.user
-      .findById(user)
+      .findById(userId)
       .then(([rows]) => {
         if (rows == null) {
           res.sendStatus(404);
@@ -117,9 +128,26 @@ class UsersController {
           signupDate,
         })
         .then((result) => {
-          res.status(201).send({
-            id: result[0].insertId,
+          /* sendMail(
+            email,
+            "Creation compte Sellect",
+            "Votre compte a bien été créé"
+          ); */
+          const token = jwt.sign(
+            {
+              id: result[0].id,
+              email: result[0].email,
+              role: result[0].role,
+            },
+            process.env.SECRET_JWT,
+            {
+              expiresIn: "2h",
+            }
+          );
+          res.cookie("sellectUserToken", token).status(201).json({
             message: "User created",
+            role: result[0].role,
+            id: result[0].insertId,
           });
         })
         .catch((err) => {
@@ -160,10 +188,11 @@ class UsersController {
           {
             id: result[0].id,
             email: result[0].email,
+            role: result[0].role,
           },
           process.env.SECRET_JWT,
           {
-            expiresIn: "1h",
+            expiresIn: "2h",
           }
         );
         return res.cookie("sellectUserToken", token).json({

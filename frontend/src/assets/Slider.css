@@ -1,7 +1,7 @@
 .carousel-root {
   width: 100%;
   margin: auto;
-  height: 54vh;
+  height: 43vh;
 }
 
 .carousel-div {
@@ -13,6 +13,7 @@
   color: #65bd60;
   font-size: calc(var(--font-size) * 1.6);
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .carousel-div .img1 {
@@ -67,7 +68,7 @@
   justify-content: center;
   flex-direction: column;
   position: absolute;
-  height: fit-content;
+  height: 4vh;
 }
 
 .carousel.carousel-slider .control-arrow {
@@ -144,7 +145,7 @@
     height: 22vh;
   }
   .carousel-root {
-    height: 52vh;
+    height: 40vh;
   }
 }
 
@@ -194,7 +195,7 @@
   .carousel-root {
     margin: 2em 0;
     width: 75%;
-    height: 100vh;
+    height: 70vh;
   }
 
   .carousel-div {

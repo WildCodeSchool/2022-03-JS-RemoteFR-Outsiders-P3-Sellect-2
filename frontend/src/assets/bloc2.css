@@ -12,6 +12,7 @@
   height: auto;
   margin-left: 2rem;
   margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .auditcontainer,
@@ -22,6 +23,7 @@
   justify-content: flex-start;
   align-items: flex-start;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .auditlogo {
@@ -57,7 +59,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    width: 80%;
+    /* width: 80%;*/
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
@@ -66,7 +68,7 @@
   .bloc2-text {
     display: flex;
     flex-direction: column;
-    height: 18rem;
+    height: auto;
     margin-left: 1rem;
     margin-right: 1rem;
   }
@@ -84,7 +86,7 @@
   .auditcontainer,
   .plateformcontainer,
   .proposalcontainer {
-    height: 37rem;
+    height: auto;
   }
 
   .auditlogo {
@@ -120,6 +122,6 @@
   .auditcontainer,
   .plateformcontainer,
   .proposalcontainer {
-    height: 33rem;
+    height: auto;
   }
 }

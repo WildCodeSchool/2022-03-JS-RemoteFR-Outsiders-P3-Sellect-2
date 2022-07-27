@@ -1,6 +1,7 @@
-.container-referralcode h1 {
+.container-referralcode h2 {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  font-size: 1.8rem;
 }
 
 .container-referralcode {
@@ -9,9 +10,16 @@
   justify-content: center;
   width: 80%;
   margin: auto;
+  margin-top: 4rem;
 }
 
-.input-referralcode input {
+.inputbutton-referralcode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-referralcode {
   height: 10rem;
   width: -webkit-fill-available;
   margin: auto;
@@ -25,11 +33,6 @@
 }
 
 .btn-referralcode {
-  display: flex;
-  justify-content: center;
-}
-
-.btn-referralcode button {
   height: 3rem;
   width: 10rem;
   font-size: 1.5rem;
@@ -46,6 +49,13 @@
   align-items: center;
 }
 
+.qrcode img {
+  width: 40vh;
+}
+
+.referral-flex {
+  margin-top: 1rem;
+}
 /**.qrcode img {
   width: max-content;
 }*/
@@ -60,40 +70,61 @@
   color: white;
   font-weight: bold;
   margin-left: 0px;
+  align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-  .input-referralcode input {
+  .referral-flex {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+  }
+  .input-referralcode {
     width: auto;
+    margin-top: auto;
+  }
+  .qrcode {
+    display: flex;
   }
 
   .btn-referralcode {
     display: block;
-  }
-
-  .qrcode {
-    position: absolute;
-    right: 3rem;
-    top: 14rem;
+    justify-content: center;
   }
 
   .qrcode img {
-    width: 15rem;
-  }
-}
-
-@media screen and (min-width: 960px) {
-  .qrcode {
-    position: absolute;
-    right: 9rem;
-    top: 11rem;
+    height: 30vh;
   }
 }
 
 @media screen and (min-width: 1200px) {
-  .qrcode {
-    position: absolute;
-    right: 20rem;
-    top: 11rem;
+  .qrcode img {
+    height: 24vh;
   }
+}
+
+.sponsor_instructions_container {
+  margin-top: 3rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.sponsor_instructions_content {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.sponsor_instructions_container h2,
+.sponsor_instructions_content li {
+  color: var(--navbar-color);
+}
+
+.sponsor_instructions_content li {
+  margin-top: 1rem;
+}
+
+.container-referralcode span {
+  color: var(--navbar-color);
 }

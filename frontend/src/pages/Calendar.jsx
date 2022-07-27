@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "@assets/common.css";
 import "@assets/Calendar.css";
 import audit from "@assets/img/audit.svg";
@@ -6,15 +6,29 @@ import UserNavbar from "@components/UserNavbar";
 import Calendly from "@components/Calendly";
 import Footer from "@components/Footer";
 import { useNavigate } from "react-router-dom";
+import Modal from "@components/Modal";
+import { MainContext } from "../contexts/MainContext";
 
 export default function Calendar() {
+  const { isFirstConnection, setIsFirstConnection } = useContext(MainContext);
+  const [isModal, setIsModal] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
+    if (!sessionStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
+    if (isFirstConnection) {
+      setTimeout(() => {
+        setIsModal(true);
+      }, 500);
+    }
   });
+
+  const toggleModal = () => {
+    setIsFirstConnection(false);
+    setIsModal(false);
+  };
 
   return (
     <div>
@@ -71,6 +85,12 @@ export default function Calendar() {
       </section>
       <Calendly />
       <Footer />
+      {isModal && (
+        <Modal
+          toggleModal={toggleModal}
+          modalMessage="Votre inscription a bien été prise en compte !"
+        />
+      )}
     </div>
   );
 }

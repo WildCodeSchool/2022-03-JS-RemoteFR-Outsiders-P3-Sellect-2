@@ -5,60 +5,75 @@ import "../assets/Usercard.css";
 import AdminModalAudit from "./AdminModalAudit";
 import SponsorName from "./SponsorName";
 import UserFiles from "./UserFiles";
+import TotalGainsPerUser from "./TotalGainsPerUser";
 
-function UserCard({ users, setUsers, user }) {
-  const { setDeleteModal } = useContext(MainContext);
+function UserCard({ user }) {
+  const { setDeleteUserModal, setIsUserDeleted } = useContext(MainContext);
   const [modal, setModal] = useState(false);
+  const [areFilesDeleted, setAreFilesDeleted] = useState(false);
 
   const handleDelete = (e) => {
     // eslint-disable-next-line no-alert
     return window.confirm("Voulez-vous vraiment supprimer cet utilisateur ?")
-      ? API.delete(`/users/${user.id}`)
+      ? API.delete(`/all-files/${user.id}`)
           .then(() => {
-            setUsers(users.filter((u) => u !== user));
-            setTimeout(() => {
-              setDeleteModal(true);
-            }, 1000);
+            setAreFilesDeleted(true);
           })
           .catch((err) => console.error(err))
       : e.preventDefault();
   };
 
+  if (areFilesDeleted) {
+    API.delete(`/users/${user.id}`)
+      .then(() => {
+        setIsUserDeleted(true);
+        setAreFilesDeleted(false);
+        setTimeout(() => {
+          setDeleteUserModal(true);
+        }, 500);
+      })
+      .catch((err) => console.error(err));
+  }
+
   return (
     <div className="user_card">
       <details className="usercard_details">
         <summary className="usercard_summary">
-          &nbsp;{user.firstname}&nbsp;{user.lastname}
+          {user.firstname} {user.lastname}
         </summary>
         <div className="usercard_div">
           <div className="details_div">
+            <TotalGainsPerUser
+              user={user.id}
+              admin={sessionStorage.getItem("isAdmin")}
+            />
             <p>
-              <span>Adresse email:</span>&nbsp;{user.email}
+              <span>Adresse email:</span> {user.email}
             </p>
             <p>
-              <span>Téléphone:</span>&nbsp;{user.phoneNumber}
+              <span>Téléphone:</span> {user.phoneNumber}
             </p>
             <p>
-              <span>Date d'inscription:</span>&nbsp;{user.signupDate}
+              <span>Date d'inscription:</span> {user.signupDate}
             </p>
             <SponsorName
               user={user.id}
-              admin={localStorage.getItem("isAdmin")}
+              admin={sessionStorage.getItem("isAdmin")}
             />
             <p>
-              <span>Code de parrainage:</span>&nbsp;{user.referralCode}
+              <span>Code de parrainage:</span> {user.referralCode}
             </p>
           </div>
           <div className="usercard_btn">
-            <button type="button" onClick={handleDelete} className="delete_btn">
-              Supprimer utilisateur
-            </button>
             <button
               type="button"
               onClick={() => setModal(true)}
               className="add_btn"
             >
               Envoyer document
+            </button>
+            <button type="button" onClick={handleDelete} className="delete_btn">
+              Supprimer utilisateur
             </button>
           </div>
         </div>

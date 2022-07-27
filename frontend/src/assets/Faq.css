@@ -3,13 +3,14 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  height: 90vh;
 }
 
 .faq-div > h1 {
   color: #65bd60;
   font-size: calc(var(--font-size) * 1.6);
   text-align: center;
-  margin-top: 2em;
+  margin-top: 5rem;
 }
 
 details {
@@ -41,6 +42,8 @@ details p {
   color: black;
   font: bolder;
   font-size: 1.2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 
 details p ul {
@@ -82,12 +85,13 @@ details p ul {
 @media screen and (min-width: 750px) {
   .faq-div {
     margin: 0 0 1em 0;
+    height: 86vh;
   }
 
   .faq-div h1 {
     margin-bottom: 1em;
     font-size: calc(var(--font-size) * 2.2);
-    margin-top: 0;
+    margin-top: 1.5rem;
   }
 
   .fad-div details {

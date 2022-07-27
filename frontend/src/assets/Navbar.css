@@ -25,7 +25,6 @@
 
 .img-hamburger:hover {
   width: 4rem;
-  height: 3rem;
   cursor: pointer;
 }
 
@@ -119,7 +118,7 @@ a {
 
 @media screen and (min-width: 750px) {
   .div-nav {
-    height: 12vh;
+    height: auto;
   }
   .img-sellectlogo {
     height: 13vh;

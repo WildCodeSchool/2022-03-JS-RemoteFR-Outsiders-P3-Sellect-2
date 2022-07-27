@@ -28,9 +28,9 @@ class UsersManager extends AbstractManager {
       .then((res) => res[0]);
   }
 
-  findById(user) {
+  findById(userId) {
     return this.connection
-      .query(`SELECT * FROM ${UsersManager.table} WHERE id = ?`, [user.id])
+      .query(`SELECT * FROM ${UsersManager.table} WHERE id = ?`, [userId])
       .then((res) => res[0]);
   }
 
@@ -54,6 +54,12 @@ class UsersManager extends AbstractManager {
         `SELECT firstname, lastname FROM ${UsersManager.table} WHERE referralCode = ?`,
         [sponsorCode]
       )
+      .then((res) => res[0]);
+  }
+
+  findUsersNumber() {
+    return this.connection
+      .query(`SELECT COUNT(id) AS "number" FROM ${UsersManager.table}`)
       .then((res) => res[0]);
   }
 }

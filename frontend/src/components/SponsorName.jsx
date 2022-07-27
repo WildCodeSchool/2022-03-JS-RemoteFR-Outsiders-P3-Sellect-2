@@ -31,10 +31,15 @@ function SponsorName({ user, admin }) {
     <div>
       {sponsor && admin && (
         <p>
-          <span>Parrain:</span>&nbsp;{sponsor}
+          <span>Parrain:</span> <span className="user-sponsor">{sponsor}</span>
         </p>
       )}
-      {sponsor && !admin && <p>Vous êtes parrainé par {sponsor}.</p>}
+      {sponsor && !admin && (
+        <p>
+          Vous êtes parrainé(e) par{" "}
+          <span className="user-sponsor">{sponsor}</span>.
+        </p>
+      )}
     </div>
   );
 }

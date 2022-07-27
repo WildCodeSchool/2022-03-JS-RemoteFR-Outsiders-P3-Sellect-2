@@ -1,8 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "@assets/common.css";
 import "@assets/Bloc1.css";
 import bloc1 from "@assets/img/bloc1.jpg";
-import { Link } from "react-router-dom";
+import Trustpilot from "./Trustpilot";
 
 export default function Bloc1() {
   return (
@@ -17,8 +18,8 @@ export default function Bloc1() {
           <span>La seule dépense</span> qui fait baisser toutes les autres.
         </p>
         <div className="btn">
-          {localStorage.getItem("loggedIn") ? (
-            <Link to="mon-compte/calendrier">
+          {sessionStorage.getItem("loggedIn") ? (
+            <Link to="/mon-compte/calendrier">
               <button
                 type="button"
                 className="audit"
@@ -48,6 +49,7 @@ export default function Bloc1() {
             </button>
           </a>
         </div>
+        <Trustpilot />
       </div>
       <div className="bloc1_right">
         <img src={bloc1} alt="photo_contrat" />

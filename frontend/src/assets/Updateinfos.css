@@ -67,7 +67,7 @@
   .form-updateinfos {
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
     margin-top: 1em;
     width: 100%;
   }
@@ -80,7 +80,7 @@
 
   .form-updateinfos button {
     margin-top: 0em;
-    /* margin-left: 2em; */
+    margin-left: 3em;
   }
 
   .updatedetails {

@@ -3,7 +3,6 @@ import { NavLink, Link, useNavigate } from "react-router-dom";
 import API from "../services/api";
 import "../assets/common.css";
 import "../assets/Login.css";
-// import { MainContext } from "../contexts/MainContext";
 import loginImage from "../assets/img/loginImage.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 
@@ -15,26 +14,21 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    API.post(
-      `/login/users`,
-      {
-        email,
-        password,
-      },
-      { withCredentials: true }
-    )
+    API.post(`/login/users`, {
+      email,
+      password,
+    })
       .then((res) => {
-        localStorage.setItem("loggedIn", true);
-        localStorage.setItem("userId", res.data.id);
+        sessionStorage.setItem("loggedIn", true);
+        sessionStorage.setItem("userId", res.data.id);
         if (res.data.role === "ADMIN") {
-          localStorage.setItem("isAdmin", true);
+          sessionStorage.setItem("isAdmin", true);
           navigate("/mon-compte/admin-dashboard");
         } else {
           navigate("/mon-compte/calendrier");
         }
       })
       .catch((err) => {
-        // console.error(err.message);
         if (err) {
           setLoginError(true);
           setTimeout(() => {

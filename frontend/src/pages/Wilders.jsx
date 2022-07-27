@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import christophesellect from "../assets/img/christophesellect.jpg";
-import audrensellect from "../assets/img/audrensellect.jpg";
-import logosellect from "../assets/img/logosellect.svg";
-import gloriasellect from "../assets/img/gloriasellect.jpg";
+import Christophe from "../assets/img/Christophe.jpg";
+import Audren from "../assets/img/Audren.jpg";
+// import logosellect from "../assets/img/logosellect.svg";
+import Gloria from "../assets/img/Gloria.jpg";
 import sellect2 from "../assets/img/sellect2.svg";
 import logowild from "../assets/img/logowild.png";
-import "../assets/Footer.css";
+import "../assets/Wilders.css";
 
 export default function Wilders() {
   return (
@@ -24,18 +24,22 @@ export default function Wilders() {
           <br />
           Les développeurs de SELLECT{" "}
         </h2>
-        <p>
-          {" "}
-          Nous avons voulu un site web performant et pratique pour Sellect.
-        </p>
-        <p> Réalisée par une équipe motivée </p>
+        <p> Nous avons voulu un site web utile et pratique pour Sellect.</p>
       </div>
 
       <div className="div-img-wilders">
-        <img src={christophesellect} alt="developpeur" className="img-dev" />
-        <img src={audrensellect} alt="developpeur" className="img-dev" />
-        <img src={logosellect} alt="developpeur" className="img-dev" />
-        <img src={gloriasellect} alt="developpeur" className="img-dev" />
+        <div className="wilder-un">
+          <img src={Christophe} alt="Christophe" className="img-dev" />
+          <p> Christophe Boinet</p>
+        </div>
+        <div className="wilder-deux">
+          <img src={Audren} alt="Audren" className="img-dev" />
+          <p> Audren Floch</p>
+        </div>
+        <div className="wilder-trois">
+          <img src={Gloria} alt="Gloria" className="img-dev" />
+          <p> Gloria Besamba</p>
+        </div>
       </div>
     </div>
   );

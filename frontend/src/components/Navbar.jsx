@@ -83,7 +83,7 @@ export default function Navbar() {
               </nav>
             </div>
 
-            {localStorage.getItem("loggedIn") ? (
+            {sessionStorage.getItem("loggedIn") ? (
               <div className="btn-div">
                 <Logout />
               </div>

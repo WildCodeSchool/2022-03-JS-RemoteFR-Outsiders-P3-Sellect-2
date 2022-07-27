@@ -54,3 +54,11 @@
   padding-right: 2rem;
   padding-bottom: 0.6rem;
 }
+
+.modal-message h2 {
+  font-size: 1.4rem;
+}
+
+.modal-message h3 {
+  font-size: 1.3rem;
+}

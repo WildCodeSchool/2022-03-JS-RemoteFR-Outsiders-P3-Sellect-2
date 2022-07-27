@@ -4,25 +4,24 @@ const MainContext = createContext();
 /* eslint-disable */
 function MainContextProvider({ children }) {
   const [isFirstConnection, setIsFirstConnection] = useState(false);
-  const [userData, setUserData] = useState(null);
-  const [deleteModal, setDeleteModal] = useState(false);
-  const [sponsor, setSponsor] = useState("");
+  const [deleteUserModal, setDeleteUserModal] = useState(false);
+  const [deleteFileModal, setDeleteFileModal] = useState(false);
   const [isAuditReportSent, setIsAuditReportSent] = useState(false);
   const [isContractSent, setIsContractSent] = useState(false);
   const [isFileSent, setIsFileSent] = useState(false);
   const [isFileModal, setIsFileModal] = useState(false);
+  const [isNewCostReady, setIsNewCostReady] = useState(false);
+  const [isGainReady, setIsGainReady] = useState(false);
+  const [isFileDeleted, setIsFileDeleted] = useState(false);
+  const [isUserDeleted, setIsUserDeleted] = useState(false);
 
   return (
     <MainContext.Provider
       value={{
         isFirstConnection,
         setIsFirstConnection,
-        userData,
-        setUserData,
-        deleteModal,
-        setDeleteModal,
-        sponsor,
-        setSponsor,
+        deleteUserModal,
+        setDeleteUserModal,
         isAuditReportSent,
         setIsAuditReportSent,
         isContractSent,
@@ -31,6 +30,16 @@ function MainContextProvider({ children }) {
         setIsFileSent,
         isFileModal,
         setIsFileModal,
+        deleteFileModal,
+        setDeleteFileModal,
+        isNewCostReady,
+        setIsNewCostReady,
+        isGainReady,
+        setIsGainReady,
+        isFileDeleted,
+        setIsFileDeleted,
+        isUserDeleted,
+        setIsUserDeleted,
       }}
     >
       {children}

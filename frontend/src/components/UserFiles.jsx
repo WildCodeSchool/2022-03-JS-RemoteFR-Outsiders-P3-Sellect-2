@@ -8,8 +8,14 @@ import "../assets/Userfiles.css";
 function UserFiles({ user }) {
   const [contracts, setContracts] = useState([]);
   const [auditReports, setAuditReports] = useState([]);
-  const { isContractSent, setIsContractSent } = useContext(MainContext);
-  const { isAuditReportSent, setIsAuditReportSent } = useContext(MainContext);
+  const {
+    isContractSent,
+    setIsContractSent,
+    isAuditReportSent,
+    setIsAuditReportSent,
+    isNewCostReady,
+    setIsNewCostReady,
+  } = useContext(MainContext);
 
   useEffect(() => {
     API.get(`/files/users/${user}`)
@@ -22,9 +28,10 @@ function UserFiles({ user }) {
         );
         setIsAuditReportSent(false);
         setIsContractSent(false);
+        setIsNewCostReady(false);
       })
       .catch((err) => console.error(err));
-  }, [isAuditReportSent, isContractSent]);
+  }, [isAuditReportSent, isContractSent, isNewCostReady]);
 
   return (
     <div className="userfile">
@@ -35,7 +42,12 @@ function UserFiles({ user }) {
             .map((auditReport) => {
               return (
                 <li key={auditReport.id}>
-                  <FileCard file={auditReport} />
+                  <FileCard
+                    file={auditReport}
+                    files={auditReports}
+                    setFiles={setAuditReports}
+                    admin={sessionStorage.getItem("isAdmin")}
+                  />
                 </li>
               );
             })
@@ -48,7 +60,12 @@ function UserFiles({ user }) {
             .map((contract) => {
               return (
                 <li key={contract.id}>
-                  <FileCard file={contract} />
+                  <FileCard
+                    file={contract}
+                    files={contracts}
+                    setFiles={setContracts}
+                    admin={sessionStorage.getItem("isAdmin")}
+                  />
                 </li>
               );
             })
