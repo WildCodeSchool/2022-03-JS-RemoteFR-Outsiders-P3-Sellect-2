@@ -15,6 +15,7 @@ function AdminModalNewContract({ file, setContractModal }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData();
+    formData.append("userId", file.userId);
     formData.append("name", name);
     formData.append("file", contract);
     formData.append("newSendDate", newSendDate);
