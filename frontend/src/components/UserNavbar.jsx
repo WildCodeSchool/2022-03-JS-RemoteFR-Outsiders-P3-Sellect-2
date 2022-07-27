@@ -56,7 +56,7 @@ export default function UserNavbar() {
                 >
                   Accueil
                 </NavLink>
-                {localStorage.getItem("isAdmin") ? (
+                {sessionStorage.getItem("isAdmin") ? (
                   <NavLink
                     to="/mon-compte/admin-dashboard"
                     className={(items) =>
@@ -75,7 +75,7 @@ export default function UserNavbar() {
                     Audit
                   </NavLink>
                 )}
-                {!localStorage.getItem("isAdmin") && (
+                {!sessionStorage.getItem("isAdmin") && (
                   <NavLink
                     to="/mon-compte/fichiers"
                     className={(items) =>

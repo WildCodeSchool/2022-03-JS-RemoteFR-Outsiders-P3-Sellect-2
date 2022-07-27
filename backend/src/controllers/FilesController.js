@@ -39,12 +39,8 @@ class FilesController {
   };
 
   static read = (req, res) => {
-    // je récupére mon userId
-    // /files/users/:id
-    // /files/users/254 <- params.id
     const userId = parseInt(req.params.id, 10);
-    // j'appel mon model pour avoir tout les fichiers
-    // dont l'id est userId
+
     models.file
       .findByUserId(userId)
       .then((rows) => {
@@ -94,13 +90,14 @@ class FilesController {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
         } else {
-          models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+          /* models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+            console.log(user);
             sendMail(
               user.email,
               "Mise à jour de contrat Sellect",
               `Votre contrat a bien été mis à jour`
             );
-          });
+          }); */
           res.sendStatus(204);
         }
       })
@@ -139,7 +136,7 @@ class FilesController {
       category: "Compte-rendu d'audit",
     };
     const file = req.body;
-    // console.warn(parseInt(req.body.userId, 10));
+
     models.file
       .insert(file)
       .then(([result]) => {
