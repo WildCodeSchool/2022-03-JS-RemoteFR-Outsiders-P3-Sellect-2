@@ -45,7 +45,7 @@ function UserCard({ user }) {
           <div className="details_div">
             <TotalGainsPerUser
               user={user.id}
-              admin={localStorage.getItem("isAdmin")}
+              admin={sessionStorage.getItem("isAdmin")}
             />
             <p>
               <span>Adresse email:</span> {user.email}
@@ -58,7 +58,7 @@ function UserCard({ user }) {
             </p>
             <SponsorName
               user={user.id}
-              admin={localStorage.getItem("isAdmin")}
+              admin={sessionStorage.getItem("isAdmin")}
             />
             <p>
               <span>Code de parrainage:</span> {user.referralCode}
