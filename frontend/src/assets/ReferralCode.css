@@ -10,12 +10,15 @@
   justify-content: center;
   width: 80%;
   margin: auto;
+  margin-top: 4rem;
 }
+
 .inputbutton-referralcode {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .input-referralcode {
   height: 10rem;
   width: -webkit-fill-available;
@@ -82,7 +85,7 @@
 
   .btn-referralcode {
     display: block;
-    justif-content: center;
+    justify-content: center;
   }
 
   .qrcode img {
@@ -97,7 +100,7 @@
 }
 
 .sponsor_instructions_container {
-  margin-top: 2rem;
+  margin-top: 3rem;
   margin-left: 2rem;
   margin-right: 2rem;
   margin-bottom: 2rem;

@@ -15,13 +15,13 @@ export default function Calendar() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
+    if (!sessionStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
     if (isFirstConnection) {
       setTimeout(() => {
         setIsModal(true);
-      }, 1000);
+      }, 500);
     }
   });
 

@@ -14,7 +14,7 @@ import Sponsorship from "./Sponsorship";
 function Home() {
   return (
     <div className="content_container">
-      {localStorage.getItem("loggedIn") ? <UserNavbar /> : <Navbar />}
+      {sessionStorage.getItem("loggedIn") ? <UserNavbar /> : <Navbar />}
       <div className="content">
         <Bloc1 />
         <Bloc2 />

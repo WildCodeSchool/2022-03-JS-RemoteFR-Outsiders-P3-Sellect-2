@@ -104,7 +104,7 @@ export default function UserNavbar() {
               </nav>
             </div>
 
-            {localStorage.getItem("loggedIn") ? (
+            {sessionStorage.getItem("loggedIn") ? (
               <div className="btn-div">
                 <Logout />
               </div>

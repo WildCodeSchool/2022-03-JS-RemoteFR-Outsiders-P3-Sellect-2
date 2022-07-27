@@ -18,7 +18,7 @@ export default function Bloc1() {
           <span>La seule dépense</span> qui fait baisser toutes les autres.
         </p>
         <div className="btn">
-          {localStorage.getItem("loggedIn") ? (
+          {sessionStorage.getItem("loggedIn") ? (
             <Link to="/mon-compte/calendrier">
               <button
                 type="button"

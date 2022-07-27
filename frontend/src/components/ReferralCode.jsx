@@ -5,7 +5,7 @@ import "@assets/ReferralCode.css";
 import SponsorName from "./SponsorName";
 
 function ReferralCode() {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [users, setUsers] = useState(userId);
   const [qrcode, setQrcode] = useState(userId.ReferralCode);
   const [url] = useState([]);
@@ -81,12 +81,15 @@ function ReferralCode() {
       <div className="container-referralcode">
         <div>
           <h1>
-            <span>Bonjour </span>
-            {`${users.firstname} ${users.lastname}. `}
-            <SponsorName user={userId} />
+            Bonjour
             <span>
-              Envie de parrainer quelqu'un ? Voici votre code de parrainage:
+              {" "}
+              {users.firstname} {users.lastname}
             </span>
+            .
+            <SponsorName user={userId} />
+            Envie de parrainer quelqu'un ?{" "}
+            <span>Voici votre code de parrainage:</span>
           </h1>
         </div>
         <div className="referral-flex">

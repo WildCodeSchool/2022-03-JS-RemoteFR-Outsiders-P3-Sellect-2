@@ -9,12 +9,12 @@ import TotalGainsPerUser from "@components/TotalGainsPerUser";
 import { MainContext } from "../contexts/MainContext";
 
 function UserFilesPage() {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const navigate = useNavigate();
   const { isFileModal, setIsFileModal } = useContext(MainContext);
 
   useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
+    if (!sessionStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
   }, []);

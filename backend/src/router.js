@@ -48,6 +48,7 @@ router.post(
 router.get("/files/users", authorization, isAdmin, FilesController.browse);
 router.get("/files/users/:id", authorization, FilesController.read);
 router.get("/download/file/:name", authorization, FilesController.download);
+router.get("/visualize/file/:name", FilesController.browsePath);
 router.delete("/files/:id", authorization, isAdmin, FilesController.delete);
 router.delete(
   "/all-files/:id",

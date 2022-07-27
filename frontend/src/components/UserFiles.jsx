@@ -46,7 +46,7 @@ function UserFiles({ user }) {
                     file={auditReport}
                     files={auditReports}
                     setFiles={setAuditReports}
-                    admin={localStorage.getItem("isAdmin")}
+                    admin={sessionStorage.getItem("isAdmin")}
                   />
                 </li>
               );
@@ -64,7 +64,7 @@ function UserFiles({ user }) {
                     file={contract}
                     files={contracts}
                     setFiles={setContracts}
-                    admin={localStorage.getItem("isAdmin")}
+                    admin={sessionStorage.getItem("isAdmin")}
                   />
                 </li>
               );

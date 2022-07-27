@@ -8,7 +8,7 @@ function SponsorPage() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (!localStorage.getItem("loggedIn")) {
+    if (!sessionStorage.getItem("loggedIn")) {
       navigate("/connexion");
     }
   }, []);
