@@ -90,14 +90,17 @@ class FilesController {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
         } else {
-          /* models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
-            console.log(user);
+          /**
+         *   console.warn(req.body);
+          models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+            console.warn(user);
             sendMail(
               user.email,
               "Mise à jour de contrat Sellect",
               `Votre contrat a bien été mis à jour`
             );
-          }); */
+          });
+         */
           res.sendStatus(204);
         }
       })
