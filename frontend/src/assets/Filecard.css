@@ -18,7 +18,7 @@
 
 .filecard_details:nth-last-child(n) {
   margin-bottom: 1em;
-  background-color: lightgrey;
+  background-color: rgb(226, 225, 225);
 }
 
 .filecard_details:hover {
