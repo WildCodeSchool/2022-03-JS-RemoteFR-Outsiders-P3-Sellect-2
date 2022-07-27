@@ -127,11 +127,34 @@ class UsersController {
           role: "USER",
           signupDate,
         })
-        .then((result) => {
+        /* .then((result) => {
           sendMail(email, "Creation compte", "Le test pour nodemailer sellect");
           res.status(201).send({
             id: result[0].insertId,
             message: "User created",
+          });
+        }) */
+        .then((result) => {
+          sendMail(
+            email,
+            "Creation compte Sellect",
+            "Votre compte a bien été créé"
+          );
+          const token = jwt.sign(
+            {
+              id: result[0].id,
+              email: result[0].email,
+              role: result[0].role,
+            },
+            process.env.SECRET_JWT,
+            {
+              expiresIn: "2h",
+            }
+          );
+          res.cookie("sellectUserToken", token).status(201).json({
+            message: "User created",
+            role: result[0].role,
+            id: result[0].insertId,
           });
         })
         .catch((err) => {
@@ -176,7 +199,7 @@ class UsersController {
           },
           process.env.SECRET_JWT,
           {
-            expiresIn: "1h",
+            expiresIn: "2h",
           }
         );
         return res.cookie("sellectUserToken", token).json({

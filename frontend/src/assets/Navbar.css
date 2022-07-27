@@ -118,7 +118,7 @@ a {
 
 @media screen and (min-width: 750px) {
   .div-nav {
-    height: 12vh;
+    height: auto;
   }
   .img-sellectlogo {
     height: 13vh;

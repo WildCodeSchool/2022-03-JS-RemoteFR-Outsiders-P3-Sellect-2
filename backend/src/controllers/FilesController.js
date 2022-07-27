@@ -94,6 +94,13 @@ class FilesController {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
         } else {
+          models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+            sendMail(
+              user.email,
+              "Mise à jour de contrat Sellect",
+              `Votre contrat a bien été mis à jour`
+            );
+          });
           res.sendStatus(204);
         }
       })
@@ -106,16 +113,17 @@ class FilesController {
   static addContract = (req, res) => {
     req.body = { ...req.body, content: req.files.file.newFilename };
     const file = req.body;
-    // const { email } = req.body.email;
-    console.warn(req.user);
 
     models.file
       .insert(file)
       .then(([result]) => {
-        //   sendMail(
-        //    `${email}`,
-        //   "Nous avons bien reçu vos documents, nous les traiteront dans les meilleurs delais"
-        // );
+        models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+          sendMail(
+            "sellect@outlook.fr",
+            "Ajout contrat Sellect",
+            `${user.firstname} ${user.lastname} a envoyé un contrat.`
+          );
+        });
         res.status(201).send({ ...file, id: result.insertId });
       })
       .catch((err) => {
@@ -136,7 +144,11 @@ class FilesController {
       .insert(file)
       .then(([result]) => {
         models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
-          sendMail(user.email, "Compte-rendu audit", "Voilà votre cr sellect");
+          sendMail(
+            user.email,
+            "Compte-rendu audit Sellect",
+            "Voilà votre cr sellect"
+          );
         });
         res.status(201).send({ ...file, id: result.insertId });
       })
@@ -181,6 +193,12 @@ class FilesController {
     const { name } = req.params;
     // je renvoi via un status code 200 mon document.
     res.status(200).download(`${__dirname}/../../uploads/${name}`, name);
+  };
+
+  static browsePath = (req, res) => {
+    const { name } = req.params;
+    // je renvoi via un status code 200 mon document.
+    res.status(200).json({ path: `${__dirname}/../../uploads/${name}` });
   };
 }
 

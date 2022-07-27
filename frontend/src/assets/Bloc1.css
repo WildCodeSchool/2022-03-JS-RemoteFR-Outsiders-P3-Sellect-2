@@ -103,7 +103,7 @@
   width: 90%;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1050px) {
   .bloc1_container {
     display: flex;
     flex-direction: row;
@@ -115,7 +115,7 @@
   .bloc1_left {
     align-items: flex-start;
     margin-left: 1rem;
-    height: 80vh;
+    height: 75vh;
   }
 
   .bloc1_left .btn {
@@ -150,7 +150,7 @@
   }
 
   .bloc1_right img {
-    height: 70vh;
+    height: auto;
   }
 }
 

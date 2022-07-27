@@ -43,9 +43,11 @@
   margin-top: 2.4rem;
 }
 
-.filecard_link button {
+.filecard_link button,
+.filecard_link a {
+  font-weight: normal;
   font-size: 0.9em;
-  width: 8em;
+  width: 7rem;
   background-color: var(--navbar-color);
   border-radius: 20px;
   color: white;
@@ -70,7 +72,8 @@
   transition: 0.5s;
 }
 
-.filecard_link button:hover {
+.filecard_link button:hover,
+.filecard_link a:hover {
   cursor: pointer;
   border: 2px solid var(--navbar-color);
   color: var(--navbar-color);

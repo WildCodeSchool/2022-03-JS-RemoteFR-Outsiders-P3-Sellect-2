@@ -4,7 +4,7 @@ import "@assets/Updatepassword.css";
 import "@assets/common.css";
 
 function UpdatePassword({ setModal }) {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [passwordError, setPasswordError] = useState(false);

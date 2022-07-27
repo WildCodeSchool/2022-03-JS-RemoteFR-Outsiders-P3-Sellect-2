@@ -5,7 +5,7 @@ import "@assets/ReferralCode.css";
 import SponsorName from "./SponsorName";
 
 function ReferralCode() {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [users, setUsers] = useState(userId);
   const [qrcode, setQrcode] = useState(userId.ReferralCode);
   const [url] = useState([]);
@@ -42,8 +42,8 @@ function ReferralCode() {
   }, []);
 
   return (
-  <div>
-        <div className="sponsor_instructions_container">
+    <div>
+      <div className="sponsor_instructions_container">
         <h2>Comment fonctionne le parrainage ?</h2>
         <div className="sponsor_instructions_content">
           <ol>
@@ -78,44 +78,48 @@ function ReferralCode() {
           </ol>
         </div>
       </div>
-    <div className="container-referralcode">
-      <div>
-        <h1>
-          <span>Bonjour </span>
-          {`${users.firstname} ${users.lastname}. `}
-          <SponsorName user={userId} />
-          <span>
-            Envie de parrainer quelqu'un ? Voici votre code de parrainage:
-          </span>
-        </h1>
-      </div>
-      <div className="referral-flex">
-        <div className="inputbutton-referralcode">
-          <input
-            type="text"
-            placeholder="code parrainage"
-            value={users.referralCode}
-            className="input-referralcode"
-          />
-
-          <button
-            type="button"
-            className="btn-referralcode"
-            onClick={generateQR}
-          >
-            QRCode
-          </button>
-        </div>
-
+      <div className="container-referralcode">
         <div>
-          {qrcode && (
-            <div className="qrcode">
-              <img src={qrcode} alt="" />
-              <a href={qrcode} download="qrcode.png">
-                Telecharger
-              </a>
-            </div>
-          )}
+          <h1>
+            Bonjour
+            <span>
+              {" "}
+              {users.firstname} {users.lastname}
+            </span>
+            .
+            <SponsorName user={userId} />
+            Envie de parrainer quelqu'un ?{" "}
+            <span>Voici votre code de parrainage:</span>
+          </h1>
+        </div>
+        <div className="referral-flex">
+          <div className="inputbutton-referralcode">
+            <input
+              type="text"
+              placeholder="code parrainage"
+              value={users.referralCode}
+              className="input-referralcode"
+            />
+
+            <button
+              type="button"
+              className="btn-referralcode"
+              onClick={generateQR}
+            >
+              QRCode
+            </button>
+          </div>
+
+          <div>
+            {qrcode && (
+              <div className="qrcode">
+                <img src={qrcode} alt="" />
+                <a href={qrcode} download="qrcode.png">
+                  Telecharger
+                </a>
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
