@@ -28,9 +28,8 @@ function FileCard({ file, files, setFiles, admin }) {
   }, []);
 
   const handleDelete = (e) => {
-    return window.location.confirm(
-      "Voulez-vous vraiment supprimer ce document ?"
-    )
+    // eslint-disable-next-line no-alert
+    return window.confirm("Voulez-vous vraiment supprimer ce document ?")
       ? API.delete(`/files/${file.id}`)
           .then(() => {
             setFiles(files.filter((el) => el !== file));
@@ -41,7 +40,6 @@ function FileCard({ file, files, setFiles, admin }) {
           })
           .catch((err) => console.error(err))
       : e.preventDefault();
-    // eslint-disable-next-line no-alert
   };
 
   return (
