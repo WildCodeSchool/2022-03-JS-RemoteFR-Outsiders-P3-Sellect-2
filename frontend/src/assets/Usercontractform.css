@@ -26,6 +26,7 @@
 .usercontractform button {
   margin-top: 2em;
   font-size: 0.9rem;
+  background-color: white;
 }
 
 .usercontractform input,
@@ -58,7 +59,7 @@
 
 input[type="file"]::-webkit-file-upload-button {
   border: none;
-  background: white;
+  background-color: white;
   color: var(--navbar-color);
 }
 
