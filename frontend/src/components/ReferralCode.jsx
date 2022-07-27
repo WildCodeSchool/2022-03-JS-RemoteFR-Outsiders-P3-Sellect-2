@@ -6,8 +6,8 @@ import SponsorName from "./SponsorName";
 
 function ReferralCode() {
   const userId = parseInt(sessionStorage.getItem("userId"), 10);
-  const [users, setUsers] = useState(userId);
-  const [qrcode, setQrcode] = useState(userId.ReferralCode);
+  const [user, setUser] = useState(userId);
+  const [qrcode, setQrcode] = useState(user.referralCode);
   const [url] = useState([]);
 
   const generateQR = () => {
@@ -29,10 +29,10 @@ function ReferralCode() {
   };
 
   const getOneUser = () => {
-    API.get(`/users/${users}`)
+    API.get(`/users/${user}`)
       .then((res) => {
         console.warn(res.data);
-        setUsers(res.data);
+        setUser(res.data);
       })
       .catch((err) => console.error(err));
   };
@@ -84,7 +84,7 @@ function ReferralCode() {
             Bonjour
             <span>
               {" "}
-              {users.firstname} {users.lastname}
+              {user.firstname} {user.lastname}
             </span>
             .
             <SponsorName user={userId} />
@@ -97,7 +97,7 @@ function ReferralCode() {
             <input
               type="text"
               placeholder="code parrainage"
-              value={users.referralCode}
+              value={user.referralCode}
               className="input-referralcode"
             />
 

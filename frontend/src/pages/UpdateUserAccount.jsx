@@ -5,7 +5,6 @@ import Modal from "@components/Modal";
 import { useNavigate } from "react-router-dom";
 import UpdateInfos from "@components/UpdateInfos";
 import UpdatePassword from "@components/UpdatePassword";
-import infos from "@assets/img/infos.jpg";
 import "@assets/Updateuseraccount.css";
 import "@assets/common.css";
 import API from "../services/api";
@@ -51,9 +50,6 @@ function UpdateUserAccount() {
               />
             )}
           </div>
-        </div>
-        <div className="updateimg">
-          <img src={infos} alt="mise à jour coordonnées" />
         </div>
       </div>
       <Footer />
