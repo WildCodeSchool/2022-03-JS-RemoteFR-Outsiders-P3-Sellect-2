@@ -2,7 +2,7 @@ require("dotenv").config();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
-const sendMail = require("../services/sendMail");
+// const sendMail = require("../services/sendMail");
 
 class UsersController {
   static browse = (req, res) => {
@@ -127,19 +127,12 @@ class UsersController {
           role: "USER",
           signupDate,
         })
-        /* .then((result) => {
-          sendMail(email, "Creation compte", "Le test pour nodemailer sellect");
-          res.status(201).send({
-            id: result[0].insertId,
-            message: "User created",
-          });
-        }) */
         .then((result) => {
-          sendMail(
+          /* sendMail(
             email,
             "Creation compte Sellect",
             "Votre compte a bien été créé"
-          );
+          ); */
           const token = jwt.sign(
             {
               id: result[0].id,

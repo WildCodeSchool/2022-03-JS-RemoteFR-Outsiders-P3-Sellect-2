@@ -1,5 +1,5 @@
 const models = require("../models");
-const sendMail = require("../services/sendMail");
+// const sendMail = require("../services/sendMail");
 
 class FilesController {
   static browse = (req, res) => {
@@ -90,18 +90,15 @@ class FilesController {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
         } else {
-          /**
-         *   console.warn(req.body);
+          /* console.log(req.body);
           models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
-            console.warn(user);
             sendMail(
               user.email,
               "Mise à jour de contrat Sellect",
               `Votre contrat a bien été mis à jour`
             );
-          });
-         */
-          res.sendStatus(204);
+          }); */
+          res.status(201).send({ ...file });
         }
       })
       .catch((err) => {
@@ -117,13 +114,13 @@ class FilesController {
     models.file
       .insert(file)
       .then(([result]) => {
-        models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+        /* models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
           sendMail(
             "sellect@outlook.fr",
             "Ajout contrat Sellect",
             `${user.firstname} ${user.lastname} a envoyé un contrat.`
           );
-        });
+        }); */
         res.status(201).send({ ...file, id: result.insertId });
       })
       .catch((err) => {
@@ -143,13 +140,13 @@ class FilesController {
     models.file
       .insert(file)
       .then(([result]) => {
-        models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
+        /* models.user.findById(parseInt(req.body.userId, 10)).then(([user]) => {
           sendMail(
             user.email,
             "Compte-rendu audit Sellect",
             "Voilà votre cr sellect"
           );
-        });
+        }); */
         res.status(201).send({ ...file, id: result.insertId });
       })
       .catch((err) => {

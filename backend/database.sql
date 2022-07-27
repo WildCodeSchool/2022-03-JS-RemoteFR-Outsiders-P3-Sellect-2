@@ -41,11 +41,7 @@ CREATE TABLE IF NOT EXISTS `file` (
   `gain` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `foreign_key` (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=78 DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `file`
---
+) ENGINE=InnoDB AUTO_INCREMENT=86 DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -62,12 +58,12 @@ CREATE TABLE IF NOT EXISTS `user` (
   `email` varchar(190) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `sponsorCode` varchar(20) DEFAULT NULL,
-  `referralCode` varchar(255) DEFAULT NULL,
-  `role` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `signupDate` varchar(45) DEFAULT NULL,
+  `referralCode` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `role` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `signupDate` varchar(45) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=270 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=324 DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `user`
