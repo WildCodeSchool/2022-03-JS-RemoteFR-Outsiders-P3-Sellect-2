@@ -41,8 +41,8 @@ function SignUp() {
       })
         .then((res) => {
           setIsFirstConnection(true);
-          localStorage.setItem("userId", res.data.id);
-          localStorage.setItem("loggedIn", true);
+          sessionStorage.setItem("userId", res.data.id);
+          sessionStorage.setItem("loggedIn", true);
           navigate("/mon-compte/calendrier");
         })
         .catch((err) => {

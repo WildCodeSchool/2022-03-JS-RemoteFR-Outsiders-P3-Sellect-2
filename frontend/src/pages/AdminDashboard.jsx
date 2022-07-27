@@ -36,10 +36,16 @@ function AdminDashboard() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
+    if (
+      sessionStorage.getItem("loggedIn") &&
+      !sessionStorage.getItem("isAdmin")
+    ) {
       navigate("/mon-compte");
     }
-    if (!localStorage.getItem("loggedIn") && !localStorage.getItem("isAdmin")) {
+    if (
+      !sessionStorage.getItem("loggedIn") &&
+      !sessionStorage.getItem("isAdmin")
+    ) {
       navigate("/");
     }
     getUsers();

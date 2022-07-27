@@ -9,7 +9,7 @@ function Logout() {
     API.get(`/logout/users`)
       .then((res) => {
         if (res.status === 200) {
-          localStorage.clear();
+          sessionStorage.clear();
           window.location = "/";
         }
       })

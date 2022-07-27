@@ -19,10 +19,10 @@ function Login() {
       password,
     })
       .then((res) => {
-        localStorage.setItem("loggedIn", true);
-        localStorage.setItem("userId", res.data.id);
+        sessionStorage.setItem("loggedIn", true);
+        sessionStorage.setItem("userId", res.data.id);
         if (res.data.role === "ADMIN") {
-          localStorage.setItem("isAdmin", true);
+          sessionStorage.setItem("isAdmin", true);
           navigate("/mon-compte/admin-dashboard");
         } else {
           navigate("/mon-compte/calendrier");

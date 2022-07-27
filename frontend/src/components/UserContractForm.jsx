@@ -8,7 +8,7 @@ import "../assets/Usercontractform.css";
 function UserContractForm() {
   const [file, setFile] = useState("");
   const [category, setCategory] = useState("");
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [name, setName] = useState("");
   const sendDate = Moment().format("DD-MM-YYYY");
   const [initialCost, setInitialCost] = useState(0);

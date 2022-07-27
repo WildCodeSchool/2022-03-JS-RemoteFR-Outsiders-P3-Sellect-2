@@ -4,7 +4,7 @@ import "@assets/Updateinfos.css";
 import "@assets/common.css";
 
 function UpdateInfos({ setModal }) {
-  const userId = parseInt(localStorage.getItem("userId"), 10);
+  const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
