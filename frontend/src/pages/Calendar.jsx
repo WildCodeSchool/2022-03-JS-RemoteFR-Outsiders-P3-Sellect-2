@@ -43,14 +43,14 @@ export default function Calendar() {
             <p>
               ►{" "}
               <span>Cahier des charges précis de vos attentes et besoins</span>{" "}
-              sur tous types de contrats,
+              sur tous types de contrats.
             </p>
             <p>
               ► Création d'un <span>tableau de bord numérique</span>{" "}
-              d'optimisation et de suivi des dépenses,
+              d'optimisation et de suivi des dépenses.
             </p>
             <p>
-              ► Présentation des <span>contrats proposés</span>,
+              ► Présentation des <span>contrats proposés</span>.
             </p>
             <p>
               ► Mise en avant des <span>gains potentiels</span>.
@@ -67,7 +67,7 @@ export default function Calendar() {
 
           <div className="instruction3">
             <h2>3 - Aller plus loin</h2>
-            <p>► Vous restez maître de la proposition qui vous est faite</p>
+            <p>► Vous restez maître de la proposition qui vous est faite.</p>
             <p>
               ► Si vous souhaitez donner suite en partie ou en totalité,
               l'association propose{" "}

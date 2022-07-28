@@ -14,22 +14,22 @@ export default function Sponsorship() {
           <div className="instruction1">
             <h1>1 - Obtenez votre code</h1>
             <p>
-              ► Réalisez votre <span>audit personnalisé</span>
+              ► Réalisez votre <span>audit personnalisé</span>.
             </p>
             <p>
               ► Si vous souhaitez{" "}
               <span> partager la philosophie de l’association</span> et
-              améliorer le pouvoir d’achat d'autrui
+              améliorer le pouvoir d’achat d'autrui.
             </p>
             <p>
-              <span>► Un code</span> vous sera remis à la remise de votre Audit.
+              ► <span>Un code</span> vous sera remis à la remise de votre Audit.
             </p>
           </div>
 
           <div className="instruction2">
             <h1>2 - Transmettez votre code</h1>
             <p>
-              ► Nous offrons <span>10 euros</span> par filleul
+              ► Nous offrons <span>10 euros</span> par filleul.
             </p>
           </div>
 
