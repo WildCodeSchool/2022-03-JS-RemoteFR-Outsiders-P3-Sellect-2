@@ -4,10 +4,15 @@
   justify-content: flex-start;
 }
 
+.instructions_container {
+  margin-top: 2rem;
+}
+
 .title h1 {
   text-align: center;
   color: #65bd60;
-  font-size: calc(var(--font-size) * 1.6);
+  font-size: calc(var(--font-size) * 1.8);
+  margin-top: 1rem;
 }
 
 .instruction1,
@@ -21,9 +26,9 @@
   background-color: var(--background-color);
 }
 
-.instruction1 h1,
-.instruction2 h1,
-.instruction3 h1 {
+.instruction1 h2,
+.instruction2 h2,
+.instruction3 h2 {
   text-align: center;
   margin: 0.5em 0 1em 0;
   text-decoration: underline;

@@ -39,7 +39,7 @@ export default function Calendar() {
         </div>
         <div className="instructions_container">
           <div className="instruction1">
-            <h1>1 - Audit personnalisé</h1>
+            <h2>1 - Audit personnalisé</h2>
             <p>
               ►{" "}
               <span>Cahier des charges précis de vos attentes et besoins</span>{" "}
@@ -58,7 +58,7 @@ export default function Calendar() {
           </div>
 
           <div className="instruction2">
-            <h1>2 - Délais</h1>
+            <h2>2 - Délais</h2>
             <p>
               ► Le délai de réalisation de l'Audit{" "}
               <span>dépend de la complexité et la situation</span> de chacun.
@@ -66,7 +66,7 @@ export default function Calendar() {
           </div>
 
           <div className="instruction3">
-            <h1>3 - Aller plus loin</h1>
+            <h2>3 - Aller plus loin</h2>
             <p>► Vous restez maître de la proposition qui vous est faite</p>
             <p>
               ► Si vous souhaitez donner suite en partie ou en totalité,

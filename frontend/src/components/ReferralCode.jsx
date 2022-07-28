@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import QRCode from "qrcode";
+// import QRCode from "qrcode";
 import API from "../services/api";
 import "@assets/ReferralCode.css";
 import SponsorName from "./SponsorName";
@@ -7,10 +7,10 @@ import SponsorName from "./SponsorName";
 function ReferralCode() {
   const userId = parseInt(sessionStorage.getItem("userId"), 10);
   const [user, setUser] = useState(userId);
-  const [qrcode, setQrcode] = useState(user.referralCode);
-  const [url] = useState([]);
+  // const [qrcode, setQrcode] = useState(user.referralCode);
+  // const [url] = useState([]);
 
-  const generateQR = () => {
+  /* const generateQR = () => {
     QRCode.toDataURL(
       url,
       {
@@ -26,12 +26,11 @@ function ReferralCode() {
         setQrcode(url);
       }
     );
-  };
+  }; */
 
   const getOneUser = () => {
     API.get(`/users/${user}`)
       .then((res) => {
-        console.warn(res.data);
         setUser(res.data);
       })
       .catch((err) => console.error(err));
@@ -55,7 +54,7 @@ function ReferralCode() {
               et enfin d'une série de 4 nombres générés aléatoirement.
             </p>
             <li>Partagez votre code parrain</li>
-            <p>Via SMS, What's App, email, QR Code... avec tous vos proches.</p>
+            <p>Via SMS, What's App, email... avec tous vos proches.</p>
             <li>Votre filleul débute sa souscription</li>
             <p>
               En saissisant votre code parrainage dans le parcours de
@@ -101,16 +100,16 @@ function ReferralCode() {
               className="input-referralcode"
             />
 
-            <button
+            {/* <button
               type="button"
               className="btn-referralcode"
               onClick={generateQR}
             >
               QRCode
-            </button>
+  </button> */}
           </div>
 
-          <div>
+          {/* <div>
             {qrcode && (
               <div className="qrcode">
                 <img src={qrcode} alt="" />
@@ -119,7 +118,7 @@ function ReferralCode() {
                 </a>
               </div>
             )}
-          </div>
+            </div> */}
         </div>
       </div>
     </div>
