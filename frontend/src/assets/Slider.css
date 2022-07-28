@@ -7,11 +7,12 @@
 .carousel-div {
   display: flex;
   flex-direction: column;
+  margin-top: 2rem;
 }
 
 .carousel-div h1 {
   color: #65bd60;
-  font-size: calc(var(--font-size) * 1.6);
+  font-size: calc(var(--font-size) * 1.8);
   text-align: center;
   margin-bottom: 1rem;
 }

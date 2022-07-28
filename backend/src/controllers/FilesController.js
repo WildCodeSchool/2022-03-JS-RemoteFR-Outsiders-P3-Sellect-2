@@ -195,7 +195,7 @@ class FilesController {
   static browsePath = (req, res) => {
     const { name } = req.params;
     // je renvoi via un status code 200 mon document.
-    res.status(200).json({ path: `${__dirname}/../../uploads/${name}` });
+    res.status(200).json({ path: `${name}` });
   };
 }
 

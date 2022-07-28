@@ -22,7 +22,7 @@
 
 @media screen and (max-width: 375px) {
   .div-updateuseraccount {
-    height: 79vh;
+    /*height: 79vh;*/
     text-align: center;
   }
 }

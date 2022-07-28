@@ -101,7 +101,11 @@ function FileCard({ file, files, setFiles, admin }) {
           </p>
         )}
         <div className="filecard_link">
-          <a target="_blank" href={fileLink} rel="noreferrer">
+          <a
+            target="_blank"
+            href={`${import.meta.VITE_BACKEND_URL}/uploads/${fileLink}`}
+            rel="noreferrer"
+          >
             Visualiser
           </a>
           <button type="button" onClick={() => handleDownload()}>
