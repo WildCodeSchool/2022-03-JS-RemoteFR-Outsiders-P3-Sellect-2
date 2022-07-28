@@ -103,7 +103,7 @@ function FileCard({ file, files, setFiles, admin }) {
         <div className="filecard_link">
           <a
             target="_blank"
-            href={`${import.meta.VITE_BACKEND_URL}/uploads/${fileLink}`}
+            href={`${import.meta.env.VITE_BACKEND_URL}/uploads/${fileLink}`}
             rel="noreferrer"
           >
             Visualiser
