@@ -55,7 +55,7 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  gap: 1em;
+  margin-right: 2rem;
 }
 
 .usercard_btn button {
