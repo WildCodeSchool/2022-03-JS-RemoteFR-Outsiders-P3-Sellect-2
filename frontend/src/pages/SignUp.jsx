@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { NavLink, Link, useNavigate } from "react-router-dom";
 import Moment from "moment";
 import API from "../services/api";
@@ -18,16 +18,44 @@ function SignUp() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
+  const [sponsorCodeError, setSponsorCodeError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [sponsorCode, setSponsorCode] = useState("");
+  const [sponsorName, setSponsorName] = useState("");
   const signupDate = Moment().format("DD-MM-YYYY");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    API.get(`/users/sponsors/${sponsorCode}`)
+      .then((res) => setSponsorName(res.data.firstname))
+      .catch((err) => {
+        console.error(err);
+        setSponsorName("");
+      });
+  }, [sponsorCode]);
+
+  const emailVerification = (emailAddress) => {
+    const emailRegex =
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return emailRegex.test(emailAddress);
+  };
+
   const handleRegister = (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
+    if (!emailVerification(email)) {
+      setEmailError(true);
+      setTimeout(() => {
+        setEmailError(false);
+      }, 5000);
+    } else if (password !== confirmPassword) {
       setPasswordError(true);
       setTimeout(() => {
         setPasswordError(false);
+      }, 5000);
+    } else if (sponsorCode !== "" && sponsorName === "") {
+      setSponsorCodeError(true);
+      setTimeout(() => {
+        setSponsorCodeError(false);
       }, 5000);
     } else {
       API.post(`/auth/users`, {
@@ -98,7 +126,14 @@ function SignUp() {
             type="text"
             placeholder="Code de parrainage"
             value={sponsorCode}
-            onChange={(e) => setSponsorCode(e.target.value)}
+            onChange={(e) =>
+              setSponsorCode(
+                e.target.value
+                  .split("")
+                  .map((el) => (el === " " ? "" : el))
+                  .join("")
+              )
+            }
           />
           <input
             type="password"
@@ -116,9 +151,19 @@ function SignUp() {
           />
           <div className="error-container">
             {error && <span className="error">Une erreur est survenue</span>}
+            {emailError && (
+              <span className="error">
+                Cette adresse email n'est pas valide
+              </span>
+            )}
             {passwordError && (
               <span className="error">
                 Les mots de passe ne correspondent pas
+              </span>
+            )}
+            {sponsorCodeError && (
+              <span className="error">
+                Ce code de parrainage n'est pas valide
               </span>
             )}
           </div>
