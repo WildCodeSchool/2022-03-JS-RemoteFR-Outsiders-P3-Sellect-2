@@ -25,11 +25,7 @@ router.get("/users/:id", authorization, UsersController.read);
 router.delete("/users/:id", authorization, isAdmin, UsersController.delete);
 router.put("/infos/users/:id", authorization, UsersController.editInfos);
 router.put("/password/users/:id", authorization, UsersController.editPassword);
-router.get(
-  "/users/sponsors/:sponsorCode",
-  authorization,
-  UsersController.readSponsor
-);
+router.get("/users/sponsors/:sponsorCode", UsersController.readSponsor);
 router.get("/users-number", UsersController.browseUsersNumber);
 
 router.post(

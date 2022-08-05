@@ -7,7 +7,8 @@ import { MainContext } from "../contexts/MainContext";
 import AdminModalNewContract from "./AdminModalNewContract";
 
 function FileCard({ file, files, setFiles, admin }) {
-  const { setDeleteFileModal, setIsFileDeleted } = useContext(MainContext);
+  const { setDeleteFileModal, setIsFileDeleted, isContractSent } =
+    useContext(MainContext);
   const [contractModal, setContractModal] = useState(false);
   const [fileLink, setFileLink] = useState(false);
 
@@ -25,7 +26,7 @@ function FileCard({ file, files, setFiles, admin }) {
     API.get(`/visualize/file/${file.content}`)
       .then((res) => setFileLink(res.data.path))
       .catch((err) => console.error(err));
-  }, []);
+  }, [isContractSent]);
 
   const handleDelete = (e) => {
     // eslint-disable-next-line no-alert
